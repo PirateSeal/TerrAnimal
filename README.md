@@ -1,4 +1,3 @@
-===================================================================================================
 # TerraBay
 ===================================================================================================
 #P.I. Semestre 2 Intech'info Thomas Cousin / Thibault Leclerc / Erwann Louboutin / Guillaume Zisa
@@ -19,4 +18,3 @@
 - sober / futuristic / spatial;
 - Dominant color: Blue;
 - Family font: Tele-Marines (title) - Red Rocket (text);
-===================================================================================================
