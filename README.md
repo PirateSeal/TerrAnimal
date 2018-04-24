@@ -5,7 +5,7 @@
 -----------------
 ###Coding Charter
 
-- Language : Anglais;
+- Language : English;
 - GIT : Commits in English, starting with an uppercase, clear and understandables. Each word from a part in the name is separated by "_" and each part is separated by "&";
 - Variables : Snake_case;
 - Control structure blocks : Aired (spaces between each keyword / parentheses / etc ...);
