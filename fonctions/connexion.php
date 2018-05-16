@@ -7,7 +7,7 @@
 	$password = htmlspecialchars($_POST["password"]);
 
 	// RECHERCHE DANS LA BASE DE DONNÉE DE L'USERNAME.
-	$req = mysqli_query($db_connexion, "SELECT * FROM users WHERE pseudo = '".$pseudo."'");
+	$req = mysqli_query($bdd_connexion, "SELECT * FROM user WHERE pseudo = '".$pseudo."'");
 
 	// SI LE NOMBRE DE LIGNE AVEC SE PSEUDO = 1 .
 	if ( mysqli_num_rows($req) == 1){
@@ -19,9 +19,11 @@
 				// MEMORISATION DES LOGINS DE LA SESSION .
 				session_start();
 				$_SESSION["id"] = $data["id"];
-				$_SESSION["pseudo"] = $pseudo;
+				$_SESSION["username"] = $data["username"];
 				header("location:../home.php");
 		} else {
+			echo $username;
+			echo $password;
 			echo "Mot de passe incorrect !";
 		}
 	} else {

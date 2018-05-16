@@ -28,8 +28,8 @@
 					echo "<h4>The passwords do not match .</h4>";
 				}
 			} elseif (isset($_GET["subscribe"]) && $_GET["subscribe"] == "confirmed"){
-				echo "Your registration has been registered .<br>You will be redirected in 5 seconds<br>";
-						header("Refresh:4;Url=index.php");
+				echo "Your registration has been registered .<br>You will be redirected in 3 seconds<br>";
+						header("Refresh:3;Url=index.php");
 			}
 		?>
 		<button>Submit</button>
