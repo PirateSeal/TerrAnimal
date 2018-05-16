@@ -10,11 +10,9 @@
 				session_start();
 				$_SESSION["id"] = $data["id"];
 				$_SESSION["pseudo"] = $data["pseudo"];
+				header("location:../home.php");
 		} else {
 			header("location:../login.php?error=incorrect");
-		}
-		if ( isset ( $_SESSION["pseudo"] )){
-			header("location:../home.php");
 		}
 	} else {
 		header("location:../login.php?error=incorrect");
