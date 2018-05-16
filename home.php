@@ -14,8 +14,8 @@
 					<form action='fonctions/logedornot.php' method='get'>
 						<button>ok</button>
 					</form>
-					<form action='fonctions/deconnect.php' method='get'>
-						<button>Deconnect</button>
+					<form action='fonctions/disconnect.php' method='get'>
+						<button>Disconnect</button>
 					</form>
 				</body>
 		</html>";
