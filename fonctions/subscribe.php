@@ -10,7 +10,7 @@
 	$req = mysqli_query($db_connexion, "SELECT * FROM users WHERE pseudo = '".$pseudo."'");
 	if ( empty ( $pseudo ) || empty ( $firstname ) || empty ( $name )|| empty ($password1) || empty($password2) || empty ($email) ){
 		header("location:../subscribe.php?error=incomplete");
-	} else if ( strlen($password1) < 3 ||  strlen($username) < 3 ) {
+	} else if ( strlen($password1) < 3 ||  strlen($pseudo) < 3 ) {
 		header("location:../subscribe.php?error=tooshort");
 	} else if ( $password1 != $password2 ){
 		header("location:../subscribe.php?error=password");
