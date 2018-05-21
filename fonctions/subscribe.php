@@ -18,7 +18,7 @@
 		header("location:../subscribe.php?error=exist");
 	} else {
     $password = $password1 ;
-    mysqli_query($db_connexion, "INSERT INTO users (id, pseudo, firstname, name, email, password) VALUES (NULL, '".$pseudo."', '".$firstname."', '".$name."', '".$email."', '".$password."')");
+    mysqli_query($db_connexion, "INSERT INTO users (id_user, pseudo, firstname, name, note, password, balance) VALUES (NULL, '".$pseudo."', '".$firstname."', '".$name."', '2.5', '".$password."', '0.0')");
 		header("location:../subscribe.php?subscribe=confirmed");
 	}
 ?>
