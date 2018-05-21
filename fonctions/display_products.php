@@ -20,7 +20,10 @@
 		echo "<br><table border = 1px><tr><td>image</td></tr>
 		<tr><td>".$data[$i][2]."</td></tr>
 		<tr><td>Price :".$data[$i][1]." $</td></tr>
-		<tr><td><form action='product_page.php?id=".$j."' method='GET'>
+		<tr><td><form action='product_page.php?id=".$j."' method='POST'>
 		<input type='submit' name='Details' value='Details'></form></td></tr></table><br>";
 	}
+
+
+
 ?>

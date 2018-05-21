@@ -5,7 +5,6 @@
 	}
 
 
-
 // ne pas mettre des trucs incomplets pls si vous faites une fonctionnalité
 // assurez vous qu'elle marche un minimum
 /*
@@ -19,7 +18,7 @@
 <html>
 <head>
 	<title>
-		
+		home
 	</title>
 </head>
 <body>
