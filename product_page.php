@@ -15,7 +15,9 @@
 </head>
 <body>
 	<?php
-		require_once("./fonctions/display_products_detail.php");
+
+		echo "<form action='./home.php'><button>back</button></form>";
+		require_once("./fonctions/product_page.php");
 
 		echo "<br><table border=1px>
 		<tr><td>image</td><td>".$data[0]."</td></tr>
@@ -24,6 +26,9 @@
 		<tr><td>Weight :".$data[5]."</td><td>Color :".$data[7]."</td></tr>
 		<tr><td>Vendor :".$data[9]." ".$data[10]."</tr></td>
 		</table>";
+
+
 		?>
+
 </body>
 </html>
