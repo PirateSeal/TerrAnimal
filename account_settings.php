@@ -38,6 +38,9 @@
     		      <label for='password2'> Re-enter password : </label><input type='password' size='25' name='password2' value=''><br>
               <button>Change your password</button><br>
             </form>";
+						if ( $_GET["error"] == "pseudo_exist"){
+								echo"<h6>This pseudo is already taken </h6>";
+						}
       ?>
     </body>
   </html>
