@@ -23,15 +23,15 @@
 </head>
 <body>
 	<?php
-		echo "<form action='fonctions/disconnect.php' method='GET'> 
+		echo "<form action='fonctions/disconnect.php' method='GET'>
 		<button>disconnect</button></form>";
 
 		echo "<form action='./caddy.php'><button>caddy</button></form>";
+		echo "<form action='account.php' method='GET'>
+		<button>account</button></form>";
 
 
 		require_once("./fonctions/display_products.php");
 	?>
 </body>
 </html>
-	
-
