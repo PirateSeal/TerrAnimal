@@ -40,6 +40,12 @@
             </form>";
 						if ( $_GET["error"] == "pseudo_exist"){
 								echo"<h6>This pseudo is already taken </h6>";
+						} elseif ( $_GET["error"] == "password_not_set"){
+								echo"<h6>You need to enter the old password and 2 times the new one .</h6>";
+						} elseif ( $_GET["error"] == "bad_password"){
+								echo"<h6>Passwords does not match .</h6>";
+						} elseif ( $_GET["error"] == "wrong_password"){
+								echo"<h6>Your old password is wrong .</h6>";
 						}
       ?>
     </body>
