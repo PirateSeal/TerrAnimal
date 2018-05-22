@@ -3,8 +3,6 @@
 	if (empty($_SESSION["pseudo"])){
 		header("location:index.php");
 	}
-
-	
 ?>
 
 
@@ -17,8 +15,11 @@
 	<?php
 
 		echo "<form action='./home.php'><button>back</button></form>";
+		
 		require_once("./fonctions/product_page.php");
-
+		
+		echo $_COOKIE['toto'];
+		
 		echo "<br><table border=1px>
 		<tr><td>image</td><td>".$data[0]."</td></tr>
 		<tr><td>".$data[1]."$ </td><td>Stock :".$data[2]."</td></tr>
@@ -27,8 +28,8 @@
 		<tr><td>Vendor :".$data[9]." ".$data[10]."</tr></td>
 		</table>";
 
-
-		?>
+		echo "<form action='./fonctions/add_caddy.php?id=".$_GET["id"]."' method='POST'><button>Add to caddy</button></form>"; 
+	?>
 
 </body>
 </html>
