@@ -25,6 +25,10 @@
 	<?php
 		echo "<form action='fonctions/disconnect.php' method='GET'> 
 		<button>disconnect</button></form>";
+
+		echo "<form action='./caddy.php'><button>caddy</button></form>";
+
+
 		require_once("./fonctions/display_products.php");
 	?>
 </body>

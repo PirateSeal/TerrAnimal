@@ -16,9 +16,11 @@
 
 		echo "<form action='./home.php'><button>back</button></form>";
 		
+		echo "<form action='./caddy.php'><button>caddy</button></form>";
+
+
 		require_once("./fonctions/product_page.php");
 		
-		echo $_COOKIE['toto'];
 		
 		echo "<br><table border=1px>
 		<tr><td>image</td><td>".$data[0]."</td></tr>
