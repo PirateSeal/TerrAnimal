@@ -30,6 +30,8 @@
 		echo "<form action='account.php' method='GET'>
 		<button>account</button></form>";
 
+		echo "<form action='./add_article.php'><button>Add an article</button></form>";
+
 
 		require_once("./fonctions/display_products.php");
 	?>

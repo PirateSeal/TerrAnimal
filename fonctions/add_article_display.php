@@ -4,34 +4,34 @@
 	$req = mysqli_query($db_connexion, $sql);
 	$recup = mysqli_fetch_array($req, MYSQLI_NUM);
 
-	echo "Description :<input type='text' value='description'>"
-	echo "<select id='name'>";
-	
+	echo "Description :<input type='text' name='description' value=''><br>";
+
+	echo "Specie :<select name='name'>";
 	for ($i=0; $i < count($recup) ; $i++) { 
 		echo "<option value='".$recup[$i]."'>".$recup[$i]."</option>";
 	}
-	echo "</select>";
+	echo "</select><br>";
 	mysqli_free_result($req);
 
-	echo "Price :<input type='text' value='price'>";
+	echo "Price :<input type='text' name='price' value=''><br>";
 
-	echo "Number of products :<input type='text' value='stock'>";
+	echo "Number of products :<input type='text' name='stock' value=''><br>";
 
-	echo "Gender :<select id='gender'>";
+	echo "Gender :<select name='gender'>";
 	echo "<option value='0'>Male</option>";
 	echo "<option value='1'>Female</option>";
 	echo "<option value='2'>Hermaphrodite</option>";
-	echo "</select>";
+	echo "</select><br>";
 
-	echo "Food :<input type='text' value='diet'>";
+	echo "Food :<input type='text' name='diet' value=''><br>";
 
-	echo "Weight :<input type='text' value='weight'>";
+	echo "Weight :<input type='text' name='weight' value=''><br>";
 
-	echo "Size :<input type='text' value='size'>";
+	echo "Size :<input type='text' name='size' value=''><br>";
 
-	echo "Color :<input type='text' value='color'>";
+	echo "Color :<input type='text' name='color' value=''><br>";
 
-	echo "Age :<input type='text' value='age'>"
+	echo "Age :<input type='text' name='age' value=''><br>";
 
 ?>
 
