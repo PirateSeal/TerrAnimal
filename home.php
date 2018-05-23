@@ -5,6 +5,7 @@
 	}
 
 
+
 // ne pas mettre des trucs incomplets pls si vous faites une fonctionnalité
 // assurez vous qu'elle marche un minimum
 /*
@@ -34,6 +35,7 @@
 
 
 		require_once("./fonctions/display_products.php");
+		print_r($data);
 	?>
 </body>
 </html>

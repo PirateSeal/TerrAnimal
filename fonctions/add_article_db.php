@@ -17,16 +17,16 @@
 
 	//RECUPERATION DE ID_USER GRACE AU PSEUDO
 
-	$req = mysqli_query($db_connexion, "SELECT * FROM users WHERE pseudo = '".$_SESSION["pseudo"]."'");
-	$data = mysqli_fetch_array($req);
-	$id= $data["id_user"];
+	$req = mysqli_query($db_connexion, "SELECT id_user FROM users WHERE pseudo = '".$_SESSION["pseudo"]."'");
+	$data = mysqli_fetch_array($req, MYSQLI_NUM);
+	$id= $data[0];
 	mysqli_free_result($req);
 
 	//RECUPERATION DE ID_SPECIE GRACE AU NAME
 
-	$req2 = mysqli_query($db_connexion, "SELECT * FROM species WHERE name = '".$_GET["name"]."'");
-	$data2 = mysqli_fetch_array($req2);
-	$specie = $data2["id_specie"];
+	$req2 = mysqli_query($db_connexion, "SELECT id_specie FROM species WHERE name = '".$_GET["name"]."'");
+	$data2 = mysqli_fetch_array($req2, MYSQLI_NUM);
+	$specie = $data2[0];
 
 
 	if ( empty ( $descri ) || empty ( $price ) || empty ( $stock )|| empty ($size) || empty($color) ){
