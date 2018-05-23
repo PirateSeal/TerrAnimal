@@ -14,11 +14,11 @@
 		array_splice($data,$id,1);
 		$data = array_values($data);
 		$string ="";
-		for ($i=0; $i <count($data) ; $i++) { 
+		for ($i=0; $i <count($data) ; $i++) {
 			$string = $string.";".$data[$i];
 		}
 		$string = ltrim($string, ";");
-		setcookie("toto", $string, time()+30,"/");
+		setcookie("toto", $string, time()+3600,"/");
 		header("location:../caddy.php");
 	}
 ?>

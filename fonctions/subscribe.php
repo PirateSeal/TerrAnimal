@@ -1,5 +1,6 @@
 <?php
 	require_once("db_connexion.php");
+	require_once("xor.php");
 	$pseudo= htmlspecialchars($_POST["pseudo"]);
 	$firstname= htmlspecialchars($_POST["firstname"]);
 	$name= htmlspecialchars($_POST["name"]);
@@ -17,7 +18,9 @@
 	} else if ( mysqli_num_rows($req) == 1 ){
 		header("location:../subscribe.php?error=exist");
 	} else {
-    $password = $password1 ;
+		$xor_key = 'ByTheWay66';
+		$signal = base64_encode(xorIt($password1, $xor_key));
+		$password = $signal;
     mysqli_query($db_connexion, "INSERT INTO users (id_user, pseudo, firstname, name, note, password, balance) VALUES (NULL, '".$pseudo."', '".$firstname."', '".$name."', '2.5', '".$password."', '0.0')");
 		header("location:../subscribe.php?subscribe=confirmed");
 	}

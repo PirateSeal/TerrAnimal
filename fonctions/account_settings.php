@@ -9,7 +9,7 @@
 	$data = mysqli_fetch_array($req);
 
 	// IDENTIFICATION BDD PDO POUR MODIFICATIOIN
-	$mysqli = new mysqli("localhost", "root", "", "bdd_terrabay");
+	$mysqli = new mysqli("localhost", "guillaume", "toor", "bdd_terrabay");
 
 	// MODIFICATION DE DONNÉES
 	if (isset($_POST["pseudo"])){
