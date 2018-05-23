@@ -2,13 +2,17 @@
 	require_once("db_connexion.php");
 	$sql = "select name from species";
 	$req = mysqli_query($db_connexion, $sql);
-	$recup = mysqli_fetch_array($req, MYSQLI_NUM);
+	$i=0;
+	while ($recup = mysqli_fetch_array($req, MYSQLI_NUM)){
+		$data[$i]= $recup;
+		$i++;
+	}
 
 	echo "Description :<input type='text' name='description' value=''><br>";
 
 	echo "Specie :<select name='name'>";
-	for ($i=0; $i < count($recup) ; $i++) { 
-		echo "<option value='".$recup[$i]."'>".$recup[$i]."</option>";
+	for ($i=0; $i < count($data) ; $i++) { 
+		echo "<option value='".$data[$i][0]."'>".$data[$i][0]."</option>";
 	}
 	echo "</select><br>";
 	mysqli_free_result($req);
