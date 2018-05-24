@@ -27,7 +27,11 @@
 	echo "<option value='2'>Hermaphrodite</option>";
 	echo "</select><br>";
 
-	echo "Food :<input type='text' name='diet' value=''><br>";
+	echo "Food :<select name='diet'>
+		<option value='0'>Carnivorous</option>
+		<option value='1'>Herbivorous</option>
+		<option value='2'>Omnivorous</option>
+		</select></br>";
 
 	echo "Weight :<input type='text' name='weight' value=''><br>";
 

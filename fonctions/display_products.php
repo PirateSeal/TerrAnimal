@@ -16,7 +16,6 @@
 	mysqli_close($db_connexion);
 
 	for ($i=0; $i < count($data); $i++) { 
-		//$j=$i+1;
 		echo "<br><table border = 1px><tr><td>image</td></tr>
 		<tr><td>".$data[$i][2]."</td></tr>
 		<tr><td>Price :".$data[$i][1]." $</td></tr>

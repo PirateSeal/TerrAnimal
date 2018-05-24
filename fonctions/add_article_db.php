@@ -8,7 +8,7 @@
 	$price= htmlspecialchars($_GET["price"]);
 	$stock= htmlspecialchars($_GET["stock"]);
 	$gender= $_GET["gender"];
-	$diet= htmlspecialchars($_GET["diet"]);
+	$diet= $_GET["diet"];
 	$weight= htmlspecialchars($_GET["weight"]);
 	$size= htmlspecialchars($_GET["size"]);
 	$color= htmlspecialchars($_GET["color"]);
