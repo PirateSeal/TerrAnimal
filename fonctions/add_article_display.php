@@ -28,9 +28,9 @@
 	echo "</select><br>";
 
 	echo "Food :<select name='diet'>
-		<option value='0'>Carnivorous</option>
-		<option value='1'>Herbivorous</option>
-		<option value='2'>Omnivorous</option>
+		<option value='Carnivorous'>Carnivorous</option>
+		<option value='Herbivorous'>Herbivorous</option>
+		<option value='Omnivorous'>Omnivorous</option>
 		</select></br>";
 
 	echo "Weight :<input type='text' name='weight' value=''><br>";

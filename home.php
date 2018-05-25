@@ -35,7 +35,6 @@
 
 
 		require_once("./fonctions/display_products.php");
-		print_r($data);
 	?>
 </body>
 </html>
