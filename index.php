@@ -5,11 +5,11 @@
 		<title>TerraBay</title>
 	</head>
 	<body>
-	<form action="login.php" method="POST">
+	<form action="view/login.php" method="POST">
 		<button>Login</button>
 	</form>
-	<form action="subscribe.php" method="POST">
-		<button>Subscribes</button>
+	<form action="view/subscribe.php" method="POST">
+		<button>Subscribe</button>
 	</form>
 	</body>
 </html>

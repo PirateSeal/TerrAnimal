@@ -5,11 +5,11 @@
 		<title>TerraBay</title>
 	</head>
 	<body>
-	<form action="index.php" method="POST">
+	<form action="../index.php" method="POST">
 		<button>Back</button>
 	</form>
 	<h2>Subscribe Field</h2>
-	<form action="fonctions/subscribe.php" method="POST">
+	<form action="../controller/subscribe.php" method="POST">
 		<label for="pseudo">Your pseudo :</label><input type="text" size="25" name="pseudo" value=""><br>
 		<label for="firstname">Firstname :</label><input type="text" size="25" name="firstname" value=""><br>
 		<label for="name">Name :</label><input type="text" size="25" name="name" value=""><br>
@@ -29,7 +29,7 @@
 				}
 			} elseif (isset($_GET["subscribe"]) && $_GET["subscribe"] == "confirmed"){
 				echo "Your registration has been registered .<br>You will be redirected in 3 seconds<br>";
-						header("Refresh:3;Url=index.php");
+						header("Refresh:3;Url=../index.php");
 			}
 		?>
 		<button>Submit</button>

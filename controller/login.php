@@ -25,7 +25,7 @@
 				session_start();
 				$_SESSION["id"] = $data["id"];
 				$_SESSION["pseudo"] = $pseudo;
-				header("location:../home.php");
+				header("location:../view/home.php");
 		} else {
 			echo "Mot de passe incorrect !";
 		}
