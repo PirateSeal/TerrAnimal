@@ -1,14 +1,14 @@
 <?php
 	SESSION_start();
 		if (empty($_SESSION["pseudo"])){
-			header("location:index.php");
+			header("location:../index.php");
 		}
 
 	$data = $_COOKIE['toto'];
 	$data = explode(";", $data);
 	if (count($data)<2) {
 		setcookie("toto", $_GET["id"], time()-1,"/");
-		header("location:../caddy.php");
+		header("location:../view/caddy.php");
 	}else{
 		$id=$_GET["id"];
 		array_splice($data,$id,1);
@@ -19,6 +19,6 @@
 		}
 		$string = ltrim($string, ";");
 		setcookie("toto", $string, time()+3600,"/");
-		header("location:../caddy.php");
+		header("location:../view/caddy.php");
 	}
 ?>

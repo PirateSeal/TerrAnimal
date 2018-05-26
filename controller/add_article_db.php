@@ -1,7 +1,7 @@
 <?php
 	SESSION_start();
 	if (empty($_SESSION["pseudo"])){
-		header("location:index.php");
+		header("location:../index.php");
 	}
 	require_once("db_connexion.php");
 	$descri= htmlspecialchars($_GET["description"]);
@@ -30,10 +30,10 @@
 
 
 	if ( empty ( $descri ) || empty ( $price ) || empty ( $stock )|| empty ($size) || empty($color) ){
-		header("location:../add_article.php?error=incomplete");
+		header("location:../view/add_article.php?error=incomplete");
 		echo "Blyat";
 	} else {
 		mysqli_query($db_connexion, "INSERT INTO articles (id_article, id_specie, id_user, description, unit_price, stock, gender, diet, weight, size, color, age) VALUES (NULL, '".$specie."', '".$id."', '".$descri."', '".$price."', '".$stock."', '".$gender."', '".$diet."', '".$weight."', '".$size."', '".$color."', '".$age."')");
-		header("location:../add_article.php?validation=confirmed");
+		header("location:../view/add_article.php?validation=confirmed");
 	}
 ?>

@@ -1,7 +1,5 @@
 <?php
 $xor_key = 'ByTheWay66';
-$string = 'azerty';
-
 function xorIt($string, $key, $type = 0)
 {
         $sLength = strlen($string);
@@ -22,8 +20,8 @@ function xorIt($string, $key, $type = 0)
 }
 
 $signal = base64_encode(xorIt($string, $xor_key));
-echo $signal ;
+
 
 $string = xorIt(base64_decode($signal), $xor_key, 1);
-echo $string ;
+
 ?>

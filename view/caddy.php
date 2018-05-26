@@ -15,10 +15,10 @@
 <body>
 	<?php
 
-		echo "<form action='./home.php' method='GET'> 
+		echo "<form action='home.php' method='GET'>
 		<button>back</button></form>";
 
-		require_once("./fonctions/display_caddy.php");
+		require_once("../controller/display_caddy.php");
 	?>
 </body>
 </html>
