@@ -1,38 +1,54 @@
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="style.css" />
-		<title>TerraBay</title>
-	</head>
-	<body>
-	<form action="../index.php" method="POST">
-		<button>Back</button>
-	</form>
-	<h2>Subscribe Field</h2>
-	<form action="../controller/subscribe.php" method="POST">
-		<label for="pseudo">Your pseudo :</label><input type="text" size="25" name="pseudo" value=""><br>
-		<label for="firstname">Firstname :</label><input type="text" size="25" name="firstname" value=""><br>
-		<label for="name">Name :</label><input type="text" size="25" name="name" value=""><br>
-		<label for="password1">Password :</label><input type="password" size="25" name="password1" value=""><br>
-		<label for="password2">Re-enter password :</label><input type="password" size="25" name="password2" value=""><br>
-		<label for="email">Email :</label><input type="text" size="25"name="email" value=""><br>
-		<?php
-			if (isset($_GET["error"])){
-				if ($_GET["error"] == "incomplete"){
-					echo "<h4>Please complete all fields .</h4>";
-				} else if ($_GET["error"] == "tooshort"){
-					echo "<h4>Your username and password must contain at least 3 characters .</h4>";
-				} else if ($_GET["error"] == "exist"){// a revoir O_o
-					echo "<h4>This username already exists .</h4>";
-				} else if ($_GET["error"] == "password"){
-					echo "<h4>The passwords do not match .</h4>";
-				}
-			} elseif (isset($_GET["subscribe"]) && $_GET["subscribe"] == "confirmed"){
-				echo "Your registration has been registered .<br>You will be redirected in 3 seconds<br>";
+  <head>
+    <meta charset="utf-8" />
+    <title>TerraBay : Subscribe</title>
+    <link rel="stylesheet" media="screen" type="text/css" title="Exemple" href="subscribe_style.css"/>
+  </head>
+
+  <body>
+
+    <form id="subscribe"><br><br>
+			<form action="../controller/subscribe.php" method="POST">
+      	<label class="form_col" for="pseudo">Pseudo : </label>
+      	<input name="pseudo" id="pseudo" type="text" />
+      	<span class="tooltip">Your pseudo must contain at least 3 characters .</span>
+      	<br><br>
+
+      	<label class="form_col" for="firstname">Firstname : </label>
+      	<input name="firstname" id="firstname" type="text" />
+      	<span class="tooltip">Your firstname must contain at least 2 characters .</span>
+      	<br><br>
+
+      	<label class="form_col" for="lastname">Name : </label>
+      	<input name="lastname" id="lastname" type="text" />
+      	<span class="tooltip">Your name must contain at least 2 characters .</span>
+      	<br><br>
+
+      	<label class="form_col" for="password1">Password : </label>
+      	<input name="password1" id="password1" type="password" />
+      	<span class="tooltip">Your name must contain at least 3 characters .</span>
+      	<br><br>
+
+      	<label class="form_col" for="password2">Password (confirmation) : </label>
+      	<input name="password2" id="password2" type="password" />
+      	<span class="tooltip">The confirmation password must be identical to the original one</span>
+      	<br><br>
+
+      	<span class="form_col"></span>
+      	<input type="submit" value="Submit" /> <input type="reset" value="Reset" />
+				<?php
+					if (isset($_GET["subscribe"]) && $_GET["subscribe"] == "confirmed"){
+						echo "Your registration has been registered .<br>You will be redirected in 3 seconds<br>";
 						header("Refresh:3;Url=../index.php");
-			}
-		?>
-		<button>Submit</button>
-	</form>
-	</body>
+					}
+				?>
+			</form>
+    </form>
+
+    <script type="text/javascript" src="../controller/subscribe.js"></script>
+
+
+  </body>
 </html>

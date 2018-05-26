@@ -1,16 +1,15 @@
 <?php
 	require_once("db_connexion.php");
 	require_once("xor.php");
-	$pseudo= htmlspecialchars($_POST["pseudo"]);
-	$firstname= htmlspecialchars($_POST["firstname"]);
-	$name= htmlspecialchars($_POST["name"]);
-	$password1= htmlspecialchars($_POST["password1"]);
-	$password2= htmlspecialchars($_POST["password2"]);
-	$email= htmlspecialchars($_POST["email"]);
+	$pseudo= htmlspecialchars($_GET["pseudo"]);
+	$firstname= htmlspecialchars($_GET["firstname"]);
+	$name= htmlspecialchars($_GET["name"]);
+	$password1= htmlspecialchars($_GET["password1"]);
+	$password2= htmlspecialchars($_GET["password2"]);
 
 	$req = mysqli_query($db_connexion, "SELECT * FROM users WHERE pseudo = '".$pseudo."'");
-	if ( empty ( $pseudo ) || empty ( $firstname ) || empty ( $name )|| empty ($password1) || empty($password2) || empty ($email) ){
-		header("location:../view/subscribe.php?error=incomplete");
+	if ( empty ( $pseudo ) || empty ( $firstname ) || empty ( $name )|| empty ($password1) || empty($password2) ){
+		//header("location:../view/subscribe.php?error=incomplete");
 	} else if ( strlen($password1) < 3 ||  strlen($pseudo) < 3 ) {
 		header("location:../view/subscribe.php?error=tooshort");
 	} else if ( $password1 != $password2 ){
