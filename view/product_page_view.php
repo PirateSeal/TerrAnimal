@@ -21,7 +21,7 @@
 		<tr><td>Vendor :".$data[9]." ".$data[10]."</tr></td>
 		</table>";
 
-		echo "<form action='../controller/add_caddy.php?id=".$_GET["id"]."' method='POST'><button>Add to caddy</button></form>"; 
+		echo "<form action='../model/add_caddy.php?id=".$_GET["id"]."' method='POST'><button>Add to caddy</button></form>"; 
 	?>
 
 </body>

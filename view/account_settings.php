@@ -12,7 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
-		<form action='home.php' method='GET'>
+		<form action='../controller/home_controller.php' method='GET'>
 			<button>Back</button></form>
 		</form>
 

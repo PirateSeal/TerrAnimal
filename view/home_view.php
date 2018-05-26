@@ -10,11 +10,11 @@
 		echo "<form action='../controller/disconnect.php' method='GET'>
 		<button>disconnect</button></form>";
 
-		echo "<form action='caddy.php'><button>caddy</button></form>";
-		echo "<form action='account.php' method='GET'>
+		echo "<form action='../controller/caddy_controller.php'><button>caddy</button></form>";
+		echo "<form action='../view/account.php' method='GET'>
 		<button>account</button></form>";
 
-		echo "<form action='add_article.php'><button>Add an article</button></form>";
+		echo "<form action='../view/add_article.php'><button>Add an article</button></form>";
 
 		for ($i=0; $i <count($data) ; $i++) { 
 			echo "<br><table border = 1px><tr><td>image</td></tr>
