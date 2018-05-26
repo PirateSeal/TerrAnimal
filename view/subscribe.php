@@ -40,7 +40,7 @@
       	<input type="submit" value="Submit" /> <input type="reset" value="Reset" />
 				<?php
 					if (isset($_GET["subscribe"]) && $_GET["subscribe"] == "confirmed"){
-						echo "Your registration has been registered .<br>You will be redirected in 3 seconds<br>";
+						echo "<br>Your registration has been registered .<br>You will be redirected in 3 seconds<br>";
 						header("Refresh:3;Url=../index.php");
 					}
 				?>
