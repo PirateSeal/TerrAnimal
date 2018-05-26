@@ -1,11 +1,5 @@
 <?php
-	SESSION_start();
-	if (empty($_SESSION["pseudo"])){
-		header("location:../index.php");
-	}
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,12 +8,9 @@
 <body>
 	<?php
 
-		echo "<form action='home.php'><button>back</button></form>";
+		echo "<form action='../controller/home_controller.php'><button>back</button></form>";
 
-		echo "<form action='caddy.php'><button>caddy</button></form>";
-
-
-		require_once("../controller/product_page.php");
+		echo "<form action='../controller/caddy_controller.php'><button>caddy</button></form>";
 
 
 		echo "<br><table border=1px>
