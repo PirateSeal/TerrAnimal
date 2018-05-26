@@ -1,7 +1,7 @@
 <?php
 	SESSION_start();
 	if (empty($_SESSION["pseudo"])){
-		header("location:index.php");
+		header("location:../index.php");
 	}
 ?>
 
@@ -14,14 +14,14 @@
 <body>
 	<?php
 
-		echo "<form action='./home.php'><button>back</button></form>";
-		
-		echo "<form action='./caddy.php'><button>caddy</button></form>";
+		echo "<form action='home.php'><button>back</button></form>";
+
+		echo "<form action='caddy.php'><button>caddy</button></form>";
 
 
-		require_once("./fonctions/product_page.php");
-		
-		
+		require_once("../controller/product_page.php");
+
+
 		echo "<br><table border=1px>
 		<tr><td>image</td><td>".$data[0]."</td></tr>
 		<tr><td>".$data[1]."$ </td><td>Stock :".$data[2]."</td></tr>
@@ -30,7 +30,7 @@
 		<tr><td>Vendor :".$data[9]." ".$data[10]."</tr></td>
 		</table>";
 
-		echo "<form action='./fonctions/add_caddy.php?id=".$_GET["id"]."' method='POST'><button>Add to caddy</button></form>"; 
+		echo "<form action='../controller/add_caddy.php?id=".$_GET["id"]."' method='POST'><button>Add to caddy</button></form>"; 
 	?>
 
 </body>

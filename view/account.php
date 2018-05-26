@@ -1,7 +1,7 @@
 <?php
 	SESSION_start();
 	if (empty($_SESSION["pseudo"])){
-		header("location:index.php");
+		header("location:../index.php");
 	}
 ?>
 
@@ -17,7 +17,7 @@
 
 		<?php
 			// AFFICHAGE DES INFORMATIONS ACTUELLES DE L'UTILISATEUR .
-			require_once("fonctions/db_connexion.php");
+			require_once("../controller/db_connexion.php");
 			$req = mysqli_query($db_connexion, "SELECT * FROM users WHERE pseudo = '".$_SESSION["pseudo"]."'");
 			$data = mysqli_fetch_array($req);
 			echo "Pseudo :".$data["pseudo"]."<br>

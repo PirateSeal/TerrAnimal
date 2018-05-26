@@ -1,7 +1,7 @@
 <?php
 	SESSION_start();
 	if (empty($_SESSION["pseudo"])){
-		header("location:index.php");
+		header("location:../index.php");
 	}
 ?>
 
@@ -17,22 +17,22 @@
 		</form>
 
 		<?php
-			require_once("fonctions/db_connexion.php");
+			require_once("../controller/db_connexion.php");
 			$req = mysqli_query($db_connexion, "SELECT * FROM users WHERE pseudo = '".$_SESSION["pseudo"]."'");
 			$data = mysqli_fetch_array($req);
-			echo" <form action='fonctions/account_settings.php' method='POST'>
+			echo" <form action='../controller/account_settings.php' method='POST'>
 							<label for='pseudo'>    Your pseudo : </label><input type='text' size='25' name='pseudo' value='".$data["pseudo"]."'>
 							<button>Change your pseudo</button><br>
 						</form>
-						<form action='fonctions/account_settings.php' method='POST'>
+						<form action='../controller/account_settings.php' method='POST'>
 							<label for='firstname'> Firstname : </label><input type='text' size='25' name='firstname' value='".$data["firstname"]."'>
 							<button>Change your firstname</button><br>
 						</form>
-						<form action='fonctions/account_settings.php' method='POST'>
+						<form action='../controller/account_settings.php' method='POST'>
 							<label for='name'>      Name : </label><input type='text' size='25' name='name' value='".$data["name"]."'>
 							<button>Change your name</button><br>
 						</form><br>
-						<form action='fonctions/account_settings.php' method='POST'>
+						<form action='../controller/account_settings.php' method='POST'>
 							<label for='password'> Old Password : </label><input type='password' size='25' name='password' value=''><br>
 							<label for='password1'> Password : </label><input type='password' size='25' name='password1' value=''><br>
 							<label for='password2'> Re-enter password : </label><input type='password' size='25' name='password2' value=''><br>
