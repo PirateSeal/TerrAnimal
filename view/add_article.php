@@ -1,7 +1,7 @@
 <?php
 	SESSION_start();
 	if (empty($_SESSION["pseudo"])){
-		header("location:index.php");
+		header("location:../index.php");
 	}
 
 
@@ -15,16 +15,16 @@
 <body>
 	<form action='home.php' method='GET'><button>Back</button></form>
 	<br>
-	<h1>Please inform information about the product you want to sell</h1> 
+	<h1>Please inform information about the product you want to sell</h1>
 	<br>
-	<form action="./fonctions/add_article_db.php" method="GET">
+	<form action="../controller/add_article_db.php" method="GET">
 		<?php
-			require_once("./fonctions/add_article_display.php");
+			require_once("../controller/add_article_display.php");
 		?>
 		<button>Submit</button>
 	</form>
 
-<?php	
+<?php
 	if (isset($_GET["error"])){
 		if ($_GET["error"] == "incomplete"){
 			echo "<h4>Please complete all fields .</h4>";
