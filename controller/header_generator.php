@@ -2,9 +2,9 @@
   if(isset($_POST["go"])){
     $whereami = $_POST["go"];
     if ($_POST["go"] == "subscribe"){
-      $style = "<link rel='stylesheet' media='screen' type='text/css' href='view/subscribe_style.css'/>";
+      $style = "<link rel='stylesheet' type='text/css' href='view/subscribe_style.css'>";
     } else {
-      $style = "<link rel='stylesheet' type='text/css' href='style.css'>";
+      $style = "<link rel='stylesheet' type='text/css' href='view/style.css'>";
     }
   } else {
     $wherami = index ;
