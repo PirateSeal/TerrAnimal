@@ -9,12 +9,16 @@
 
 	$req = mysqli_query($db_connexion, "SELECT * FROM users WHERE pseudo = '".$pseudo."'");
  	if ( mysqli_num_rows($req) == 1 ){
-		header("location:../index.php?subscribe=exist");
+		header("location:../index.php?go=subscribe&subscribe=exist");
 	} else {
 		$xor_key = 'ByTheWay66';
 		$signal = base64_encode(xorIt($password1, $xor_key));
 		$password = $signal;
-    mysqli_query($db_connexion, "INSERT INTO users (id_user, pseudo, firstname, name, note, password, balance) VALUES (NULL, '".$pseudo."', '".$firstname."', '".$name."', '2.5', '".$password."', '0.0')");
+		$conn = new PDO("mysql:host=localhost;dbname=bdd_terrabay",'root', '');
+    //mysqli_query($db_connexion, "INSERT INTO users (id_user, pseudo, firstname, name, note, password, balance) VALUES (NULL, '".$pseudo."', '".$firstname."', '".$name."', '2.5', '".$password."', '0.0')");
+		$sql = "INSERT INTO users (id_user, pseudo, firstname, name, note, password, balance)
+		VALUES (NULL, '".$pseudo."', '".$firstname."', '".$name."', '2.5', '".$password."', '0.0')";
+    $conn->exec($sql);
 		header("location:../index.php?subscribe=confirmed");
 	}
 ?>
