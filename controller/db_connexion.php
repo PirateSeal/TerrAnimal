@@ -5,5 +5,5 @@
 	$bdd	= "bdd_terrabay";
 	$password = "";
 	// TENTATIVE ACCES A LA BASE DE DONNÉE
-	$db_connexion = mysqli_connect($host , $user , $password , $bdd) or die ("Erreur de connexion a la bade de donnée ! ");
+	$db_connexion = mysqli_connect($host , $user , $password , $bdd) or die ("Erreur de connexion a la base de donnée ! ");
 ?>
