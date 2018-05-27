@@ -8,7 +8,6 @@
 			// INDEX
 			include("controller/header_generator.php");
 			include("view/body_index.php");
-			require_once("controller/display_products.php");
 			include("view/footer_index.php");
 		}elseif ($_POST["go"] == "login"){
 			// LOGIN
