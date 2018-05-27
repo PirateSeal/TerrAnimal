@@ -5,9 +5,10 @@
 <form id="subscribe"><br><br>
   <form action="controller/subscribe.php" method="POST">
     <label class="form_col" for="pseudo">Pseudo : </label>
-    <input name="pseudo" id="pseudo" type="text" />
+    <input name="pseudo" id="pseudo" type="text" value="<?php if(isset($_GET["go"])){echo "This account already exist ";}?>"/>
     <span class="tooltip">Your pseudo must contain at least 3 characters .</span>
     <br><br>
+
 
     <label class="form_col" for="firstname">Firstname : </label>
     <input name="firstname" id="firstname" type="text" />

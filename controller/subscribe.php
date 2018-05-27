@@ -7,9 +7,11 @@
 	$password1= htmlspecialchars($_GET["password1"]);
 	$password2= htmlspecialchars($_GET["password2"]);
 
-	$req = mysqli_query($db_connexion, "SELECT * FROM users WHERE pseudo = '".$pseudo."'");
- 	if ( mysqli_num_rows($req) == 1 ){
-		header("location:../index.php?go=subscribe&subscribe=exist");
+		$bdd = new PDO("mysql:host=localhost;dbname=bdd_terrabay",'root', '');
+		$st = $bdd->query("SELECT COUNT(*) FROM users WHERE pseudo='".$pseudo."' ")->fetch();
+
+		if( $st['COUNT(*)'] == 1 ){
+			header("location:../index.php?go=subscribe");
 	} else {
 		$xor_key = 'ByTheWay66';
 		$signal = base64_encode(xorIt($password1, $xor_key));
