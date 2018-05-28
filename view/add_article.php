@@ -46,9 +46,9 @@
 			</select><br><br>
 
 			Food : <select name='diet' id="diet">
-				<option value='Carnivorous'>Carnivorous</option>
-				<option value='Herbivorous'>Herbivorous</option>
-				<option value='Omnivorous'>Omnivorous</option>
+				<option value='carnivorous'>Carnivorous</option>
+				<option value='vegie'>Herbivorous</option>
+				<option value='omnivorous'>Omnivorous</option>
 			</select><br><br>
 
 			>Weight : <input type='text' name='weight' id="weight" value=''> In kilograms<br><br>
