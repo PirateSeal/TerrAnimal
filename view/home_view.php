@@ -1,12 +1,12 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-		home
-	</title>
+	<title>TerraBay</title>
 </head>
 <body>
 	<?php
+		echo "<center><h2>Welcome ".$_SESSION["pseudo"]."</h2></center>";
 		echo "<form action='../controller/disconnect.php' method='GET'>
 		<button>disconnect</button></form>";
 
@@ -16,7 +16,7 @@
 
 		echo "<form action='../view/add_article.php'><button>Add an article</button></form>";
 
-		for ($i=0; $i <count($data) ; $i++) { 
+		for ($i=0; $i <count($data) ; $i++) {
 			echo "<br><table border = 1px><tr><td>image</td></tr>
 			<tr><td>".$data[$i]['name']."</td></tr>
 			<tr><td>Price :".$data[$i]['unit_price']." $</td></tr>
