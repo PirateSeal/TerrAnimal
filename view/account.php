@@ -1,8 +1,5 @@
 <?php
-	SESSION_start();
-	if (empty($_SESSION["pseudo"])){
-		header("location:../index.php");
-	}
+	require_once("../controller/loged_or_not.php");
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +15,9 @@
 		<?php
 			// AFFICHAGE DES INFORMATIONS ACTUELLES DE L'UTILISATEUR .
 			require_once("../controller/db_connexion.php");
-			$req = mysqli_query($db_connexion, "SELECT * FROM users WHERE pseudo = '".$_SESSION["pseudo"]."'");
-			$data = mysqli_fetch_array($req);
+			$data = $db_connexion->query("SELECT * FROM users WHERE pseudo='".$_SESSION["pseudo"]."'")->fetch();
 			echo "Pseudo :".$data["pseudo"]."<br>
+						Email :".$data["email"]."<br>
 						Firstname :".$data["firstname"]."<br>
 						Name :".$data["name"]."<br>
 						Note :".$data["note"]."<br>";

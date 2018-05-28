@@ -18,11 +18,15 @@
 
 		<?php
 			require_once("../controller/db_connexion.php");
-			$req = mysqli_query($db_connexion, "SELECT * FROM users WHERE pseudo = '".$_SESSION["pseudo"]."'");
-			$data = mysqli_fetch_array($req);
+			$data = $db_connexion->query("SELECT * FROM users WHERE pseudo='".$_SESSION["pseudo"]."'")->fetch();
+
 			echo" <form action='../controller/account_settings.php' method='POST'>
 							<label for='pseudo'>    Your pseudo : </label><input type='text' size='25' name='pseudo' value='".$data["pseudo"]."'>
 							<button>Change your pseudo</button><br>
+						</form>
+						<form action='../controller/account_settings.php' method='POST'>
+							<label for='email'> Email : </label><input type='text' size='25' name='email' value='".$data["email"]."'>
+							<button>Change your email</button><br>
 						</form>
 						<form action='../controller/account_settings.php' method='POST'>
 							<label for='firstname'> Firstname : </label><input type='text' size='25' name='firstname' value='".$data["firstname"]."'>
@@ -41,6 +45,7 @@
 						<form action='../controller/account_settings.php' method='POST'>
 							<button name='account' value='delete'> Delete your account</button>;
 						</form>";
+
 			if (isset( $_GET["error"])){
 				if ( $_GET["error"] == "pseudo_exist"){
 					echo"<h6>This pseudo is already taken </h6>";
