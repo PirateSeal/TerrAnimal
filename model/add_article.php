@@ -29,9 +29,8 @@
 	$specie = $data2[0];
 
 
-	if ( empty ( $descri ) || empty ( $price ) || empty ( $stock )|| empty ($size) || empty($color) ){
+	if ( empty ( $descri ) || empty ( $price ) || $stock == '0' || empty ($size) || empty($color) ){
 		header("location:../view/add_article.php?error=incomplete");
-		echo "Blyat";
 	} else {
 		mysqli_query($db_connexion, "INSERT INTO articles (id_article, id_specie, id_user, description, unit_price, stock, gender, diet, weight, size, color, age) VALUES (NULL, '".$specie."', '".$id."', '".$descri."', '".$price."', '".$stock."', '".$gender."', '".$diet."', '".$weight."', '".$size."', '".$color."', '".$age."')");
 		header("location:../view/add_article.php?validation=confirmed");
