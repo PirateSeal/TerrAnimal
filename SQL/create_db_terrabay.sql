@@ -61,16 +61,10 @@ CREATE TABLE IF NOT EXISTS `db_terrabay`.`orders` (
   PRIMARY KEY (`id_order`),
   INDEX `buyer_idx` (`id_buyer` ASC),
   INDEX `seller_idx` (`id_seller` ASC),
-  CONSTRAINT `buyer`
-    FOREIGN KEY (`id_buyer`)
-    REFERENCES `db_terrabay`.`users` (`id_user`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `seller`
-    FOREIGN KEY (`id_seller`)
-    REFERENCES `db_terrabay`.`users` (`id_user`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_buyer`)
+  REFERENCES `db_terrabay`.`users` (`id_user`),
+  FOREIGN KEY (`id_seller`)
+  REFERENCES `db_terrabay`.`users` (`id_user`))
 ENGINE = InnoDB;
 
 
@@ -95,16 +89,10 @@ CREATE TABLE IF NOT EXISTS `db_terrabay`.`articles` (
   PRIMARY KEY (`id_article`),
   INDEX `specie_idx` (`id_specie` ASC),
   INDEX `user_idx` (`id_user` ASC),
-  CONSTRAINT `specie`
-    FOREIGN KEY (`id_specie`)
-    REFERENCES `db_terrabay`.`species` (`id_specie`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `user`
-    FOREIGN KEY (`id_user`)
-    REFERENCES `db_terrabay`.`users` (`id_user`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_specie`)
+  REFERENCES `db_terrabay`.`species` (`id_specie`),
+  FOREIGN KEY (`id_user`)
+  REFERENCES `db_terrabay`.`users` (`id_user`))
 ENGINE = InnoDB;
 
 
@@ -122,16 +110,10 @@ CREATE TABLE IF NOT EXISTS `db_terrabay`.`orders_lines` (
   PRIMARY KEY (`id_order_line`),
   INDEX `order_idx` (`id_order` ASC),
   INDEX `article_idx` (`id_article` ASC),
-  CONSTRAINT `order`
-    FOREIGN KEY (`id_order`)
-    REFERENCES `db_terrabay`.`orders` (`id_order`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `article`
-    FOREIGN KEY (`id_article`)
-    REFERENCES `db_terrabay`.`articles` (`id_article`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  FOREIGN KEY (`id_order`)
+  REFERENCES `db_terrabay`.`orders` (`id_order`),
+  FOREIGN KEY (`id_article`)
+  REFERENCES `db_terrabay`.`articles` (`id_article`))
 ENGINE = InnoDB;
 
 

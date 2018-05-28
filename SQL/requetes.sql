@@ -77,6 +77,15 @@
         INSERT INTO articles (`id_specie`, `id_user`, `description`, `unit_price`, `stock`, `gender`, `diet`, `weight`, `size`, `color`, `age`) 
         VALUES ('$specie', '$user', '$desc', '$price', '$stock', '$gender', '$diet', '$weight', '$size', '$color', '$age');
 
+    -- modifier un article 
+        update articles
+        SET id_specie | id_user | articles.description | unit_price | stock | gender | diet | articles.weight | size | color | age =  '$id_specie' | '$id_user' | '$description' | '$unit_price' | '$stock' | '$gender' | '$diet' | '$weight' | '$size' | '$color' | '$age'; --Retirer mention inutile
+
+    -- Retirer un article
+        DELETE FROM articles JOIN users 
+        ON articles.id_user = users.id_user 
+        WHERE articles.description LIKE '$description' AND articles.id_user LIKE users.id_user;
+
     -- montrer tous les articles d'un user ✔
         SELECT u.id_user, u.pseudo, a.description,  s.name AS specie, unit_price, stock, gender, diet, a.weight, size, color, age 
         FROM species AS s JOIN articles AS a JOIN users AS u 
@@ -93,7 +102,7 @@
     -- montrer tous les articles ayant une certaine diet ✔
         SELECT * 
         FROM articles 
-        WHERE diet = 'herbivorous' | 'carnivorous' | 'omnivorous' --retirer mention inutile 
+        WHERE diet = 'herbivorous' | 'carnivorous' | 'omnivorous' --Retirer mention inutile 
         ORDER BY ID_article;
 
     -- montrer tous les articles d'une espèce appartenant à un certain utilisateur ✔
