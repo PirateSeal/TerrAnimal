@@ -10,7 +10,7 @@
     $style = "<link rel='stylesheet' type='text/css' href='view/subscribe_style.css'>";
     $whereami = ": ".$_GET["go"];
   } else {
-    $wherami = "" ;
+    $wherami = "." ;
     $style = "<link rel='stylesheet' type='text/css' href='view/style.css'>";
   }
   echo "<!DOCTYPE html>
