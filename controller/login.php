@@ -10,14 +10,9 @@
 		$signal = base64_encode(xorIt($password1, $xor_key));
 		$password = $signal;
 
-		try {$bdd = new PDO('mysql:host=localhost;dbname=bdd_terrabay', 'root', '');}
-		catch (Exception $e) {
-			die("L'accès à la base de donnée est impossible.");
-		}
+	$how_much = $db_connexion->query("SELECT COUNT(*) FROM users WHERE pseudo='".$pseudo."' AND password='".$password."'")->fetch();
 
-	$st = $bdd->query("SELECT COUNT(*) FROM users WHERE pseudo='".$pseudo."' AND password='".$password."'")->fetch();
-
-	if( $st['COUNT(*)'] == 1 ){
+	if( $how_much['COUNT(*)'] == 1 ){
 				session_start();
 				$_SESSION["pseudo"] = $pseudo;
 				header("location:../controller/home_controller.php");
