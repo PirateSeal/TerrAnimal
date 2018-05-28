@@ -62,7 +62,7 @@
 			foreach ($caddy as $key => $value) {
 				if ($recup[$i]['id_article'] == $key) {
 					if ($recup[$i]['stock']== $value) {
-						 $sql = "delete from articles where id_article=".$key;
+						 $sql = 'delete from articles where id_article="'.$key.'"';
 						 $pdo->exec($sql);
 					}else{
 						$stock = $recup[$i]['stock']-$value;
