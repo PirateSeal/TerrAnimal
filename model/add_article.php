@@ -1,9 +1,5 @@
 <?php
-	SESSION_start();
-	if (empty($_SESSION["pseudo"])){
-		header("location:../index.php");
-	}
-	require_once("db_connexion.php");
+	require_once("../controller/db_connexion.php");
 	$descri= htmlspecialchars($_GET["description"]);
 	$price= htmlspecialchars($_GET["price"]);
 	$stock= htmlspecialchars($_GET["stock"]);

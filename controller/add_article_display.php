@@ -11,7 +11,6 @@
 			$data[$i]= $recup;
 			$i++;
 		}
-		require_once("../model/add_article.php");
 		require_once("../view/add_article.php");
 	}
 
