@@ -16,6 +16,8 @@
 
 		echo "<form action='../controller/add_article_display.php'><button>Add an article</button></form>";
 
+		echo "<form action='../controller/modify_article.php'><button>Modify your article</button></form>";
+
 		for ($i=0; $i <count($data) ; $i++) {
 			echo "<br><table border = 1px><tr><td>image</td></tr>
 			<tr><td>".$data[$i]['name']."</td></tr>
