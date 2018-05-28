@@ -1,9 +1,9 @@
 <?php
-	// CRÉATION DES VARIABLES DE CONNEXION A LA BASE DE DONNÉE
-	$host = "localhost";
-	$user = "root";
-	$bdd	= "bdd_terrabay";
-	$password = "";
-	// TENTATIVE ACCES A LA BASE DE DONNÉE
-	$db_connexion = mysqli_connect($host , $user , $password , $bdd) or die ("Erreur de connexion a la base de donnée ! ");
+
+  try{
+    $db_connexion=new PDO("mysql:host=localhost;dbname=bdd_terrabay","root","");
+  } catch(PDOException $e){
+    echo "Failed to connect to the database .";
+  }
+
 ?>

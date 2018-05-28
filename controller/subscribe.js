@@ -66,6 +66,19 @@ check['lastname'] = function(id) {
   }
 };
 
+check['email'] = function() {
+  var email = document.getElementById(),
+  tooltipStyle = getTooltip(email).style;
+  if (email.value.length > 2) {
+    email.className = 'correct';
+    tooltipStyle.display = 'none';
+    return true;
+  } else {
+    email.className = 'incorrect';
+    tooltipStyle.display = 'inline-block';
+    return false;
+  }
+};
 
 check['password1'] = function() {
   var password1 = document.getElementById('password1'),
