@@ -9,8 +9,8 @@
 
 -- USERS
     -- ajouter un user ✔
-        INSERT INTO users (`pseudo`, 'email', `firstname`, `name`, `note`, `password`, `balance`, `status`)
-        VALUES ('$pseudo', '$email', '$firstname', '$name', '$note', '$password', '$balance', '$status');
+        INSERT INTO users (`pseudo`, 'email', `firstname`, `name`, `note`, `password`, `balance`)
+        VALUES ('$pseudo', '$email', '$firstname', '$name', '$note', '$password', '$balance');
         
     -- afficher toutes les infos d'un user ✔
         SELECT * 
