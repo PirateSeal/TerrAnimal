@@ -52,6 +52,22 @@ check['firstname'] = function(id) {
     return false;
   }
 };
+
+check['mail'] = function(id) {
+  var mail = document.getElementById(id),
+  tooltipStyle = getTooltip(mail).style;
+  if (mail.value.length > 2) {
+    mail.className = 'correct';
+    tooltipStyle.display = 'none';
+    return true;
+  } else {
+    mail.className = 'incorrect';
+    tooltipStyle.display = 'inline-block';
+    return false;
+  }
+};
+
+
 check['lastname'] = function(id) {
   var lastname = document.getElementById(id),
   tooltipStyle = getTooltip(lastname).style;
@@ -66,21 +82,8 @@ check['lastname'] = function(id) {
   }
 };
 
-check['email'] = function() {
-  var email = document.getElementById(),
-  tooltipStyle = getTooltip(email).style;
-  if (email.value.length > 2) {
-    email.className = 'correct';
-    tooltipStyle.display = 'none';
-    return true;
-  } else {
-    email.className = 'incorrect';
-    tooltipStyle.display = 'inline-block';
-    return false;
-  }
-};
 
-check['password1'] = function() {
+check['password1'] = function(id) {
   var password1 = document.getElementById('password1'),
   tooltipStyle = getTooltip(password1).style;
   if (password1.value.length >= 3) {
@@ -94,7 +97,7 @@ check['password1'] = function() {
   }
 };
 
-check['password2'] = function() {
+check['password2'] = function(id) {
   var password1 = document.getElementById('password1'),
   password2 = document.getElementById('password2'),
   tooltipStyle = getTooltip(password2).style;
@@ -127,7 +130,7 @@ check['password2'] = function() {
       }
 
       if (result) {
-        location.href="controller/subscribe.php?pseudo="+pseudo.value+"&firstname="+firstname.value+"&name="+lastname.value+"&password1="+password1.value+"&password2="+password2.value;
+        location.href="controller/subscribe.php?pseudo="+pseudo.value+"&email="+mail.value+"&firstname="+firstname.value+"&name="+lastname.value+"&password1="+password1.value+"&password2="+password2.value;
 
       }
       e.preventDefault();

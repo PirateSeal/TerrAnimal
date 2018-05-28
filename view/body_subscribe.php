@@ -20,10 +20,11 @@
     <span class="tooltip">Your name must contain at least 2 characters .</span>
     <br><br>
 
-    <label class="form_col" for="email">Email : </label>
-    <input name="email" id="email" type="text" />
-    <span class="tooltip">Your name must contain a @ </span>
+    <label class="form_col" for="mail">Email : </label>
+    <input name="mail" id="mail" type="text" />
+    <span class="tooltip">Your email must contain at least 2 characters .</span>
     <br><br>
+
 
     <label class="form_col" for="password1">Password : </label>
     <input name="password1" id="password1" type="password" />
