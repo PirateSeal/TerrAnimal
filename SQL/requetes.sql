@@ -11,7 +11,7 @@
     FROM users 
     WHERE $pseudo = pseudo AND $password = password;
 
-    -- accéder au portefeuille
+    -- afficher valeur portefeuille
     select pseudo, balance 
     FROM users
     WHERE $pseudo = pseudo;
@@ -32,8 +32,8 @@
     VALUES ('$specie', '$user', '$desc', '$price', '$stock', '$gender', '$diet', '$weight', '$size', '$color', '$age');
 
     -- ajouter un user
-    INSERT INTO users (`pseudo`, `firstname`, `name`, `note`, `password`, `balance`, `status`)
-    VALUES ('$pseudo', '$firstname', '$name', '$note', '$password', '$balance', '$status');
+    INSERT INTO users (`pseudo`, 'email', `firstname`, `name`, `note`, `password`, `balance`, `status`)
+    VALUES ('$pseudo', '$email', '$firstname', '$name', '$note', '$password', '$balance', '$status');
 
 -- ARTICLES
     -- montrer tous les articles d'un user
