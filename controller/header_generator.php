@@ -11,6 +11,7 @@
     $whereami = ": ".$_GET["go"];
   } else {
     $wherami = "" ;
+    $style = "<link rel='stylesheet' type='text/css' href='view/style.css'>";
   }
   echo "<!DOCTYPE html>
   <html>
