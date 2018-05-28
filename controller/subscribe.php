@@ -11,6 +11,21 @@
 
 		$how_much = $db_connexion->query("SELECT COUNT(*) FROM users WHERE pseudo='".$pseudo."' ")->fetch();
 
+		$user = [$pseudo,$firstname,$name,$email,$password1,$password2];
+		$interdit = ['"',"&","'","{","(","[","-","|","`","_","'\'"];
+		$flag = 0;
+		for ($i=0; $i < count($user) ; $i++) {
+			for ($j=0; $j < strlen($user[$i]) ; $j++) {
+				for ($k=0; $k < count($interdit); $k++) {
+					if ( $user[$i][$j] === $interdit[$k]){
+						$flag = 1 ;
+					}
+				}
+			}
+		}
+		 if ( $flag === 1 ){
+			 header("location:../index.php?go=subscribe");
+		 }
 		if( $how_much['COUNT(*)'] == 1 ){
 			header("location:../index.php?go=subscribe");
 	} else {
