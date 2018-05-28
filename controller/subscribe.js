@@ -114,7 +114,7 @@ check['password2'] = function() {
       }
 
       if (result) {
-        location.href="subscribe.php?pseudo="+pseudo.value+"&firstname="+firstname.value+"&name="+lastname.value+"&password1="+password1.value+"&password2="+password2.value;
+        location.href="controller/subscribe.php?pseudo="+pseudo.value+"&firstname="+firstname.value+"&name="+lastname.value+"&password1="+password1.value+"&password2="+password2.value;
 
       }
       e.preventDefault();
