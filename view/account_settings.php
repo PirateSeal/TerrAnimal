@@ -12,7 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
-		<form action='home.php' method='GET'>
+		<form action='../controller/home_controller.php' method='GET'>
 			<button>Back</button></form>
 		</form>
 
@@ -37,6 +37,9 @@
 							<label for='password1'> Password : </label><input type='password' size='25' name='password1' value=''><br>
 							<label for='password2'> Re-enter password : </label><input type='password' size='25' name='password2' value=''><br>
 							<button>Change your password</button><br>
+						</form>
+						<form action='../controller/account_settings.php' method='POST'>
+							<button name='account' value='delete'> Delete your account</button>;
 						</form>";
 			if (isset( $_GET["error"])){
 				if ( $_GET["error"] == "pseudo_exist"){

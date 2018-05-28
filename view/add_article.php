@@ -13,7 +13,7 @@
 	<title>add_article</title>
 </head>
 <body>
-	<form action='home.php' method='GET'><button>Back</button></form>
+	<form action='../controller/home_controller.php' method='GET'><button>Back</button></form>
 	<br>
 	<h1>Please inform information about the product you want to sell</h1>
 	<br>
