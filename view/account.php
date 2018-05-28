@@ -38,6 +38,8 @@
 					echo"<h6>Your name has been changed .</h6>";
 				} elseif ( $_GET["done"] == "new_password"){
 					echo"<h6>Your password has been changed .</h6>";
+				} elseif ($_GET["done"] == "new_email"){
+					echo"<h6>Your email has been changed .</h6>";
 				}
 			}
 		?>
