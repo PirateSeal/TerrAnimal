@@ -1,6 +1,4 @@
-<?php
-include("../controller/loged_or_not.php");
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
