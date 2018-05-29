@@ -31,10 +31,10 @@
 	}else{
 
 
-
+		$balance=0;
 
 		//on retire l'argent du compte de l'acheteur
-		$balance = $balance - $total_price;
+		$balance = $balance_buyer['balance'] - $total_price;
 		$sql ="update users set balance = '".$balance."' WHERE pseudo = '".$_SESSION['pseudo']."'";
 		$db_connexion->exec($sql);
 
@@ -50,9 +50,9 @@
 		
 		for ($i=0; $i < count($recup); $i++) { 
 			$sql = "insert into orders (id_order, id_buyer, id_seller) values (NULL,".$balance_buyer['id_user'].",".$recup[$i]['id_user']." )";
-			$pdo->exec($sql);
-			$sql = "insert into orders_lines (id_order_line, id_order, id_article, amount)";
-			$pdo->exec($sql);
+			$db_connexion->exec($sql);
+			//$sql = "insert into orders_lines (id_order_line, id_order, id_article, amount) values (NULL, )";
+			//$db_connexion->exec($sql);
 		}
 		
 
@@ -75,7 +75,7 @@
 		
 
 		//on supprime le cookie
-		setcookie("toto", "0", time()+3600,"/");
-		header("location:../controller/caddy_controller.php?status=true");
+		setcookie("toto", "0", time()-1,"/");
+//		header("location:../controller/caddy_controller.php?status=true");
 	}
 ?>
