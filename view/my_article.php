@@ -4,9 +4,10 @@
 	<title>Your article</title>
 </head>
 <body>
-	<center><h2>Your article, <?php $_SESSION["pseudo"] ?></h2></center>
-	<form action='../controller/home_controller.php' method='GET'>
-		<button>Back</button></form>
+	<?php
+	echo "<center><h2>Welcome ".$_SESSION["pseudo"]."</h2></center>";
+	?>
+		<form action='../controller/home_controller.php' method='GET'><button>Back</button></form>
 	</form>	
 			<?php 
 			if (empty($req)) {

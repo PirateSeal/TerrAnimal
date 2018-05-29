@@ -26,7 +26,7 @@
 		</select><br><br>
 
 		<?php
-			echo "Price : <input type='text' name='price' id='price' value='".$data["price"]."'> In dollars <br><br>
+			echo "Price : <input type='text' name='unit_price' id='unit_price' value='".$data["unit_price"]."'> In dollars <br><br>
 
 			Number of products : <input type='text' name='stock' id='stock' value='".$data["stock"]."'><br><br>
 
