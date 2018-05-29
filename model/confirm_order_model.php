@@ -1,5 +1,6 @@
 <?php
-
+			header("location:../index.php");
+	require_once("../controller/db_connexion.php");
 	//on recup les informations du cookie
 	$data = $_COOKIE['toto'];
 	$data = explode(";", $data);
@@ -9,7 +10,7 @@
 	//on remonte le prix et l'id du vendeur correspondant aux ids article du cookie
 	for ($i=0; $i < count($data); $i++) { 
 		$sql = 'select unit_price, articles.id_user, balance, id_article, stock from articles inner join users on users.id_user=articles.id_user where id_article ='.$data[$i];
-		$req = $pdo->query($sql);
+		$req = $db_connexion->query($sql);
 		while($row = $req->fetch(PDO::FETCH_ASSOC)){
 			$recup[$i] = $row;
 		}
@@ -17,7 +18,7 @@
 
 	//on récupère l'argent que possède l'utilisateur 
 	$sql ='select balance, id_user from users where pseudo = "'.$_SESSION['pseudo'].'"';
-	$req = $pdo->query($sql);
+	$req = $db_connexion->query($sql);
 	$balance_buyer = $req->fetch();
 
 	//on vérifie si l'acheteur à assez d'argent 
@@ -33,18 +34,18 @@
 
 
 
-		$pdo = new PDO('mysql:host=localhost;dbname=bdd_terrabay','root','');
+
 		//on retire l'argent du compte de l'acheteur
 		$balance = $balance - $total_price;
 		$sql ="update users set balance = '".$balance."' WHERE pseudo = '".$_SESSION['pseudo']."'";
-		$pdo->exec($sql);
+		$db_connexion->exec($sql);
 
 		//on ajoute l'argent aux comptes vendeurs
 		for ($i=0; $i < count($recup) ; $i++) { 
 			$balance = $recup[$i]['balance'];
 			$balance = $balance + $recup[$i]['unit_price'];
 			$sql ='update users set balance="'.$balance.'" WHERE id_user="'.$recup[$i]['id_user'].'"';
-			$pdo->exec($sql);
+			$db_connexion->exec($sql);
 		}
 
 		//on enregistre la transaction dans order & order_line
@@ -63,10 +64,11 @@
 				if ($recup[$i]['id_article'] == $key) {
 					if ($recup[$i]['stock']== $value) {
 						 $sql = 'delete from articles where id_article="'.$key.'"';
-						 $pdo->exec($sql);
+						 $db_connexion->exec($sql);
 					}else{
 						$stock = $recup[$i]['stock']-$value;
 						$sql = "update articles set stock='".$stock."' where id_article='".$key."'";
+						$db_connexion->exec($sql);
 					}
 				}
 			}
