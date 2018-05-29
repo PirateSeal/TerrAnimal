@@ -10,7 +10,7 @@
 		$signal = base64_encode(xorIt($password1, $xor_key));
 		$password = $signal;
 
-	$how_much = $db_connexion->query("SELECT COUNT(*) FROM users WHERE pseudo='".$pseudo."' AND password='".$password."'")->fetch();
+	require("../model/connexion_model.php");
 
 	if( $how_much['COUNT(*)'] == 1 ){
 				session_start();
