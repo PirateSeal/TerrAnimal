@@ -22,7 +22,10 @@
 				</tr>
 				<br>";
 			}
-			echo "<form action='../controller/confirm_order_controller.php'><button>Confirm order</button> ";
+			if ($order == 1) {
+				echo "<form action='../controller/confirm_order_controller.php'><button>Confirm order</button> ";
+			}
+			
 		}else {
 			echo "You don't have any articles in your caddy.";
 		}
