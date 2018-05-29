@@ -71,8 +71,11 @@
 			echo "<h4>Please complete all fields .</h4>";
 		}
 	} else if (isset($_GET["validation"]) && $_GET["validation"] == "confirmed") {
+		echo '<script language="Javascript">
+                 document.location.replace("home_view.php");
+     </script>';
 		echo "Your add has been confirmed .<br>You will be redirected in 3 seconds<br>";
-			header("Refresh:3;Url=home_view.php");
+
 	}
 ?>
 

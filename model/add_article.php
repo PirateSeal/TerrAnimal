@@ -1,4 +1,6 @@
 <?php
+	SESSION_start();
+	echo $_SESSION["pseudo"];
 	require_once("../controller/db_connexion.php");
 	$descri= htmlspecialchars($_GET["description"]);
 	$price= htmlspecialchars($_GET["price"]);
@@ -27,10 +29,11 @@
 
 
 	if ( empty ( $descri ) || empty ( $price ) || $stock == '0' || empty ($size) || empty($color) ){
-		header("location:../view/add_article.php?error=incomplete");
+		header("location: ../view/add_article.php?error=incomplete");
 	} else {
-		$sql= "INSERT INTO articles (id_article, id_specie, id_user, description, unit_price, stock, gender, diet, weight, size, color, age) VALUES (NULL, '".$specie."', '".$id."', '".$descri."', '".$price."', '".$stock."', '".$gender."', '".$diet."', '".$weight."', '".$size."', '".$color."', '".$age."')";
-		$sql->execute();
-		header("location:../view/add_article.php?validation=confirmed");
+		$sql= "INSERT INTO articles (id_article, id_specie, id_user, description, unit_price, stock, gender, diet, weight, size, color, age, status) VALUES (NULL, '".$specie."', '".$id."', '".$descri."', '".$price."', '".$stock."', '".$gender."', '".$diet."', '".$weight."', '".$size."', '".$color."', '".$age."', 'available')";
+		$stmt = $db_connexion->prepare($sql);
+		$stmt->execute();
+		header("location: ../view/add_article.php?validation=confirmed");
 	}
 ?>
