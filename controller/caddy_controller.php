@@ -7,7 +7,7 @@
 			require_once("../model/caddy_modele.php");
 			$order = 1;
 			require_once("../view/caddy_view.php");
-		}elseif (isset($_COOKIE['toto']) && $_GET['status']=="1") {
+		}elseif (isset($_COOKIE['toto']) && $_GET['status']=="0") {
 			require_once("../model/caddy_modele.php");
 			$order = 0;
 			require_once("../view/caddy_view.php");

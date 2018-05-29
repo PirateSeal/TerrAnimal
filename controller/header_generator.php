@@ -1,9 +1,12 @@
 <?php
-  if(isset($_POST["go"])){
+  if(isset($_POST["go"]) || isset($_GET['go'])){
     //$whereami = ": ".$_POST["go"];
-    if ($_POST["go"] == "subscribe" || $_GET["go"] == "subscribe"){
+    //|| $_GET["go"] == "subscribe"
+    if ($_POST["go"] == "subscribe"  ){
       $style = "<link rel='stylesheet' type='text/css' href='view/subscribe_style.css'>";
-    } else {
+    }elseif (isset($_GET["go"]) && $_GET['go'] == "subscribe" ) {
+      $style = "<link rel='stylesheet' type='text/css' href='view/subscribe_style.css'>";
+    }else {
       $style = "<link rel='stylesheet' type='text/css' href='view/style.css'>";
     }
   }elseif(isset($_GET["go"])){

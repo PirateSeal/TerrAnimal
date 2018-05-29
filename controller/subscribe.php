@@ -33,8 +33,8 @@
 		$signal = base64_encode(xorIt($password1, $xor_key));
 		$password = $signal;
 
-		$sql = "INSERT INTO users (id_user, pseudo, email, firstname, name, note, password, balance)
-		VALUES (NULL, '".$pseudo."','".$email."','".$firstname."', '".$name."', '2.5', '".$password."', '0.0')";
+		$sql = "INSERT INTO users (id_user, pseudo, email, firstname, name, note, password)
+		VALUES (NULL, '".$pseudo."','".$email."','".$firstname."', '".$name."', '2.5', '".$password."')";
 		$db_connexion->exec($sql);
 		header("location:../index.php?subscribe=confirmed");
 	}
