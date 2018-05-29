@@ -1,5 +1,4 @@
 <?php
-			header("location:../index.php");
 	require_once("../controller/db_connexion.php");
 	//on recup les informations du cookie
 	$data = $_COOKIE['toto'];
@@ -19,7 +18,7 @@
 	//on récupère l'argent que possède l'utilisateur 
 	$sql ='select balance, id_user from users where pseudo = "'.$_SESSION['pseudo'].'"';
 	$req = $db_connexion->query($sql);
-	$balance_buyer = $req->fetch();
+	$balance_buyer = $req->fetch(PDO::FETCH_ASSOC);
 
 	//on vérifie si l'acheteur à assez d'argent 
 	$total_price =0;
@@ -27,8 +26,7 @@
 		$total_price = $total_price + $recup[$i]['unit_price'];
 	}
 	if ($total_price > $balance_buyer['balance']) {
-		$enough_money = false;
-	
+		$enough_money = 0;
 	//si il a assez d'argent
 	}else{
 
@@ -49,14 +47,14 @@
 		}
 
 		//on enregistre la transaction dans order & order_line
-		/*
+		
 		for ($i=0; $i < count($recup); $i++) { 
 			$sql = "insert into orders (id_order, id_buyer, id_seller) values (NULL,".$balance_buyer['id_user'].",".$recup[$i]['id_user']." )";
 			$pdo->exec($sql);
 			$sql = "insert into orders_lines (id_order_line, id_order, id_article, amount)";
 			$pdo->exec($sql);
 		}
-		*/
+		
 
 		//on ajuste les quantité en stock, on supprime si jamais le stock est épuisé
 		for ($i=0; $i < count($recup); $i++) { 
@@ -80,6 +78,4 @@
 		setcookie("toto", "0", time()+3600,"/");
 		header("location:../controller/caddy_controller.php?status=true");
 	}
-
-
 ?>
