@@ -1,21 +1,17 @@
-	<?php
-	if (isset($_GET["subscribe"]) && $_GET["subscribe"] == "confirmed"){
-		echo "<script>alert('Your account has been created !')</script>";
-	}
-		if (!isset($_POST["go"]) && !isset($_GET["go"]) ){
-			// INDEX
-			include("controller/header_generator.php");
-			include("view/body_index.php");
-			include("view/footer_index.php");
-		}elseif ($_POST["go"] == "login"){
-			// LOGIN
-			include("controller/header_generator.php");
-			include("view/body_login.php");
-			include("view/footer_index.php");
-		}elseif ($_POST["go"] == "subscribe" || $_GET["go"] == "subscribe"){
-			// SUBSCRIBE
-			include("controller/header_generator.php");
-			include("view/body_subscribe.php");
-			include("view/footer_index.php");
-		}
-?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel='stylesheet' type='text/css' href='view/style.css'>
+		<title>TerraBay </title>
+	</head>
+	<body>
+		<?php if (isset($_GET["subscribe"]) && $_GET["subscribe"] == "confirmed"){ echo "<script>alert('Your account has been created !')</script>";} ?>
+		<center><h1> Welcome on TerraBay</h1></center>
+		<form action="controller/index_controller.php" method="POST">
+			<button name="go" value="login">Login</button>
+		</form>
+		<form action="controller/index_controller.php" method="POST">
+			<button name="go" value="subscribe">Subscribe</button>
+		</form>
+	</body>
+</html>

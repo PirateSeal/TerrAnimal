@@ -17,6 +17,6 @@
 				$_SESSION["pseudo"] = $pseudo;
 				header("location:../controller/home_controller.php");
 	} else {
-		echo "Ce compte n'éxiste pas !";
+		header("location:../view/login.php?error=wrong");
 	}
 ?>
