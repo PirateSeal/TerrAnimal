@@ -5,9 +5,9 @@
 	}else{
 		require_once("db_connexion.php");
 		$sql = "select name from species";
-		$req = mysqli_query($db_connexion, $sql);
+		$req = $db_connexion->query($sql);
 		$i=0;
-		while ($recup = mysqli_fetch_array($req, MYSQLI_NUM)){
+		while ($recup = $req -> fetch()){
 			$data[$i]= $recup;
 			$i++;
 		}
