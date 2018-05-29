@@ -12,6 +12,7 @@
 
 		echo "<form action='../controller/home_controller.php' method='GET'>
 		<button>back</button></form>";
+		echo "You have ".$user_data['balance']."$ on your account <br>";
 		if (isset($_COOKIE['toto'])) {
 			for ($i=0; $i < count($recup); $i++) {
 				echo "<table border=1px>

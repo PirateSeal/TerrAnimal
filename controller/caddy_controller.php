@@ -18,6 +18,7 @@
 			require_once("../view/caddy_view.php");
 			echo "The transaction has been confirmed";
 		}else{
+			require_once("../model/caddy_modele.php");
 			$order = 0;
 			require_once("../view/caddy_view.php");
 		}
