@@ -16,7 +16,7 @@
 		$caddy = explode(";", $caddy);
 		$caddy = array_count_values($caddy);
 
-		if ($caddy[$_GET["id"]] == $data['stock']) {
+		if (isset($caddy[$_GET["id"]]) && $caddy[$_GET["id"]] == $data['stock']) {
 			$status = 1;
 		}else{
 			$status =0;
