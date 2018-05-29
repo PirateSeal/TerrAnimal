@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `db_terrabay`.`articles` (
   `size` DECIMAL(5,2) NOT NULL,
   `color` VARCHAR(45) NOT NULL,
   `age` INT NULL,
-  'status' ENUM('available','unavailable') NOT NULL,
+  `status` ENUM('available','unavailable') NOT NULL,
   PRIMARY KEY (`id_article`),
   INDEX `specie_idx` (`id_specie` ASC),
   INDEX `user_idx` (`id_user` ASC),
