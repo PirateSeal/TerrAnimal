@@ -10,7 +10,8 @@
 		$signal = base64_encode(xorIt($password1, $xor_key));
 		$password = $signal;
 
-	require("../model/connexion_model.php");
+		require("../model/login_model.php");
+	$how_much = $db_connexion->query($req_login)->fetch();
 
 	if( $how_much['COUNT(*)'] == 1 ){
 				session_start();
