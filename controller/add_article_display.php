@@ -3,15 +3,46 @@
 	if (empty($_SESSION["pseudo"])){
 		header("location:../index.php");
 	}else{
-		require_once("db_connexion.php");
-		$sql = "select name from species";
-		$req = $db_connexion->query($sql);
-		$i=0;
-		while ($recup = $req -> fetch()){
-			$data[$i]= $recup;
-			$i++;
-		}
-		require_once("../view/add_article.php");
-	}
+		if (!isset($_GET['go'])) {
+			require_once("../model/add_article.php");
+			$data = $retrieve_species();
+			require_once("../view/add_article.php");
+		} else if ($_POST['go']="add") {
+			$verif = ["description", "name", "price", "gender", "diet", "weight", "size", "size", "color", "age"];
 
+			for ($i=0; $i < count($verif); $i++) { 
+				if (!isset($_GET[$verif[$i]])) {
+					$test=1;
+					break;
+				}
+			}
+
+			if (!isset($_GET['stock']) || intval($_GET['stock'])<1 ) {
+				$test=1;
+			}
+
+
+			if ($test == 1) {
+				require_once("../model/add_article.php");
+				$data = $retrieve_species();
+				require_once("../view/add_article.php");
+			}
+
+		}
+
+/*
+		$descri= htmlspecialchars($_GET["description"]);
+		$price= htmlspecialchars($_GET["price"]);
+		$stock= htmlspecialchars($_GET["stock"]);
+		$gender= $_GET["gender"];
+		$diet= $_GET["diet"];
+		$weight= htmlspecialchars($_GET["weight"]);
+		$size= htmlspecialchars($_GET["size"]);
+		$color= htmlspecialchars($_GET["color"]);
+		$age= htmlspecialchars($_GET["age"]);
+		$pseudo= $_SESSION["pseudo"];
+
+
+*/
+	}
 ?>
