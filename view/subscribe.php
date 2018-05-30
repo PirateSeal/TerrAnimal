@@ -8,9 +8,9 @@
 		<form action="../index.php" method="GET">
 	  	<button>Back</button>
 		</form>
-
+			<!-- <3<3<3 -->
 		<form id="subscribe"><br><br>
-	  	<form action="login.php" method="POST">
+	  	<form action="subscribe.php" method="POST">
 	    	<label class="form_col" for="pseudo">Pseudo : </label>
 	    	<input name="pseudo" id="pseudo" type="text" value="<?php if(isset($_GET["go"])){echo "This account already exist ";}?>"/>
 	    	<span class="tooltip">Your pseudo must contain at least 3 characters .</span>
