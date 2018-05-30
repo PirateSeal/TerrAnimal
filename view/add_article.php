@@ -11,21 +11,20 @@
 	<br>
 	<h1>Please inform information about the product you want to sell</h1>
 	<br>
+	<?php
+		if (isset($test) && $test==1) {
+			echo "Please be sure you have completed all field, and that your stock value is not 0.<br><br>";
+		} elseif (isset($test) && $test==0) {
+			echo "Your article has been added.<br><br>";
+		}
+	?>
 
-		<form action="../model/add_article.php" method="GET">
+		<form action="../controller/add_article_display.php?go=add" method="POST">
 				Description : <input type='text' name='description' id="description" class="" value=''>
 				<span class="tooltip">You must fill this field !</span><br><br>
 
 				Specie : <select name='name' id="name">
 					<?php	
-					require_once("../controller/db_connexion.php");
-					$sql = "select name from species";
-					$req = mysqli_query($db_connexion, $sql);
-					$i=0;
-					while ($recup = mysqli_fetch_array($req, MYSQLI_NUM)){
-						$data[$i]= $recup;
-						$i++;
-					}
 					for ($i=0; $i < count($data) ; $i++) { 
 						echo "<option value='".$data[$i][0]."'>".$data[$i][0]."</option>";
 					} 
@@ -62,21 +61,6 @@
 				Age : <input type='text' name='age' id="age" value=''><br><br>
 			<button>Submit</button>
 		</form>
-
-
-<?php
-	if (isset($_GET["error"])){
-		if ($_GET["error"] == "incomplete"){
-			echo "<h4>Please complete all fields .</h4>";
-		}
-	} else if (isset($_GET["validation"]) && $_GET["validation"] == "confirmed") {
-		header("location:../controller/home_controller.php");
-		echo "Your add has been confirmed .<br>You will be redirected in 3 seconds<br>";
-
-	}
-?>
-
-<script type="text/javascript" src="controller/add_article.js"></script>
 
 </body>
 </html>
