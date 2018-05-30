@@ -1,5 +1,5 @@
 DELETE FROM users;
-INSERT INTO users (`pseudo`, `firstname`, `name`, `password`) VALUES ('Feral','Thomas','Cousin','Oui');
+INSERT INTO users (`pseudo`, `firstname`, `name`, `password`) VALUES ('Feral','Thomas','Cousin','YlhE');
 
 DELETE FROM species;
 INSERT INTO `species` (`id_specie`, `name`) VALUES ('1', 'felines'), ('2', 'canides');  
