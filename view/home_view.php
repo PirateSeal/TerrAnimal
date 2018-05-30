@@ -18,13 +18,16 @@
 
 		echo "<form action='../controller/my_article.php'><button>Modify your article</button></form>";
 		echo "You have ".$user_data['balance']."$ on your account";
-		for ($i=0; $i <count($data) ; $i++) {
-			echo "<br><table border = 1px><tr><td>image</td></tr>
-			<tr><td>".$data[$i]['name']."</td></tr>
-			<tr><td>Price :".$data[$i]['unit_price']." $</td></tr>
-			<tr><td><form action='../controller/product_page_controller.php?id=".$data[$i]['id_article']."' method='POST'>
-			<input type='submit' name='Details' value='Details'></form></td></tr></table><br>";
+		if (isset($data)) {
+			for ($i=0; $i <count($data) ; $i++) {
+				echo "<br><table border = 1px><tr><td>image</td></tr>
+				<tr><td>".$data[$i]['name']."</td></tr>
+				<tr><td>Price :".$data[$i]['unit_price']." $</td></tr>
+				<tr><td><form action='../controller/product_page_controller.php?id=".$data[$i]['id_article']."' method='POST'>
+				<input type='submit' name='Details' value='Details'></form></td></tr></table><br>";
+			}
 		}
+		
 
 	?>
 </body>
