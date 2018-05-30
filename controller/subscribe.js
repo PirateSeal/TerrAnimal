@@ -29,7 +29,8 @@ var check = {};
 check['pseudo'] = function(id) {
   var pseudo = document.getElementById(id),
   tooltipStyle = getTooltip(pseudo).style;
-  if (pseudo.value.length >= 3) {
+
+  if ( /^[a-zA-Z0-9]+$/.test(pseudo.value) === true && pseudo.value.length <= 12  && pseudo.value.length >= 3 ) {
     pseudo.className = 'correct';
     tooltipStyle.display = 'none';
     return true;
@@ -42,7 +43,7 @@ check['pseudo'] = function(id) {
 check['firstname'] = function(id) {
   var firstname = document.getElementById(id),
   tooltipStyle = getTooltip(firstname).style;
-  if (firstname.value.length >= 2) {
+  if ( /^[a-zA-Z0-9]+$/.test(firstname.value) === true && firstname.value.length <= 12 && firstname.value.length >= 2) {
     firstname.className = 'correct';
     tooltipStyle.display = 'none';
     return true;
@@ -56,7 +57,7 @@ check['firstname'] = function(id) {
 check['mail'] = function(id) {
   var mail = document.getElementById(id),
   tooltipStyle = getTooltip(mail).style;
-  if (mail.value.length > 2) {
+  if (/^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/.test(mail.value) === true && mail.value.length > 2) {
     mail.className = 'correct';
     tooltipStyle.display = 'none';
     return true;
@@ -71,7 +72,7 @@ check['mail'] = function(id) {
 check['lastname'] = function(id) {
   var lastname = document.getElementById(id),
   tooltipStyle = getTooltip(lastname).style;
-  if (lastname.value.length >= 2) {
+  if ( /^[a-zA-Z0-9]+$/.test(lastname.value) === true && lastname.value.length <= 12 && lastname.value.length >= 2) {
     lastname.className = 'correct';
     tooltipStyle.display = 'none';
     return true;
@@ -86,7 +87,7 @@ check['lastname'] = function(id) {
 check['password1'] = function(id) {
   var password1 = document.getElementById('password1'),
   tooltipStyle = getTooltip(password1).style;
-  if (password1.value.length >= 3) {
+  if ( /^[a-zA-Z0-9]+$/.test(password1.value) === true && password1.value.length <= 12 && password1.value.length >= 3) {
     password1.className = 'correct';
     tooltipStyle.display = 'none';
     return true;
@@ -101,7 +102,7 @@ check['password2'] = function(id) {
   var password1 = document.getElementById('password1'),
   password2 = document.getElementById('password2'),
   tooltipStyle = getTooltip(password2).style;
-  if (password1.value == password2.value && password2.value != '' && password2.value.length >= 3) {
+  if ( /^[a-zA-Z0-9]+$/.test(password2.value) === true && password2.value.length <= 12 &&  password1.value == password2.value && password2.value != '' && password2.value.length >= 3) {
     password2.className = 'correct';
     tooltipStyle.display = 'none';
     return true;
