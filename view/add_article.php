@@ -13,7 +13,9 @@
 	<br>
 	<?php
 		if (isset($test) && $test=1) {
-			echo "Please be sure you have completed all fiels, and that your stock value is not 0.<br>";
+			echo "Please be sure you have completed all fiels, and that your stock value is not 0.<br><br>";
+		} elseif (isset($test) && $test=0) {
+			echo "Your article has been added.<br><br>";
 		}
 	?>
 

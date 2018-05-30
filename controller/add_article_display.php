@@ -17,7 +17,7 @@
 				}
 			}
 
-			if (!isset($_GET['stock']) || intval($_GET['stock'])<1 ) {
+			if (!isset($_GET['stock']) || intval($_GET['stock'])==0 ) {
 				$test=1;
 			}
 
@@ -26,6 +26,12 @@
 				require_once("../model/add_article.php");
 				$data = $retrieve_species();
 				require_once("../view/add_article.php");
+			} else {
+				require_once("../model/add_article.php");
+				$register_article();
+				$test=0;
+				require_once("../view/add_article.php");
+
 			}
 
 		}
