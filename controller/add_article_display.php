@@ -9,15 +9,15 @@
 			require_once("../view/add_article.php");
 		} else if ($_POST['go']="add") {
 			$verif = ["description", "name", "price", "gender", "diet", "weight", "size", "size", "color", "age"];
-
+			$test = 0;
 			for ($i=0; $i < count($verif); $i++) { 
-				if (!isset($_GET[$verif[$i]])) {
+				if (!isset($_POST[$verif[$i]])) {
 					$test=1;
 					break;
 				}
 			}
 
-			if (!isset($_GET['stock']) || intval($_GET['stock'])==0 ) {
+			if (!isset($_POST['stock']) || intval($_POST['stock'])==0 ) {
 				$test=1;
 			}
 
