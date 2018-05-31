@@ -15,7 +15,7 @@
 
 	$how_much = $db_connexion->query($req_subscribe)->fetch();
 	if( $how_much['COUNT(*)'] == 1 ){
-		header("location:../index.php?go=subscribe");
+		header("location:../controller/index_controller.php?user=exist");
 	} else {
 		$xor_key = 'ByTheWay66';
 		$signal = base64_encode(xorIt($password1, $xor_key));

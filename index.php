@@ -13,5 +13,12 @@
 		<form action="controller/index_controller.php" method="POST">
 			<button name="go" value="subscribe">Subscribe</button>
 		</form>
+		<?php
+			if ( isset($_GET["user"])){
+				if ( $_GET["user"] === "exist"){
+					echo "<h6> Your pseudo already exist ! </h6>";
+				}
+			}
+		?>
 	</body>
 </html>
