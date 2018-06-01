@@ -14,9 +14,16 @@
 	$how_much = $db_connexion->query($req_login)->fetch();
 
 	if( $how_much['COUNT(*)'] == 1 ){
-				session_start();
-				$_SESSION["pseudo"] = $pseudo;
-				header("location:../controller/home_controller.php");
+		session_start();
+		$_SESSION["pseudo"] = $pseudo;
+		require("../model/login_model.php");
+		$data = $db_connexion->query($req_data)->fetch();
+		echo $data["status"];
+		if ($data["status"] === "admin"){
+			header("location:../controller/bo_controller.php");
+		} else {
+			header("location:../controller/home_controller.php");
+		}
 	} else {
 		header("location:../view/login.php?error=wrong");
 	}
