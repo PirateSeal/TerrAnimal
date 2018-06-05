@@ -13,12 +13,14 @@
     <?php
         echo 'Ban a member : <br><form action="../controller/backoffice_controller.php" method="get"><select name="ban">';
         for ($i=0; $i<count($srv_user) ; $i++) { 
-            if ($srv_user[$i]['id_user']!== $_SESSION['pseudo']) {
+            if ($srv_user[$i]['pseudo']!== $_SESSION['pseudo'] || $srv_user[$i]['status'] !== 'admin') {
                 echo '<option value="'.$srv_user[$i]['id_user']. '">'.$srv_user[$i]['pseudo'].'</option>';
             }
         }
-        echo '</select> <input type="submit" value="Ban">
-            </form>'; 
     ?>
+        </select> 
+        <input type="submit" value="Ban" onclick="return confirm('Are you sure you want to ban this user ?')"/>
+    </form>
+
 </body>
 </html>
