@@ -10,19 +10,11 @@
 
 		?>		
 		Specie : <select name='name' id="name">
-			<?php	
-				require_once("../controller/db_connexion.php");
-				$sql = "select name from species";
-				$reqs = mysqli_query($db_connexion, $sql);
-				$i=0;
-				while ($recup = mysqli_fetch_array($reqs, MYSQLI_NUM)){
-					$specie[$i]= $recup;
-					$i++;
-				}
-				for ($i=0; $i < count($specie) ; $i++) { 
-					echo "<option value='".$specie[$i][0]."'>".$specie[$i][0]."</option>";
-				} 
-			?>				
+					<?php	
+					for ($i=0; $i < count($data) ; $i++) { 
+						echo "<option value='".$data[$i][0]."'>".$data[$i][0]."</option>";
+					} 
+					?>				
 		</select><br><br>
 
 		<?php
@@ -54,16 +46,5 @@
 
 		<button>Submit</button>
 	</form>
-
-	<?php
-	if (isset($_GET["error"])){
-		if ($_GET["error"] == "incomplete"){
-			echo "<h4>Please complete all fields .</h4>";
-		}
-	} else if (isset($_GET["validation"]) && $_GET["validation"] == "confirmed") {
-		echo "Your modifications has been confirmed .<br>You will be redirected in 3 seconds<br>";
-			header("Refresh:3;Url=my_article.php");
-	}
-?>
 </body>
 </html>
