@@ -23,16 +23,21 @@
 				Description : <input type='text' name='description' id="description" class="" value=''>
 				<span class="tooltip">You must fill this field !</span><br><br>
 
-				Specie : <select name='name' id="name">
-					<?php	
+				Specie :<?php 
+				if (!isset($test) || $test!==2) {
+					echo "<select name='name' id='name'>";
 					//AFFICHAGE DES DIFFERENTES ESPECES
 					for ($i=0; $i < count($data) ; $i++) { 
 						echo "<option value='".$data[$i][0]."'>".$data[$i][0]."</option>";
-					} 
+					}
+				}else{
+					echo "<input type='text' name='name' id='name'>";
+				}
 					?>
 								
-					</select><br><br>
-
+					</select><br>
+				The specie you want to add doesn't exist ?  <a href="../controller/add_article_display.php?go=add_specie"> Add one</a>
+				<br>
 				Price : <input type='text' name='price' id="price" value=''> In dollars
 				<span class="tooltip">You must fill this field !</span><br><br>
 
