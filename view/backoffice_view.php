@@ -7,16 +7,18 @@
 <body>
     <h1 align = center>Backoffice TerraBay</h1>
     
+    <a href="../controller/disconnect.php"><button>Disconnect</button></a> <br>
+    <a href="../controller/home_controller.php"><button>Leave BO</button></a> <br> <br>  
+    
     <?php
-        
-        echo 'Ban member : <br>
-        <form action="../controller/backoffice_controller.php" method="post">
-            <select name="ban">'
-            for ($i=0; $i<count($srv_data) ; $i++) { 
-                echo '<option value=""></option>';
+        echo 'Ban a member : <br><form action="../controller/backoffice_controller.php" method="get"><select name="ban">';
+        for ($i=0; $i<count($srv_user) ; $i++) { 
+            if ($srv_user[$i]['id_user']!== $_SESSION['pseudo']) {
+                echo '<option value="'.$srv_user[$i]['id_user']. '">'.$srv_user[$i]['pseudo'].'</option>';
             }
-            '</select>
-        </form>' 
+        }
+        echo '</select> <input type="submit" value="Ban">
+            </form>'; 
     ?>
 </body>
 </html>
