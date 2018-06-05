@@ -23,13 +23,8 @@
                 <input type="submit" value="Ban"'.$alert.'/>
             </form>
             <br><br>';
-        }     
-    ?>
-           
-
-    
-
-    <?php
+        }
+        
         $alert_art = "return confirm('Are you sure you want to remove this article ?')";
         if (isset($srv_art)) {
             for ($i=0; $i<count($srv_art) ; $i++) { 
@@ -54,7 +49,7 @@
                             </a>
                         </td>
                     </tr>
-                </table>';    
+                </table><br>';    
             }
         }
         
