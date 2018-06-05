@@ -16,25 +16,26 @@
 			<button>Back</button></form>
 		</form>
 		<?php
+			include("../controller/db_connexion.php");
 			$today = date("H:i:s");
 			echo $today ;
 			echo "<br>";
 			echo rand(5, 15);
+			$req_article = "SELECT COUNT(*) FROM articles ";
+			$how_much = $db_connexion->query($req_article)->fetch();
+			echo "<br>";
+			echo $how_much['COUNT(*)'] ;
+			echo"<br><br>";
+			$req_discount = "SELECT * FROM discounts where id_article=( SELECT MAX(id_article) FROM discounts )";
+			$what = $db_connexion->query($req_discount)->fetch();
+			echo($what["id_article"]);
 
-			// offre de la demieheure :
-			// Je vais avoir besoin d'une date de debut , une date de fin .
-			// tiré un nombre random qui va correspondre a l'id d'un article entre 1 et la totalité des articles en boucle tans qu'on a pas trouvé un articles
-			// peut etre que le client devrait avoir le choix de s'il veut que son produit soit en vente du jour ou non ?
-			// modifier l'article en lui appliquant une reduction au debut et a la fin .
-			// peut etre un random sur la reduction entre 10 et 75 ? ou au choix du vendeur  ?
-			// donc une table avec au moin id_article date_start date_end  /!\
+			$req_data = "SELECT * FROM articles WHERE id_article = '".$what['id_article']."'";
+			$data = $db_connexion->query($req_data)->fetch();
+			echo "<br>-----------------------";
+			echo $data["description"];
+			echo "-----------------------<br>";
 
-			// enchere :
-			// Je vais avoir besoin d'une date de début une date de fin .
-			// Le vendeur doit pouvoir accepté une offre quand il le souhaite .
-			// Les clients peuvent enchérire sur n'importe quel enchère lorsqu'elle est active et que l'offre est plus forte que l'offre actuel .
-			// Si le vendeur accepte ou que le temps est écoulé le dernier acheteur recoit une notification ???? et est débité .
-			// le vendeur est payer ajout dans les logs de ventes
 
 		?>
 	</body>
