@@ -13,4 +13,10 @@ if ($bo_user['status'] !== 'admin') {
 require('../model/backoffice_model.php');
 require('../view/backoffice_view.php');
 
+if (isset($_GET['ban'])) {
+    $ban = 'DELETE FROM users WHERE id_user ='.$_GET['ban'].';';
+    $db_connexion->exec($ban);    
+    echo '<meta http-equiv="refresh" content="0.5;URL=../controller/backoffice_controller.php">'; 
+}
+
 ?>
