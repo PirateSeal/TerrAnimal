@@ -35,20 +35,5 @@
 			}
 
 		}
-
-/*
-		$descri= htmlspecialchars($_GET["description"]);
-		$price= htmlspecialchars($_GET["price"]);
-		$stock= htmlspecialchars($_GET["stock"]);
-		$gender= $_GET["gender"];
-		$diet= $_GET["diet"];
-		$weight= htmlspecialchars($_GET["weight"]);
-		$size= htmlspecialchars($_GET["size"]);
-		$color= htmlspecialchars($_GET["color"]);
-		$age= htmlspecialchars($_GET["age"]);
-		$pseudo= $_SESSION["pseudo"];
-
-
-*/
 	}
 ?>

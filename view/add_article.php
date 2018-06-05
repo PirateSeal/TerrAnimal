@@ -25,6 +25,7 @@
 
 				Specie : <select name='name' id="name">
 					<?php	
+					//AFFICHAGE DES DIFFERENTES ESPECES
 					for ($i=0; $i < count($data) ; $i++) { 
 						echo "<option value='".$data[$i][0]."'>".$data[$i][0]."</option>";
 					} 

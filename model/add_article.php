@@ -9,7 +9,7 @@
 		$data = $req -> fetch();
 		$id= $data[0];
 
-	//RECUPERATION DE ID_SPECIE GRACE AU NAME
+	//RECUPERATION DE ID_SPECIE GRACE AU NAME DE L'ESPECE
 
 		$sql2 = "SELECT id_specie FROM species WHERE name = '".$_POST["name"]."'";
 		$req2 = $db_connexion->query($sql);
