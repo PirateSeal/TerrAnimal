@@ -29,7 +29,7 @@
 			}
 		}
 
-		echo "<form action='account_settings.php' method='GET'>
+		echo "<form action='../view/account_settings.php' method='GET'>
 						<button>Settings</button>
 					</form>";
 ?>

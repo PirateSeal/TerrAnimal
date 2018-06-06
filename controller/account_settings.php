@@ -3,6 +3,7 @@
 	require_once("db_connexion.php");
 	require_once("xor.php");
 	include("../model/account_model.php");
+	include("../view/account_settings.php");
 	$data = $db_connexion->query($req_data)->fetch();
 
 	// MODIFICATION DE DONNÉES
@@ -11,34 +12,34 @@ if (isset($_POST["pseudo"])){
 	include("../model/account_model.php");
 	$how_much = $db_connexion->query($req_how_much)->fetch();
 	if( $how_much['COUNT(*)'] == 1 ){
-		header("location:../view/account_settings.php?error=pseudo_exist");
+		header("location:../controller/account_settings.php?error=pseudo_exist");
 	} else {
 		$req = $db_connexion->prepare($req_pseudo);
 		$req->execute();
 		$_SESSION["pseudo"] = $pseudo ;
-		header("location:../view/account.php?done=new_pseudo");
+		header("location:../controller/account_controller.php?done=new_pseudo");
 	}
 } elseif(isset($_POST["firstname"])){
 	$firstname = htmlspecialchars($_POST["firstname"]);
 	include("../model/account_model.php");
 	$req = $db_connexion->prepare($req_firstname);
 	$req->execute();
-	header("location:../view/account.php?done=new_firstname");
+	header("location:../controller/account_controller.php?done=new_firstname");
 }elseif(isset($_POST["email"])){
 	$email = htmlspecialchars($_POST["email"]);
 	include("../model/account_model.php");
 	$req = $db_connexion->prepare($req_name);
 	$req->execute();
-	header("location:../view/account.php?done=new_email");
+	header("location:../controller/account_controller.php?done=new_email");
 } elseif(isset($_POST["name"])){
 	$name = htmlspecialchars($_POST["name"]);
 	include("../model/account_model.php");
 	$req = $db_connexion->prepare($req_email);
 	$req->execute();
-	header("location:../view/account.php?done=new_name");
+	header("location:../controller/account_controller.php?done=new_name");
 } elseif(isset ($_POST["password"]) || isset($_POST["password1"]) || isset($_POST["password2"])){
 	if(!isset ($_POST["password"]) || !isset($_POST["password1"]) || !isset($_POST["password2"])){
-		header("location:../view/account_settings.php?error=password_not_set");
+		header("location:../controller/account_settings.php?error=password_not_set");
 	} else {
 		$password = htmlspecialchars($_POST["password"]);
 		$password1 = htmlspecialchars($_POST["password1"]);
@@ -55,12 +56,12 @@ if (isset($_POST["pseudo"])){
 				include("../model/account_model.php");
 				$req = $db_connexion->prepare();
 				$req->execute();
-				header("location:../view/account.php?done=new_password");
+				header("location:../controller/account_controller.php?done=new_password");
 			} else {
-				header("location:../view/account_settings.php?error=bad_password");
+				header("location:../controller/account_settings.php?error=bad_password");
 			}
 		} else {
-		header("location:../view/account_settings.php?error=wrong_password");
+		header("location:../controller/account_settings.php?error=wrong_password");
 		}
 	}
 }
