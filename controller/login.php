@@ -19,6 +19,7 @@
 				$_SESSION["pseudo"] = $pseudo;
 
 				if ($status['status'] == 'admin') {
+					$_SESSION['admin'] = true;
 					header("location:../controller/backoffice_controller.php");
 				} else {
 					header("location:../controller/home_controller.php");

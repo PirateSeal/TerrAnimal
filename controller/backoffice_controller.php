@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!isset($_SESSION['pseudo']) || !isset($_SESSION['admin'])) {
+    header("location:../index.php");
+    exit;
+}
+
 require_once("../controller/db_connexion.php");
 require('../model/backoffice_model.php');
 require('../view/backoffice_view.php');
@@ -9,9 +14,7 @@ $req = $db_connexion->query($admin);
 
 $bo_user = $req->fetch();
 
-if ($bo_user['status'] !== 'admin') {
-    header("location:../index.php");
-};
+
 
 if (isset($_GET['ban'])) {
     $ban = 'DELETE FROM users WHERE id_user ='.$_GET['ban'].';';
