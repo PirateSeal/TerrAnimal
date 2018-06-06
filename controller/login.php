@@ -17,13 +17,13 @@
 	if( $how_much['COUNT(*)'] == 1 ){
 				session_start();
 				$_SESSION["pseudo"] = $pseudo;
-				
+
 				if ($status['status'] == 'admin') {
-					header("location:../controller/backoffice_controller.php");	
+					header("location:../controller/backoffice_controller.php");
 				} else {
 					header("location:../controller/home_controller.php");
 				}
 	} else {
-		header("location:../view/login.php?error=wrong");
+		header("location:../controller/index_controller.php?error=wrong");
 	}
 ?>

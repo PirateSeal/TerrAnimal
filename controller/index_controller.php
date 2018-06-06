@@ -7,6 +7,9 @@ if (isset($_POST["go"])){
     include("../view/subscribe.php");
   }
 }
+if (isset ($_GET["error"]) && $_GET["error"] == "wrong"){
+    include("../view/login.php");
+}
 if (isset ($_GET["user"])){
   if ($_GET["user"] === "exist"){
     header("location:../index.php?user=exist");
