@@ -11,7 +11,7 @@
 		<button>disconnect</button></form>";
 
 		echo "<form action='../controller/caddy_controller.php'><button>caddy</button></form>";
-		echo "<form action='../view/account.php' method='GET'>
+		echo "<form action='../controller/account_controller.php' method='GET'>
 		<button>account</button></form>";
 
 		echo "<form action='../controller/add_article_display.php'><button>Add an article</button></form>";
