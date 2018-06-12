@@ -74,12 +74,10 @@ CREATE TABLE IF NOT EXISTS `db_terrabay`.`articles` (
   `status` ENUM('available', 'unavailable') NOT NULL,
   `photo_path` VARCHAR(100) NULL,
   PRIMARY KEY (`id_article`),
-  CONSTRAINT `articles_ibfk_1`
     FOREIGN KEY (`id_specie`)
     REFERENCES `db_terrabay`.`species` (`id_specie`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT `articles_ibfk_2`
     FOREIGN KEY (`id_user`)
     REFERENCES `db_terrabay`.`users` (`id_user`)
     ON DELETE CASCADE
@@ -103,12 +101,10 @@ CREATE TABLE IF NOT EXISTS `db_terrabay`.`orders` (
   `id_seller` INT(11) NOT NULL,
   `date` DATE NOT NULL,
   PRIMARY KEY (`id_order`),
-  CONSTRAINT `orders_ibfk_1`
     FOREIGN KEY (`id_buyer`)
     REFERENCES `db_terrabay`.`users` (`id_user`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT `orders_ibfk_2`
     FOREIGN KEY (`id_seller`)
     REFERENCES `db_terrabay`.`users` (`id_user`)
     ON DELETE CASCADE
@@ -133,12 +129,10 @@ CREATE TABLE IF NOT EXISTS `db_terrabay`.`orders_lines` (
   `quantity` INT(11) NOT NULL,
   `total_price` DECIMAL(65,2) NOT NULL,
   PRIMARY KEY (`id_order_line`),
-  CONSTRAINT `orders_lines_ibfk_1`
     FOREIGN KEY (`id_order`)
     REFERENCES `db_terrabay`.`orders` (`id_order`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT `orders_lines_ibfk_2`
     FOREIGN KEY (`id_article`)
     REFERENCES `db_terrabay`.`articles` (`id_article`)
     ON DELETE CASCADE
@@ -165,7 +159,6 @@ CREATE TABLE IF NOT EXISTS `db_terrabay`.`discounts` (
   `init_price` DECIMAL(65,2) NOT NULL,
   `disc_price` DECIMAL(65,2) NOT NULL,
   PRIMARY KEY (`id_discount`),
-  CONSTRAINT `id_article`
     FOREIGN KEY (`id_article`)
     REFERENCES `db_terrabay`.`articles` (`id_article`)
     ON DELETE CASCADE
