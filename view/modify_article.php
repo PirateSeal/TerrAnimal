@@ -4,9 +4,9 @@
 	<title>Modify your article</title>
 </head>
 <body>
-	<form action="../model/modify_article.php" method="GET">
+	<form action="../controller/modify_article.php?go=modify" method="POST">
 		<?php
-			echo "Description : <input type='text' name='description' value='".$data["description"]."'><br><br>";
+			echo "Description : <input type='text' name='description' value='".$info["description"]."'><br><br>";
 
 		?>		
 		Specie : <select name='name' id="name">
@@ -18,9 +18,9 @@
 		</select><br><br>
 
 		<?php
-			echo "Price : <input type='text' name='unit_price' id='unit_price' value='".$data["unit_price"]."'> In dollars <br><br>
+			echo "Price : <input type='text' name='unit_price' id='unit_price' value='".$info["unit_price"]."'> In dollars <br><br>
 
-			Number of products : <input type='text' name='stock' id='stock' value='".$data["stock"]."'><br><br>
+			Number of products : <input type='text' name='stock' id='stock' value='".$info["stock"]."'><br><br>
 
 			Gender : <select name='gender' id='gender'>
 				<option value='0'>Male</option>
@@ -34,13 +34,13 @@
 				<option value='omnivorous'>Omnivorous</option>
 			</select><br><br>
 
-			>Weight : <input type='text' name='weight' id='weight' value='".$data["weight"]."'> In kilograms<br><br>
+			Weight : <input type='text' name='weight' id='weight' value='".$info["weight"]."'> In kilograms<br><br>
 
-			Size : <input type='text' name='size' id='size' value='".$data["size"]."'> In meters<br><br>
+			Size : <input type='text' name='size' id='size' value='".$info["size"]."'> In meters<br><br>
 
-			Color : <input type='text' name='color' id='color' value='".$data["color"]."'><br><br>
+			Color : <input type='text' name='color' id='color' value='".$info["color"]."'><br><br>
 
-			Age : <input type='text' name='age' id='age' value='".$data["age"]."'><br><br>";
+			Age : <input type='text' name='age' id='age' value='".$info["age"]."'><br><br>";
 
 		?>
 
