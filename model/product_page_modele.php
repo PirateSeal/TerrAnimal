@@ -9,8 +9,6 @@
 		$data=$row;
 	}
 	$req->closeCursor();
-	var_dump($data);
-
 
 	if (isset($_COOKIE['toto'])) {
 		$caddy = $_COOKIE['toto'];
