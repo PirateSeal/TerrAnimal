@@ -18,9 +18,9 @@
 						echo"<br><table border = 1px><tr><td>image</td></tr>
 						<tr><td>".$data[$i]['name']."</td></tr>
 						<tr><td>Price :".$data[$i]['unit_price']." $</td></tr>
-						<tr><td><form action='../controller/modify_article.php?id=".$data[$i]['id_article']."' method='POST'>
+						<tr><td><form action='../controller/modify_article.php?id=".$data[$i]['id_article']."' method='GET'>
 						<input type='submit' name='Modify' value='Modify'></form></td></tr>
-						<tr><td><form action='../controller/delete_article.php?id=".$data[$i]['id_article']."' method='POST'>
+						<tr><td><form action='../controller/delete_article.php?id=".$data[$i]['id_article']."' method='GET'>
 						<input type='submit' name='Delete' value='Delete'></form></td></tr></table><br>";
 					}
 				}

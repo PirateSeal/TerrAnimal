@@ -19,11 +19,13 @@
 			}
 
 			if ($good=1) {
+				$idarticle = $_GET['id'];
 				require_once("../model/modify_article_data.php");
 				require_once("../view/modify_article.php");
 			} else {
-				require_once("../model/modify_article.php");
+				$idarticle = $_GET['id'];
 				require_once("../model/modify_article_data.php");
+				require_once("../model/modify_article.php");
 				$good=0;
 				require_once("../view/modify_article.php");
 			}

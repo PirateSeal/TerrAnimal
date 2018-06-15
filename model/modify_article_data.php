@@ -7,13 +7,14 @@
 		$data[$i] = $recup;
 		$i++;
 	}
-
-	$sql2 = "SELECT description, unit_price, stock, weight, size, color, age FROM articles WHERE id_article = '".$id."'";
-	$req2 = $db_connexion->query($sql2);
-	$i=0;
-	while ($recup = $req2 -> fetch()) {
-		$info[$i] = $recup;
-		echo $info;
-		$i++;
+	//echo $idarticle;
+	if (isset($idarticle)) {
+		$sql2 = 'select description, unit_price, stock, weight, size, color, age from articles where id_article = '.$idarticle.';';
+		$req2 = $db_connexion->query($sql2);
+		$i=0;
+		while ($row = $req2 -> fetch(PDO::FETCH_ASSOC)) {
+			$info = $row;
+		}
+		var_dump($info);
 	}
 ?>
