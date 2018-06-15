@@ -21,9 +21,9 @@
 		</table>";
 
 		if ($status == 0) {
-			echo "<form action='../model/add_caddy.php?id=".$_GET["id"]."' method='POST'><button>Add to caddy</button></form>"; 
+			echo "<form action='../model/add_caddy.php?id=".$_GET["id"]."' method='POST'><button>Add to caddy</button></form><br>"; 
 		}
-		
+		echo "<form action='../controller/user_account.php?id_user=".$data["id_user"]."' method='POST'><button>Vendor Page</button></form>";
 	?>
 
 </body>

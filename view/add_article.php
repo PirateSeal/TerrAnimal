@@ -20,8 +20,7 @@
 	?>
 
 		<form action="../controller/add_article_display.php?go=add" method="POST">
-				Description : <input type='text' name='description' id="description" class="" value=''>
-				<span class="tooltip">You must fill this field !</span><br><br>
+				Description : <input type='text' name='description' id="description"  pattern="[a-zA-Z0-9]{3,}+" title="Your article name must contain 3 characters. Special characters are not accepted." class="" value=''><br><br>
 
 				Specie :<?php 
 				if (!isset($test) || $test!==2) {
@@ -37,11 +36,10 @@
 								
 					</select><br>
 				The specie you want to add doesn't exist ?  <a href="../controller/add_article_display.php?go=add_specie"> Add one</a>
-				<br>
-				Price : <input type='text' name='price' id="price" value=''> In dollars
-				<span class="tooltip">You must fill this field !</span><br><br>
+				<br><br>
+				Price : <input type='text' name='price' id="price" pattern="[0-9]{1,}+" title="Special characters are not accepted." value=''> In dollars<br><br>
 
-				Number of products : <input type='text' name='stock' id="stock" value=''>
+				Number of products : <input type='text' name='stock' id="stock" pattern="[0-9]{1,}+" title="Special characters are not accepted." value=''>
 				<span class="tooltip">This field can't be equal to 0 !</span><br><br>
 
 				Gender : <select name='gender' id="gender">
@@ -58,11 +56,9 @@
 
 				Weight : <input type='text' name='weight' id="weight" value=''> In kilograms<br><br>
 
-				Size : <input type='text' name='size' id="size" value=''> In meters
-				<span class="tooltip">You must fill this field !</span><br><br>
+				Size : <input type='text' name='size' id="size"  pattern="[0-9]{1,}+" title="Special characters are not accepted." value=''> In meters <br><br>
 
-				Color : <input type='text' name='color' id="color" value=''>
-				<span class="tooltip">You must fill this field !</span><br><br>
+				Color : <input type='text' name='color' id="color"  pattern="[a-zA-Z0-9]{3,}+" title="Your article color must contain at enter 3 and 12 characters. Special characters are not accepted." value=''><br><br>
 
 				Age : <input type='text' name='age' id="age" value=''><br><br>
 			<button>Submit</button>

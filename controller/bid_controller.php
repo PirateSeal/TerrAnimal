@@ -10,7 +10,10 @@
   $hour = date("H");
   $minute = date("i");
   $second = date("s");
-
+  $h = $hour+1;
+  $hh = $hour+2;
+  $h1 =$year."-".$month."-".$day." ".$h.":00:00";
+  $h2 =$year."-".$month."-".$day." ".$hh.":00:00";
   $time_start =$data[3];
   $time_now =$year."-".$month."-".$day." ".$hour.":".$minute.":".$second;
   $time_end = $data[4];
@@ -68,7 +71,7 @@
   //echo "Old id :".$old_id."<br>";
 
   // ALGO
-  echo $day."=".$date_end[2]."et".$hour.">=".$hour_end[0];
+  //echo $day."=".$date_end[2]."et".$hour.">=".$hour_end[0];
   if ($day === $date_end[2] && $hour >= $hour_end[0] || $day > $date_end[2]){
     if ( $old_id === $new_id){
       header("location:../controller/bid_controller.php");
@@ -83,21 +86,45 @@
       //echo "Disc prix :".$disc_price."<br>";
 
       // MODIFICATION DE L'ANCIEN DISCOUNT PRIX PAR DEFAULT .
+      // '".$data[4]."', '".$new_end."' modifier a l'heure actuel et l'heure +1
       $req_old_price = "UPDATE articles SET unit_price = '".$data[5]."' WHERE id_article = '".$data[1]."'" ;
       $db_connexion->exec($req_old_price);
       $req_low_status = "UPDATE discounts SET status = '0' WHERE id_article = '".$data[1]."'" ;
       $db_connexion->exec($req_low_status);
       // AJOUT DU NOUVEAU DISCOUNT
       $req_new_discount = "INSERT INTO `discounts` (`id_discount`, `id_article`, `status`, `date_start`, `date_end`, `init_price`, `disc_price`)
-      VALUES (NULL, '".$new_id."', '1', '".$data[4]."', '".$new_end."', '".$true_price."', '".$disc_price."') ";
+      VALUES (NULL, '".$new_id."', '1', '".$h1."', '".$h2."', '".$true_price."', '".$disc_price."') ";
       $db_connexion->exec($req_new_discount);
 
       $req_new_price = "UPDATE articles SET unit_price = '".$disc_price."' WHERE id_article = '".$new_id."'" ;
       $data = $db_connexion->query($req_new_price)->fetch();
     }
-  } else if ($day === $date_end && $hour <= $hour_end[0] ){
-      echo "BANANA";
   } else {
-      echo "banana";
+    echo "<form action='../controller/home_controller.php' method='get'><button>Back</button>";
+      $req_data_article = "SELECT * FROM articles where id_article = '".$data[1]."' ";
+      $article = $db_connexion->query($req_data_article)->fetch();
+      echo "<h1>Offer of the hour !</h1>";
+      echo "Description : ".$article[3]."<br>";
+      echo "Price : ".$article[4]."<br>";
+      echo "Quantity : ".$article[5]."<br>";
+      if ( $article[6] === 0){
+        $sexe = "Male" ;
+      }else if ( $article[6] === 1){
+        $sexe = "Female" ;
+      }else{
+        $sexe = "Hermaphrodite";
+      }
+      echo "Sexe : ".$sexe."<br>" ;
+      echo "Diet : ".$article[7]."<br>";
+      echo "Weight : ".$article[8]."<br>";
+      echo "Size : ".$article[9]."<br>";
+      echo "Color : ".$article[10]."<br>";
+      echo "Age : ".$article[11]."<br>";
+      echo "<img src='".$article[13]."'><br><br>";
+      echo "<form action='../model/add_caddy.php?id=".$data[1]."' method='POST'><button>Add to the caddy</button>";
+
+      $data_specie ="SELECT * FROM species WHERE id_specie ='".$article[1]."'" ;
+      $data_client ="SELECT * FROM users WHERE id_user='".$article[2]."'" ;
   }
+  //if ( $day != $date_end && $hour !=  )
 ?>

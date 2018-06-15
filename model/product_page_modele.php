@@ -1,7 +1,7 @@
 <?php
 	
 	require_once("../controller/db_connexion.php");
-	$sql = 'select species.name as specie, unit_price, stock, gender, diet, weight, size, color, age, firstname, users.name from species inner join articles on species.id_specie = articles.id_specie inner join users on articles.id_user = users.id_user where id_article = '.$_GET["id"].';';
+	$sql = 'select species.name as specie, unit_price, stock, gender, diet, weight, size, color, age, firstname, users.name, users.id_user from species inner join articles on species.id_specie = articles.id_specie inner join users on articles.id_user = users.id_user where id_article = '.$_GET["id"].';';
 	$req = $db_connexion->query($sql);
 
 
@@ -9,6 +9,7 @@
 		$data=$row;
 	}
 	$req->closeCursor();
+	var_dump($data);
 
 
 	if (isset($_COOKIE['toto'])) {
