@@ -7,12 +7,14 @@
 <body>
 	<?php
 		echo "<center><h2>Welcome ".$_SESSION["pseudo"]."</h2></center>";
+		echo "<form action='home_controller.php' method='POST'><button>Home</button></form>";
 		echo "<form action='../controller/disconnect.php' method='GET'>
 		<button>disconnect</button></form>";
 
 		echo "<form action='../controller/caddy_controller.php'><button>caddy</button></form>";
 		echo "<form action='../controller/account_controller.php' method='GET'>
 		<button>account</button></form>";
+		require_once("searchbar_view.php");
 
 		echo "<form action='../controller/add_article_display.php'><button>Add an article</button></form>";
 
