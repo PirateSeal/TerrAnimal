@@ -51,8 +51,18 @@
 		for ($i=0; $i < count($recup); $i++) { 
 			$sql = "insert into orders (id_order, id_buyer, id_seller) values (NULL,".$balance_buyer['id_user'].",".$recup[$i]['id_user']." )";
 			$db_connexion->exec($sql);
-			//$sql = "insert into orders_lines (id_order_line, id_order, id_article, amount) values (NULL, )";
-			//$db_connexion->exec($sql);
+			$sql="select max(id_order) as id_order from orders";
+			$req = $db_connexion->query($sql);
+			$orders = $req->fetch(PDO::FETCH_ASSOC);
+			for ($i=0; $i < count($recup); $i++) { 
+				foreach ($caddy as $key => $value) {
+					if ($recup[$i]['id_article'] == $key) {
+						$sql = "insert into orders_lines (id_order_line, id_order, id_article, quantity) values (NULL,".$orders['id_order'].",".$recup[$i]['id_article'].",".$value." )";
+						$db_connexion->exec($sql);
+					}
+				}
+			}
+
 		}
 		
 
@@ -61,7 +71,7 @@
 			foreach ($caddy as $key => $value) {
 				if ($recup[$i]['id_article'] == $key) {
 					if ($recup[$i]['stock']== $value) {
-						 $sql = 'delete from articles where id_article="'.$key.'"';
+						$sql ="update articles set status='unavailable' where id_article='".$key."'";
 						 $db_connexion->exec($sql);
 					}else{
 						$stock = $recup[$i]['stock']-$value;
@@ -76,6 +86,5 @@
 
 		//on supprime le cookie
 		setcookie("toto", "0", time()-1,"/");
-//		header("location:../controller/caddy_controller.php?status=true");
 	}
 ?>
