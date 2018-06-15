@@ -100,7 +100,7 @@
       $data = $db_connexion->query($req_new_price)->fetch();
     }
   } else {
-    echo "<form action='../controller/home_controller.php' method='get'><button>Back</button>";
+    echo "<form action='../controller/home_controller.php' method='get'><button>Back</button></form>";
       $req_data_article = "SELECT * FROM articles where id_article = '".$data[1]."' ";
       $article = $db_connexion->query($req_data_article)->fetch();
       echo "<h1>Offer of the hour !</h1>";
@@ -121,7 +121,7 @@
       echo "Color : ".$article[10]."<br>";
       echo "Age : ".$article[11]."<br>";
       echo "<img src='".$article[13]."'><br><br>";
-      echo "<form action='../model/add_caddy.php?id=".$data[1]."' method='POST'><button>Add to the caddy</button>";
+      echo "<form action='../model/add_caddy.php?id=".$data[1]."' method='POST'><button>Add to the caddy</button></form>";
 
       $data_specie ="SELECT * FROM species WHERE id_specie ='".$article[1]."'" ;
       $data_client ="SELECT * FROM users WHERE id_user='".$article[2]."'" ;

@@ -9,9 +9,9 @@
 	<?php
 		echo "<table>
 		<tr><td>Vendor Image</td><td></td></tr>
-		<tr><td>".$data['pseudo']."</td> <td>".$data['firstname']." ".$data['name']."</td></tr>
-		<tr><td>".$data['email']."</td> <td></td></tr>
-		<tr><td>".$data['note']."</td> <td></td></tr>
+		<tr><td>Pseudo : ".$data['pseudo']."</td> <td>Name : ".$data['firstname']." ".$data['name']."</td></tr>
+		<tr><td>Mail : ".$data['email']."</td> <td></td></tr>
+		<tr><td>Note : ".$data['note']."/5</td> <td></td></tr>
 		</table>";
 	?>
 </body>
