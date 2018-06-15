@@ -23,4 +23,7 @@
 			require_once("../view/caddy_view.php");
 		}
 	}
+	if (isset($_GET["status"])){
+		echo "<br>Your order was confirmed with success .";
+	}
 ?>
