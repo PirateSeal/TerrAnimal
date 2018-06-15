@@ -12,12 +12,12 @@
 
 	require("../model/login_model.php");
 	$how_much = $db_connexion->query($req_login)->fetch();
-	$status = $db_connexion->query($req_status)->fetch();
+	$status = $db_connexion->query($req_status)->fetch(PDO::FETCH_ASSOC);
 
 	if( $how_much['COUNT(*)'] == 1 ){
 				session_start();
 				$_SESSION["pseudo"] = $pseudo;
-
+				$_SESSION["ID"] = $status['id_user'];
 				if ($status['status'] == 'admin') {
 					$_SESSION['admin'] = true;
 					header("location:../controller/backoffice_controller.php");
