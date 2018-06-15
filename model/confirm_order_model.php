@@ -71,7 +71,9 @@
 				if ($recup[$i]['id_article'] == $key) {
 					if ($recup[$i]['stock']== $value) {
 						$sql ="update articles set status='unavailable' where id_article='".$key."'";
-						 $db_connexion->exec($sql);
+						$db_connexion->exec($sql);
+						$sql ="update articles set stock='0' where id_article='".$key."'";
+						$db_connexion->exec($sql);
 					}else{
 						$stock = $recup[$i]['stock']-$value;
 						$sql = "update articles set stock='".$stock."' where id_article='".$key."'";
