@@ -19,7 +19,7 @@
 		echo "<form action='../controller/add_article_display.php'><button>Add an article</button></form>";
 
 		echo "<form action='../controller/my_article.php'><button>Modify your article</button></form>";
-		echo "<form action='../controller/bid_controller.php'><button>Offer of the hour</button></form>";
+		echo "<form action='../controller/offer_of_the_hour_controller.php'><button>Offer of the hour</button></form>";
 		echo "You have ".$user_data['balance']."$ on your account";
 		if (isset($data)) {
 			for ($i=0; $i <count($data) ; $i++) {

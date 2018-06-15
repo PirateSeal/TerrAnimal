@@ -222,4 +222,3 @@ USE `db_terrabay`;
 INSERT INTO `db_terrabay`.`discounts` (`id_discount`, `id_article`, `status`, `date_start`, `date_end`, `init_price`, `disc_price`) VALUES (1, 2, '0', current_time, current_time + interval 1 hour, 150.00, 200.00);
 
 COMMIT;
-
