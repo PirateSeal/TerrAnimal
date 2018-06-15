@@ -17,13 +17,12 @@
 		<tr><td>".$data['unit_price']."$ </td><td>Stock :".$data['stock']."</td></tr>
 		<tr><td>Age :".$data['age']."</td><td>".$data['diet']."</td></tr>
 		<tr><td>Weight :".$data['weight']."</td><td>Color :".$data['color']."</td></tr>
-		<tr><td>Vendor :".$data['firstname']." ".$data['name']."</tr></td>
+		<tr><td>Vendor :<a href='../controller/user_account.php?id_user=".$data["id_user"]."'>".$data['firstname']." ".$data['name']."</a></tr></td>
 		</table>";
 
 		if ($status == 0) {
 			echo "<form action='../model/add_caddy.php?id=".$_GET["id"]."' method='POST'><button>Add to caddy</button></form><br>"; 
 		}
-		echo "<form action='../controller/user_account.php?id_user=".$data["id_user"]."' method='POST'><button>Vendor Page</button></form>";
 	?>
 
 </body>

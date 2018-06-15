@@ -6,6 +6,5 @@
 	while ($row = $req->fetch(PDO::FETCH_ASSOC)){
 		$data=$row;
 	}
-	$req->closeCursor();
-	var_dump($data);	
+	$req->closeCursor();	
 ?>
