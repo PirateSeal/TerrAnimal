@@ -47,23 +47,22 @@
 		}
 
 		//on enregistre la transaction dans order & order_line
-		
-		for ($i=0; $i < count($recup); $i++) { 
-			$sql = "insert into orders (id_order, id_buyer, id_seller) values (NULL,".$balance_buyer['id_user'].",".$recup[$i]['id_user']." )";
-			$db_connexion->exec($sql);
-			$sql="select max(id_order) as id_order from orders";
-			$req = $db_connexion->query($sql);
-			$orders = $req->fetch(PDO::FETCH_ASSOC);
-			for ($i=0; $i < count($recup); $i++) { 
-				foreach ($caddy as $key => $value) {
-					if ($recup[$i]['id_article'] == $key) {
-						$sql = "insert into orders_lines (id_order_line, id_order, id_article, quantity) values (NULL,".$orders['id_order'].",".$recup[$i]['id_article'].",".$value." )";
-						$db_connexion->exec($sql);
-					}
-				}
+		for ($i=0; $i <count($recup) ; $i++) { 
+			
+			foreach ($caddy as $key => $value) {
+				$sql = "insert into transactions (id_transaction, id_buyer, id_seller, date) values (NULL,".$balance_buyer['id_user'].",".$recup[$i]['id_user'].", CURDATE() )";
+				$db_connexion->exec($sql);
+				$sql="select max(id_transaction) as id_transaction from transactions";
+				$req = $db_connexion->query($sql);
+				$orders = $req->fetch(PDO::FETCH_ASSOC);
+				$sql = "insert into transactions_lines (id_transaction_line, id_transaction, id_article) values (NULL,".$orders['id_transaction'].",".$key.")";
+				$db_connexion->exec($sql);
+				echo $sql;
 			}
-
 		}
+			
+
+		
 		
 
 		//on ajuste les quantité en stock, on supprime si jamais le stock est épuisé
