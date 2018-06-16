@@ -54,8 +54,8 @@ if (isset($_POST["pseudo"])){
 				$signal = base64_encode(xorIt($password1, $xor_key));
 				$password = $signal;
 				include("../model/account_model.php");
-				$req = $db_connexion->prepare();
-				$req->execute();
+				$req_pass = $db_connexion->prepare($req_password);
+				$req_pass->execute();
 				header("location:../controller/account_controller.php?done=new_password");
 			} else {
 				header("location:../controller/account_settings.php?error=bad_password");

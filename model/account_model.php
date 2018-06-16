@@ -5,6 +5,6 @@
   $req_firstname = "UPDATE users SET firstname = '".$firstname."' WHERE id_user = '".$data['id_user']."'";
   $req_name = "UPDATE users SET email = '".$email."' WHERE id_user = '".$data['id_user']."'";
   $req_email = "UPDATE users SET name = '".$name."' WHERE id_user = '".$data['id_user']."'";
-  $req_passowrd = "UPDATE users SET password = '".$password."' WHERE id_user = '".$data['id_user']."'";
+  $req_password = "UPDATE users SET password = '".$password."' WHERE id_user = '".$_SESSION['ID']."'";
   $req_delete_account = "DELETE FROM users WHERE id_user = '".$data['id_user']."'";
 ?>
