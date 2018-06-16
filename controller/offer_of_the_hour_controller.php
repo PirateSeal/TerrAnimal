@@ -1,5 +1,6 @@
 <?php
   require("../controller/db_connexion.php");
+  require("../controller/loged_or_not.php");
   require("../model/offer_of_the_hour_model.php");
   $data = $db_connexion->query($req_bid)->fetch();
 
@@ -98,6 +99,7 @@
       require("../model/offer_of_the_hour_model.php");
       $data = $db_connexion->query($req_new_price)->fetch();
     }
+    header("refresh:0");
   } else {
     echo "<form action='../controller/home_controller.php' method='get'><button>Back</button></form>";
       require("../model/offer_of_the_hour_model.php");
@@ -120,8 +122,11 @@
       echo "Color : ".$article[10]."<br>";
       echo "Age : ".$article[11]."<br>";
       echo "<img src='".$article[13]."'><br><br>";
-      echo "<form action='../model/add_caddy.php?id=".$data[1]."' method='POST'><button>Add to the caddy</button></form>";
-
+      if ($article[2] === $_SESSION["ID"]){
+        echo "<form action='../controller/home_controller.php' method='POST'><button>You can't buy your article</button></form>";
+      } else {
+        echo "<form action='../model/add_caddy.php?id=".$data[1]."' method='POST'><button>Add to the caddy</button></form>";
+      }
 
   }
   //if ( $day != $date_end && $hour !=  )
