@@ -38,6 +38,4 @@ while ($row = $req->fetch(PDO::FETCH_ASSOC)){
     $i++;
 }
 
-var_dump($transactions);
-
 ?>
