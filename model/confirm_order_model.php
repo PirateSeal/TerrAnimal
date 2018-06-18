@@ -52,14 +52,22 @@
 		for ($i=0; $i <count($recup) ; $i++) {
 			foreach ($caddy as $key => $value) {
 				foreach ($caddy as $keybis => $valuebis) {
-					/*$l=0;
-					foreach ($caddy as $key3 => $value3) {
-						if ($keybis == $key3 && $l==$k ) {
-							$verif=0;
+					
+					////////////
+					$verif =1;
+					if ($j==$k) {
+						if ($j!==0) {
+							$l=0;
+							foreach ($caddy as $a => $b) {
+								if ($a == $key && $l<$j) {
+									$verif=0;
+								}
+								$l++;
+							}
 						}
-						$l++;
-					}*/
-					if ($j!==$k && $key==$keybis  || $k<$j /*|| $j==$k && $verif==0*/) {
+					}
+					//////////////
+					if ($j!==$k && $key==$keybis  || $k<$j || $verif==0) {
 						######
 					}else{
 						$sql = "insert into transactions (id_transaction, id_buyer, id_seller, date) values (NULL,".$balance_buyer['id_user'].",".$recup[$i]['id_user'].", CURDATE() )";
