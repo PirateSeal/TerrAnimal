@@ -53,7 +53,7 @@
                                     echo '
                                         <tr>
                                             <td align = "right" colspan = 4>
-                                                <a href="../controller/controller_orders.php">NOTE YOUR ORDER</a>
+                                                <a href="../controller/user_account.php?id_transa='.$transactions[$i]['id_transaction_line'].'">NOTE YOUR ORDER</a>
                                             </td>
                                         </tr>';}
                                 echo '</table>' ;  
