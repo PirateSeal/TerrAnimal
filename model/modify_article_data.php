@@ -7,7 +7,6 @@
 		$data[$i] = $recup;
 		$i++;
 	}
-	//echo $idarticle;
 	if (isset($idarticle)) {
 		$sql2 = 'select description, unit_price, stock, weight, size, color, age from articles where id_article = '.$idarticle.';';
 		$req2 = $db_connexion->query($sql2);
@@ -15,6 +14,5 @@
 		while ($row = $req2 -> fetch(PDO::FETCH_ASSOC)) {
 			$info = $row;
 		}
-		var_dump($info);
 	}
 ?>

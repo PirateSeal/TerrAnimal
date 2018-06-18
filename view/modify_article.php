@@ -4,6 +4,7 @@
 	<title>Modify your article</title>
 </head>
 <body>
+	<form action='../controller/home_controller.php' method='GET'><button>Back</button></form>
 	<form action="../controller/modify_article.php?go=modify" method="POST">
 		<?php
 			echo "Description : <input type='text' name='description' value='".$info["description"]."'><br><br>";
@@ -40,10 +41,12 @@
 
 			Color : <input type='text' name='color' id='color' value='".$info["color"]."'><br><br>
 
-			Age : <input type='text' name='age' id='age' value='".$info["age"]."'><br><br>";
+			Age : <input type='text' name='age' id='age' value='".$info["age"]."'><br><br>
 
+			<input type='hidden' name='id' value='".$_GET['id']."'>";
+
+		
 		?>
-
 		<button>Submit</button>
 	</form>
 </body>

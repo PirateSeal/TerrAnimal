@@ -22,7 +22,6 @@
 						<button> Modify </button></form></td></tr>
 						<tr><td><form action='../controller/delete_article.php?id=".$data[$i]['id_article']."' method='POST'>
 						<button> Delete </button></form></td></tr></table><br>";
-						var_dump($data);
 					}
 				}
 			}?>
