@@ -4,9 +4,10 @@
 		header("location:../index.php");
 	}else{
 		if (!isset($_GET['go'])) {
+			$idarticle = $_GET['id'];
 			require_once("../model/modify_article_data.php");
 			require_once("../view/modify_article.php");
-		} elseif (isset($_GET['go']) && $_GET['go']=="modify") {
+		} elseif (isset($_POST['go']) && $_POST['go']=='modify') {
 			$verif = ["description", "name", "price", "gender", "diet", "weight", "size", "size", "color", "age"];
 			$good = 0;
 			for ($i=0; $i < count($verif); $i++) { 
