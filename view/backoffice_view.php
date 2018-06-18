@@ -11,10 +11,9 @@
     <a href="../controller/home_controller.php"><button>Leave BO</button></a> <br> <br>
 
 <?php
-    var_dump($srv_user);
     // BAN A MEMBER
         if (isset($srv_user)) {
-            echo '<div id="ban" align="center">Ban a member : <br><br>';
+            echo '<div id="ban">Ban a member : <br><br>';
             $alert_user = "return confirm('Are you sure you want to ban this user ?')";
             for ($i=0; $i<count($srv_user) ; $i++) { 
                 // if ($srv_user[$i]['pseudo']!== $_SESSION['pseudo'] || $srv_user[$i]['status'] !== 'admin') {
@@ -52,7 +51,9 @@
                     </tr>
                     <tr>
                         <td>Ban a member : </td>
-                        <td align = "center"></td>
+                        <td align = "center">
+                            <a href="../controller/backoffice_controller.php?ban='.$srv_user[$i]['id_user'].'"><button>BAN</button></a>
+                        </td>
                     </tr>
                 </table><br>';
                 // }
@@ -62,21 +63,24 @@
         
     // RM SPECIE
         if (isset($srv_specie)) {
-            echo '<table class="table" border="1" cellpadding="5" cellspacing="0.5" width="100%">
-                <tr class="row"><td class="col" colspan="10" align="center">Specie</td></tr><tr class="row">';
+            echo '<table class="table" style="font-size: 20px" border="1" cellpadding="5" cellspacing="0.5" width="50%">
+                <tr class="row"><td class="col" colspan="10" align="center">Remove a specie</td></tr><tr class="row">';
             
-            $k=0;
-            while ($k < count($srv_specie)) {
-                if ($k % 6 == 0) {
-                    echo '</tr>';
-                } else {
-                    echo '<td class="col" align="center">'.$srv_specie[$k]['name'].'</td>';
-                }
-                $k++;
+        for ($k=0; $k<count($srv_specie) ; $k++) { 
+            if ($k % 6 == 0 && $k !== 0) {
+                echo '</tr>';
+            } else {
+                echo '
+                    <td class="col" align="center">
+                        '.$srv_specie[$k]['name'].'<br>
+                        <a href="../controller/backoffice_controller.php?rm_specie='.$srv_specie[$k]['id_specie'].'">
+                            <button>Remove</button>
+                        </a>
+                    </td>';
             }
         }
-
         echo '</table><br><br>';
+    }
 
     // RM ARTICLE
         if (isset($srv_art)) {

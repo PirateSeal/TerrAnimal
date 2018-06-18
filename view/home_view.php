@@ -23,10 +23,10 @@
 
 		echo "<form action='../controller/my_article.php'><button>Modify your article</button></form>";
 		echo "<form action='../controller/offer_of_the_hour_controller.php'><button>Offer of the hour</button></form>";
-		echo "You have ".$user_data['balance']."$ on your account";
+		echo "You have ".$user_data['balance']."$ on your account <br>";
 		if (isset($data)) {
 			for ($i=0; $i <count($data) ; $i++) {
-				echo "<br><table border = 1px><tr><td>image</td></tr>
+				echo "<br><table border = 1px width='20%'><tr><td><img src = '".$data[$i]['photo_path']."'></td></tr>
 				<tr><td>".$data[$i]['name']."</td></tr>
 				<tr><td>Price :".$data[$i]['unit_price']." $</td></tr>
 				<tr><td><form action='../controller/product_page_controller.php?id=".$data[$i]['id_article']."' method='POST'>

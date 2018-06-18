@@ -28,4 +28,10 @@ if (isset($_GET['remove_article'])) {
     echo '<meta http-equiv="refresh" content="0.5;URL=../controller/backoffice_controller.php">'; 
 }
 
+if (isset($_GET['rm_specie'])) {
+    $ban = 'DELETE FROM species WHERE id_specie ='.$_GET['rm_specie'].';';
+    $db_connexion->exec($ban);    
+    echo '<meta http-equiv="refresh" content="0.5;URL=../controller/backoffice_controller.php">'; 
+}
+
 ?>
