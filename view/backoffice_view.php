@@ -61,21 +61,19 @@
         }
         
     // RM SPECIE
-        $srv_specie = array('felines','canides','poissons','humains','insectes','noirs','esclaves','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24');
-
-        echo '<table class="table" border="1" cellpadding="5" cellspacing="0.5" width="100%">
-            <tr class="row"><td class="col" colspan="10" align="center">Specie</td></tr><tr class="row">';
-        $k=0;
-        for ($i=0; $i<count($srv_specie); $i++) {
-            for ($j=0; $j<10 ; $j++) {
-                if ($k === count($srv_specie)-1) {
-                    break;
+        if (isset($srv_specie)) {
+            echo '<table class="table" border="1" cellpadding="5" cellspacing="0.5" width="100%">
+                <tr class="row"><td class="col" colspan="10" align="center">Specie</td></tr><tr class="row">';
+            
+            $k=0;
+            while ($k < count($srv_specie)) {
+                if ($k % 6 == 0) {
+                    echo '</tr>';
                 } else {
-                    $k++;                    
+                    echo '<td class="col" align="center">'.$srv_specie[$k]['name'].'</td>';
                 }
-                echo '<td class="col" align="center">'.$srv_specie[$k].'</td>';
+                $k++;
             }
-            echo '</tr>';
         }
 
         echo '</table><br><br>';

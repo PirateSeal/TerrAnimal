@@ -7,6 +7,9 @@
 <body>
 	<?php
 		echo "<center><h2>Welcome ".$_SESSION["pseudo"]."</h2></center>";
+		if (isset($_SESSION['admin'])) {
+			echo '<a href="../controller/backoffice_controller.php"><button>Goto BO</button></a>';
+		}
 		echo "<form action='home_controller.php' method='POST'><button>Home</button></form>";
 		echo "<form action='../controller/disconnect.php' method='GET'>
 		<button>disconnect</button></form>";
