@@ -2,6 +2,8 @@
 
 require("../controller/db_connexion.php");
 
+$transactions = array();
+
 $sql = "SELECT
     a.description,
     a.unit_price,
