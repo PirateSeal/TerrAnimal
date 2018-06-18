@@ -11,7 +11,5 @@
 		<form action='../controller/home_controller.php' method='GET'>
 			<button>Back</button></form>
 		</form>
-
-
 	</body>
 </html>
