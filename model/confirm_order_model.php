@@ -47,6 +47,8 @@
 		}
 
 		//on enregistre la transaction dans order & order_line
+		$j=0;
+		$k=0;
 		for ($i=0; $i <count($recup) ; $i++) { 
 			
 			foreach ($caddy as $key => $value) {
@@ -55,9 +57,18 @@
 				$sql="select max(id_transaction) as id_transaction from transactions";
 				$req = $db_connexion->query($sql);
 				$orders = $req->fetch(PDO::FETCH_ASSOC);
-				$sql = "insert into transactions_lines (id_transaction_line, id_transaction, id_article) values (NULL,".$orders['id_transaction'].",".$key.")";
-				$db_connexion->exec($sql);
-				echo $sql;
+
+				foreach ($caddy as $keybis => $valuebis) {
+					if ($j!==$k && $key==$keybis) {
+						######
+					}else{
+						$sql = "insert into transactions_lines (id_transaction_line, id_transaction, id_article, quantity) values (NULL,".$orders['id_transaction'].",".$key.", ".$value.")";
+						$db_connexion->exec($sql);
+						echo $sql;
+					}
+					$k++;
+				}
+				$j++;
 			}
 		}
 			
