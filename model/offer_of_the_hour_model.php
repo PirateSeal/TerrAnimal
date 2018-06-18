@@ -3,8 +3,6 @@ $req_bid ="SELECT * FROM discounts WHERE id_discount = ( SELECT Max(id_discount)
 $req_random = "SELECT id_article FROM articles ORDER BY RAND() LIMIT 1";
 $req_select_random = "SELECT * FROM articles WHERE id_article='".$new_id."'";
 $req_data_article = "SELECT * FROM articles where id_article = '".$data[1]."' ";
-$data_specie ="SELECT * FROM species WHERE id_specie ='".$article[1]."'" ;
-$data_client ="SELECT * FROM users WHERE id_user='".$article[2]."'" ;
 
 $req_old_price = "UPDATE articles SET unit_price = '".$data[5]."' WHERE id_article = '".$data[1]."'" ;
 $req_low_status = "UPDATE discounts SET status = '0' WHERE id_article = '".$data[1]."'" ;
