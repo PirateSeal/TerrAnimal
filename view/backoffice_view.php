@@ -4,39 +4,80 @@
     <meta charset="utf-8" />
     <title>Backoffice_TerraBay</title>
 </head>
-<body>
-    <h1 align = center>Backoffice TerraBay</h1>
+<body style="font-family: 'red rocket'">
+    <h1 align = center style="font-family: 'tele-marines'">Backoffice TerraBay</h1>
     
     <a href="../controller/disconnect.php"><button>Disconnect</button></a> <br>
     <a href="../controller/home_controller.php"><button>Leave BO</button></a> <br> <br>
-    
-    <?php
+
+<?php
+    var_dump($srv_user);
     // BAN A MEMBER
         if (isset($srv_user)) {
-            echo 'Ban a member : <br><form action="../controller/backoffice_controller.php" method="get"><select name="ban">';
+            echo '<div id="ban" align="center">Ban a member : <br><br>';
             $alert_user = "return confirm('Are you sure you want to ban this user ?')";
             for ($i=0; $i<count($srv_user) ; $i++) { 
-                if ($srv_user[$i]['pseudo']!== $_SESSION['pseudo'] || $srv_user[$i]['status'] !== 'admin') {
-                    echo '<option value="'.$srv_user[$i]['id_user']. '">'.$srv_user[$i]['pseudo'].'</option>';
-                }
+                // if ($srv_user[$i]['pseudo']!== $_SESSION['pseudo'] || $srv_user[$i]['status'] !== 'admin') {
+                    echo '<table style="font-size: 20px"  class="table" border="1" cellpadding="5" cellspacing="0.5" width="25%">
+                    <tr>
+                        <td colspan = 2 align = "center">'.$srv_user[$i]['pseudo'].'</td>
+                    </tr>
+                    <tr>
+                        <td>ID : </td>
+                        <td align = "center">'.$srv_user[$i]['id_user'].'</td>
+                    </tr>
+                    <tr>
+                        <td>Name : </td>
+                        <td align = "center">'.$srv_user[$i]['name'].'</td>
+                    </tr>
+                    <tr>
+                        <td>Firstname : </td>
+                        <td align = "center">'.$srv_user[$i]['firstname'].'</td>
+                    </tr>
+                    <tr>
+                        <td>Email : </td>
+                        <td align = "center">'.$srv_user[$i]['email'].'</td>
+                    </tr>
+                    <tr>
+                        <td>Balance : </td>
+                        <td align = "center">'.$srv_user[$i]['balance'].'</td>
+                    </tr>
+                    <tr>
+                        <td>Number of articles : </td>
+                        <td align = "center">'.$srv_user[$i]['nbr_article'].'</td>
+                    </tr>
+                    <tr>
+                        <td>Note : </td>
+                        <td align = "center">'.$srv_user[$i]['note'].' / 5</td>
+                    </tr>
+                    <tr>
+                        <td>Ban a member : </td>
+                        <td align = "center"></td>
+                    </tr>
+                </table><br>';
+                // }
             }
-            echo '</select> 
-                <input type="submit" value="Ban"'.$alert.'/>
-            </form>
-            <br><br>';
+            echo '</div>';
         }
-
+        
     // RM SPECIE
-        $srv_specie = array('felines','canides','poissons','humains','insectes','noirs','esclaves','8','9','10','11','12','13','14','15');
+        $srv_specie = array('felines','canides','poissons','humains','insectes','noirs','esclaves','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24');
 
-        echo '<table class="table" border="1" cellpadding="5" cellspacing="0.5" width="18%">
+        echo '<table class="table" border="1" cellpadding="5" cellspacing="0.5" width="100%">
             <tr class="row"><td class="col" colspan="10" align="center">Specie</td></tr><tr class="row">';
+        $k=0;
         for ($i=0; $i<count($srv_specie); $i++) {
             for ($j=0; $j<10 ; $j++) {
-                echo '<td class="col" align="center">'.$srv_specie[$i].'</td>';
+                if ($k === count($srv_specie)-1) {
+                    break;
+                } else {
+                    $k++;                    
+                }
+                echo '<td class="col" align="center">'.$srv_specie[$k].'</td>';
             }
             echo '</tr>';
         }
+
         echo '</table><br><br>';
 
     // RM ARTICLE

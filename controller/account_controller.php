@@ -3,7 +3,7 @@
 	include("../view/account.php");
   // AFFICHAGE DES INFORMATIONS ACTUELLES DE L'UTILISATEUR .
 
-		require_once("../controller/db_connexion.php");
+	require_once("../controller/db_connexion.php");
   	$data = $db_connexion->query("SELECT * FROM users WHERE pseudo='".$_SESSION["pseudo"]."'")->fetch();
   	echo "Pseudo :".$data["pseudo"]."<br>
         	Email :".$data["email"]."<br>
@@ -11,7 +11,7 @@
         	Name :".$data["name"]."<br>
         	Note :".$data["note"]."<br>";
 
-
+	echo '<a href="../controller/controller_orders.php"><button>View my orders</button></a>';
 
 	// COMMENTAIRE DE MODIFICATION
 
