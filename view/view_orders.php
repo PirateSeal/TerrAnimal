@@ -60,6 +60,8 @@
                         }
                     }
                 }
+            } else {
+                echo "Vous n'avez aucune commande passée";
             }
         }
     ?>
