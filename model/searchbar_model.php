@@ -5,8 +5,7 @@
 	$req = $db_connexion->query($sql);
 	$user_data = $req->fetch();
 	$sql = 'select id_article, unit_price, species.name, articles.photo_path from users inner join articles on users.id_user = articles.id_user inner join species on articles.id_specie = species.id_specie where users.id_user != "'.$user_data['id_user'].'"and articles.status="available" and species.name like "%'.$_POST['search'].'%"';
-	echo $sql;
-		$req = $db_connexion->query($sql);
+	$req = $db_connexion->query($sql);
 
 	$i=0;
 	while ($row = $req->fetch()){
