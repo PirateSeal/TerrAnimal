@@ -9,7 +9,19 @@
 	$password1= htmlspecialchars($_GET["password1"]);
 	$password2= htmlspecialchars($_GET["password2"]);
 
-
+	$quote = [$firstname,$name];
+	    for ($i=0; $i < 2 ; $i++) {
+	        for ($j=0; $j < strlen($quote[$i]) ; $j++) {
+	          if ($quote[$i][$j] === "'"){
+	            $dual[$i] = explode("'", $quote[$i]);
+	            $fin[$i] = implode("quote",$dual[$i]);
+	          } else {
+							$fin[$i] = $quote[$i];
+						}
+	        }
+	    }
+	    $firstname = $fin[0];
+	    $name = $fin[1];
 
 		require("../model/subscribe_model.php");
 
@@ -24,4 +36,5 @@
 		$db_connexion->exec($sql);
 		header("location:../index.php?subscribe=confirmed");
 	}
+
 ?>

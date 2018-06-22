@@ -43,7 +43,7 @@ check['pseudo'] = function(id) {
 check['firstname'] = function(id) {
   var firstname = document.getElementById(id),
   tooltipStyle = getTooltip(firstname).style;
-  if ( /^[a-zA-Z0-9]+$/.test(firstname.value) === true && firstname.value.length <= 12 && firstname.value.length >= 2) {
+  if ( /^[a-zA-Z0-9\'\-]+$/.test(firstname.value) === true && firstname.value.length <= 12 && firstname.value.length >= 2) {
     firstname.className = 'correct';
     tooltipStyle.display = 'none';
     return true;
@@ -72,7 +72,7 @@ check['mail'] = function(id) {
 check['lastname'] = function(id) {
   var lastname = document.getElementById(id),
   tooltipStyle = getTooltip(lastname).style;
-  if ( /^[a-zA-Z0-9]+$/.test(lastname.value) === true && lastname.value.length <= 12 && lastname.value.length >= 2) {
+  if ( /^[a-zA-Z0-9\'\-]+$/.test(lastname.value) === true && lastname.value.length <= 12 && lastname.value.length >= 2) {
     lastname.className = 'correct';
     tooltipStyle.display = 'none';
     return true;
