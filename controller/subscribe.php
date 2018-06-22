@@ -14,7 +14,7 @@
 	        for ($j=0; $j < strlen($quote[$i]) ; $j++) {
 	          if ($quote[$i][$j] === "'"){
 	            $dual[$i] = explode("'", $quote[$i]);
-	            $fin[$i] = implode("quote",$dual[$i]);
+	            $fin[$i] = implode("\'",$dual[$i]);
 	          } else {
 							$fin[$i] = $quote[$i];
 						}
@@ -22,6 +22,8 @@
 	    }
 	    $firstname = $fin[0];
 	    $name = $fin[1];
+			echo $firstname ;
+			echo $name;
 
 		require("../model/subscribe_model.php");
 
@@ -36,5 +38,4 @@
 		$db_connexion->exec($sql);
 		header("location:../index.php?subscribe=confirmed");
 	}
-
 ?>
