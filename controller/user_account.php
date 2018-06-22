@@ -5,6 +5,8 @@
 	}else{
 		if (isset($_GET['id_user'])) {
 			$iduser = $_GET['id_user'];
+			require_once("../model/user_account.php");
+			require_once("../view/user_account.php");
 		} else {
 			echo "1";
 			if (isset($_GET['id_transa'])) {
