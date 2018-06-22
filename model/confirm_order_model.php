@@ -14,6 +14,7 @@
 			$recup[$i] = $row;
 		}
 	}
+	var_dump($recup);
 
 	//on récupère l'argent que possède l'utilisateur 
 	$sql ='select balance, id_user from users where pseudo = "'.$_SESSION['pseudo'].'"';
@@ -46,10 +47,15 @@
 			$db_connexion->exec($sql);
 		}
 
+	
 		//on enregistre la transaction dans order & order_line
 		$j=0;
 		$k=0;
+		echo "<br>";
+		echo "<br>";
+		$a=0;
 		for ($i=0; $i <count($recup) ; $i++) {
+			$k=0;
 			foreach ($caddy as $key => $value) {
 				foreach ($caddy as $keybis => $valuebis) {
 					
@@ -67,9 +73,10 @@
 						}
 					}
 					//////////////
-					if ($j!==$k && $key==$keybis  || $k<$j || $verif==0) {
+					if ($j!==$k && $key==$keybis  || $k<$j || $verif==0 ||$a==1 && $j==0) {
 						######
 					}else{
+						$a=1;
 						$sql = "insert into transactions (id_transaction, id_buyer, id_seller, date) values (NULL,".$balance_buyer['id_user'].",".$recup[$i]['id_user'].", CURDATE() )";
 						$db_connexion->exec($sql);
 						$sql="select max(id_transaction) as id_transaction from transactions";
@@ -77,7 +84,8 @@
 						$orders = $req->fetch(PDO::FETCH_ASSOC);
 						$sql = "insert into transactions_lines (id_transaction_line, id_transaction, id_article, quantity) values (NULL,".$orders['id_transaction'].",".$key.", ".$value.")";
 						$db_connexion->exec($sql);
-						echo $sql;
+
+						echo "<br>";
 					}
 					$k++;
 				}
