@@ -3,6 +3,7 @@
 	if (empty($_SESSION["pseudo"])){
 		header("location:../index.php");
 	}else{
+		include("../view/header.php");
 		$good = 0;
 		if (!isset($_GET['go'])) {
 			$idarticle = $_GET['id'];
@@ -11,7 +12,7 @@
 		} elseif (isset($_GET['go']) && $_GET['go']=="modify") {
 			$verif = ["description", "name", "unit_price", "gender", "diet", "weight", "size", "color", "age"];
 			$good = 0;
-			for ($i=0; $i < count($verif); $i++) { 
+			for ($i=0; $i < count($verif); $i++) {
 				if (!isset($_POST[$verif[$i]])) {
 					$good=1;
 				}

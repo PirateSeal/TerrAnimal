@@ -2,6 +2,7 @@
 	require_once("loged_or_not.php");
 	require_once("db_connexion.php");
 	require_once("xor.php");
+	include("../view/header.php");
 	include("../model/account_model.php");
 	include("../view/account_settings.php");
 	$data = $db_connexion->query($req_data)->fetch();

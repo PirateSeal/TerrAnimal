@@ -1,8 +1,6 @@
 <?php
-	SESSION_start();
-	if (empty($_SESSION["pseudo"])){
-		header("location:../index.php");
-	}
+	require("../controller/loged_or_not.php");
+	include("../view/header.php");
 ?>
 
 <!DOCTYPE html>

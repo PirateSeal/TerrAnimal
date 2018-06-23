@@ -3,6 +3,7 @@
 	if (empty($_SESSION["pseudo"])){
 		header("location:../index.php");
 	}else{
+		include("../view/header.php");
 		if (isset($_GET['id_user'])) {
 			$iduser = $_GET['id_user'];
 			require_once("../model/user_account.php");
@@ -29,7 +30,7 @@
 			require_once("../view/user_account.php");
 			}
 		}
-		
+
 /*		if (isset($_POST['vote']) && $_POST['vote'] == "oui") {
 			echo "2";
 			$transa = $_GET['id_transa'];

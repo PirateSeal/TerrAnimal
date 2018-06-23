@@ -18,12 +18,12 @@
 
 
 	    	<label class="form_col" for="firstname">Firstname : </label>
-	    	<input name="firstname" id="firstname" pattern="[a-zA-Z0-9]+" title="Special characters are forbidden." type="text" >
+	    	<input name="firstname" id="firstname" type="text">
 	    	<span class="tooltip">Your firstname must contain at enter 3 and 12 characters . Special characters are not accepted .</span>
 	    	<br><br>
 
 	    	<label class="form_col" for="lastname">Name : </label>
-	    	<input name="lastname" id="lastname" pattern="[a-zA-Z0-9]+" title="Special characters are forbidden." type="text" >
+	    	<input name="lastname" id="lastname"  type="text" >
 	    	<span class="tooltip">Your lastname must contain at enter 3 and 12 characters . Special characters are not accepted .</span>
 	    	<br><br>
 
