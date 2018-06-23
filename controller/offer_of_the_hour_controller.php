@@ -1,6 +1,7 @@
 <?php
   require("../controller/db_connexion.php");
   require("../controller/loged_or_not.php");
+  include("../view/header.php");
   require("../model/offer_of_the_hour_model.php");
   $data = $db_connexion->query($req_bid)->fetch();
 

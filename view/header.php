@@ -11,7 +11,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="../controller/home_controller.php">
       <img src="../view/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">TerraBay</a>
       <div class="collapse navbar-collapse row ml-3" id="navbarSupportedContent">
 
