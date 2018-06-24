@@ -3,7 +3,7 @@
 	include("../view/header.php");
 	include("../view/account.php");
   // AFFICHAGE DES INFORMATIONS ACTUELLES DE L'UTILISATEUR .
-	echo "<center><h2>Your account informations</h2></center><br>
+	echo "<center><h2>Your account informations</h2></center>
 				<div id='box1'><br>";
 	require_once("../controller/db_connexion.php");
   	$data = $db_connexion->query("SELECT * FROM users WHERE pseudo='".$_SESSION["pseudo"]."'")->fetch();
@@ -50,7 +50,7 @@
 		}
 
 		echo "<form action='../view/account_settings.php' method='GET'>
-						<button class='button'>Settings</button>
+						<button class='button2'>Settings</button>
 					</form>";
 		echo "<br>";
 ?>

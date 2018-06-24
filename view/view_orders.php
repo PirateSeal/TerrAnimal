@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>View_my_orders</title>
-</head>
-<body>
-    <?php if (isset($_POST['ID'])) { echo '<a href="../controller/controller_orders.php"><button>Back</button></a>'; } else { echo '<a href="../controller/account_controller.php"><button>Back</button></a>'; } ?>
-    <h1 align = "center">Voici toutes vos commandes </h1>
+
+    <h2><center>Your Commands</h2></center><div id="box">
     <?php
         if (isset($transactions)) {
             if (!empty($transactions)) {
                 if (!isset($_POST['ID'])) {
-                    for ($i=0; $i<count($transactions) ; $i++) { 
+                    for ($i=0; $i<count($transactions) ; $i++) {
+
                         echo '
                         <table style="font-size: 20px"  class="table" border="1" cellpadding="5" cellspacing="0.5" width="100%">
                             <tr align = "center">
@@ -22,14 +16,14 @@
                                     <form action="../controller/controller_orders.php" method="post">
                                         <input type="hidden" name="ID" value="'.$transactions[$i]['id_transaction'].'">
                                         <input type="hidden" name="tl" value="'.$transactions[$i]['id_transaction_line'].'">
-                                        <input type="submit" value="Voir">
+                                        <button class="button1">Details</button>
                                     </form>
                                 </td>
                             </tr>
-                        </table>' ;                    
+                        </table>' ;
                     }
                 } else if (isset($_POST['ID'])) {
-                    for ($i=0; $i<count($transactions) ; $i++) { 
+                    for ($i=0; $i<count($transactions) ; $i++) {
                         if ($transactions[$i]['id_transaction_line'] == $_POST['tl']) {
                             echo '
                             <table style="font-size: 20px" border = 1  class="table" cellpadding="5" cellspacing="0.5" width="100%">
@@ -56,15 +50,16 @@
                                                 <a href="../controller/user_account.php?id_transa='.$transactions[$i]['id_transaction_line'].'">NOTE YOUR ORDER</a>
                                             </td>
                                         </tr>';}
-                                echo '</table>' ;  
+                                echo '</table>' ;
                         }
                     }
                 }
             } else {
-                echo "Vous n'avez aucune commande passée";
+                echo "<center><h2>You have no orders</h2></center>";
             }
         }
     ?>
+  </div>
 </body>
 </html>
 
