@@ -2,6 +2,7 @@ body {
 	background-image: url("../view/images/background.jpg");
 	background-size: 100%;
 	color : white;
+	overflow-X:hidden;
 
 }
 label{
