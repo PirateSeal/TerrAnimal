@@ -18,6 +18,7 @@
 				session_start();
 				$_SESSION["pseudo"] = $pseudo;
 				$_SESSION["ID"] = $status['id_user'];
+				$_SESSION["monney"] = $status['balance'];
 				if ($status['status'] == 'admin') {
 					$_SESSION['admin'] = true;
 					header("location:../controller/backoffice_controller.php");

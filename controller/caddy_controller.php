@@ -28,7 +28,6 @@
 		}
 	}
 	if (isset($_GET["status"])){
-		include("../view/header.php");
 		echo "<br>Your order was confirmed with success .";
 	}
 ?>

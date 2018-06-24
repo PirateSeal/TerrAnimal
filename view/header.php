@@ -47,7 +47,7 @@
 
         <div class="collapse navbar-collapse col-lg-3 mr-auto" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto float-right">
-            <li class="nav-item"><a class="nav-link" href="#"> You have : <?php echo round($user_data['balance'])." "; ?><img src="../view/images/monney.svg" width="20" height="20" class="d-inline-block align-top" alt=""></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"> You have : <?php echo round($_SESSION['monney'])." "; ?><img src="../view/images/monney.svg" width="20" height="20" class="d-inline-block align-top" alt=""></a></li>
             <a class="navbar-brand" href="../controller/caddy_controller.php">
             <img src="../view/images/caddy.svg" width="30" height="30" class="d-inline-block align-top" alt=""></a>
             <a class="navbar-brand" href="../controller/disconnect.php">
