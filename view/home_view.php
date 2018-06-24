@@ -1,21 +1,18 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>TerraBay</title>
-</head>
-<body>
 	<?php
 		echo "<center><h2>Welcome ".$_SESSION["pseudo"]."</h2></center>";
+	?>
+	<?php
+	$x=0;
 
-		echo "You have ".$user_data['balance']."$ on your account <br>";
 		if (isset($data)) {
+			echo "<div class='row'>";
 			for ($i=0; $i <count($data) ; $i++) {
-				echo "<br><table border = 1px width='20%'><tr><td><img src = '".$data[$i]['photo_path']."'></td></tr>
-				<tr><td>".$data[$i]['name']."</td></tr>
-				<tr><td>Price :".$data[$i]['unit_price']." $</td></tr>
-				<tr><td><form action='../controller/product_page_controller.php?id=".$data[$i]['id_article']."' method='POST'>
-				<input type='submit' name='Details' value='Details'></form></td></tr></table><br>";
+				echo "<div class='col-sm-3' style='background-color:white; opacity:0.7; color:red; border:solid black 2px ; border-radius:5px;'><br>
+				<img class='float-left mr-3' src = '".$data[$i]['photo_path']."' width='25%'>
+				<br>".$data[$i]['name']."<br>".$data[$i]['unit_price']." $<br>
+				<form action='../controller/product_page_controller.php?id=".$data[$i]['id_article']."' method='POST'>
+				<input type='submit' class='btn btn-dark' style='background-color:dark;' name='Details' value='Details'></form><br><br></div>";
 			}
 		}
 
