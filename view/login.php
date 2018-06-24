@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<link rel='stylesheet' type='text/css' href='../view/style.css'>
-		<title>TerraBay </title>
+		<title>TerraBay</title>
 	</head>
 	<body>
 

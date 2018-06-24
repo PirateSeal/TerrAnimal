@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
+    <link rel="stylesheet" href="../view/style.css">
 		<link rel='stylesheet' type='text/css' href='../view/subscribe_style.css'>
-		<title>TerraBay : Subscription</title>
+		<title>TerraBay</title>
 	</head>
 	<body>
-		<form action="../index.php" method="GET">
-	  	<button>Back</button>
-		</form>
-			<!-- <3<3<3 -->
+		<form action="../index.php" method="GET"><button class="button2">Back</button></form>
+		<center><h2>Subscription Field</h2></center>
+		<div id="box2">
 		<form id="subscribe"><br><br>
 	  	<form action="subscribe.php" method="POST">
 	    	<label class="form_col" for="pseudo">Pseudo : </label>
@@ -44,7 +44,11 @@
 	    	<br><br>
 
 	    	<span class="form_col"></span>
-	    	<input type="submit" value="Submit" /> <input type="reset" value="Reset" />
+				<div class="btn-group">
+  				<button class="button1" value="submit">Submit</button>
+  				<button class="button2" value="reset">Reset</button>
+				</div>
+
 	    	<?php
 	      	if (isset($_GET["subscribe"]) && $_GET["subscribe"] == "confirmed"){
 	        	echo "<br>Your registration has been registered .<br>You will be redirected in 3 seconds<br>";
@@ -52,7 +56,8 @@
 	      	}
 	    	?>
 	  	</form>
-		</form>
+		</form><br>
+	</div>
 		<script type="text/javascript" src="subscribe.js"></script>
 	</body>
 </html>

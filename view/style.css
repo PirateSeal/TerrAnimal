@@ -28,6 +28,16 @@ label{
 	margin:auto;
 	color:red;
 }
+#box2{
+	background-color :white;
+	opacity: 0.5;
+	border-radius: 5px;
+	width : 60%;
+	padding :40%,15%;
+	text-align : center;
+	margin:auto;
+	color:red;
+}
 
 .button1 {
     background-color: #43677d;

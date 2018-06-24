@@ -1,18 +1,9 @@
-body {
- padding-top: 50px;
-
-}
 label{
 	display : block;
 	width : 150px;
 	float :left;
 }
 
-#subscribe{
-  border : 2px solid black;
-  height :310px;
-
-}
 .form_col {
   display: inline-block;
   margin-right: 15px;
