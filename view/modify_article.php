@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Modify your article</title>
-</head>
-<body>
-	<form action='../controller/home_controller.php' method='GET'><button>Back</button></form>
 	<form action="../controller/modify_article.php?go=modify" method="POST">
 		<?php
 			echo "Description : <input type='text' name='description' value='".$info["description"]."'><br><br>";
 
-		?>		
+		?>
 		Specie : <select name='name' id="name">
-					<?php	
-					for ($i=0; $i < count($data) ; $i++) { 
+					<?php
+					for ($i=0; $i < count($data) ; $i++) {
 						echo "<option value='".$data[$i][0]."'>".$data[$i][0]."</option>";
-					} 
-					?>				
+					}
+					?>
 		</select><br><br>
 
 		<?php
@@ -45,7 +38,7 @@
 
 			<input type='hidden' name='id' value='".$_GET['id']."'>";
 
-		
+
 		?>
 		<button>Submit</button>
 	</form>

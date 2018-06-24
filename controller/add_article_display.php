@@ -23,10 +23,12 @@
 
 			if ($test == 1) {
 				require_once("../model/add_article_retrieve.php");
+				include("../view/header.php");
 				require_once("../view/add_article.php");
 			} else {
 				require_once("../model/add_article_insert.php");
 				require_once("../model/add_article_retrieve.php");
+				include("../view/header.php");
 				$test=0;
 				require_once("../view/add_article.php");
 
@@ -34,6 +36,7 @@
 
 		}elseif ($_GET['go']=="add_specie") {
 			$test=2;
+			include("../view/header.php");
 			require_once("../view/add_article.php");
 		}
 	}

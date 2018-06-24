@@ -3,7 +3,8 @@
 	include("../view/header.php");
 	include("../view/account.php");
   // AFFICHAGE DES INFORMATIONS ACTUELLES DE L'UTILISATEUR .
-
+	echo "<center><h2>Your account informations</h2></center><br>
+				<div id='box1'><br>";
 	require_once("../controller/db_connexion.php");
   	$data = $db_connexion->query("SELECT * FROM users WHERE pseudo='".$_SESSION["pseudo"]."'")->fetch();
   	echo "Pseudo :".$data["pseudo"]."<br>
@@ -30,7 +31,7 @@
 	Name :".$name."<br>
 	Note :".$data["note"]."<br>";
 
-	echo '<a href="../controller/controller_orders.php"><button>View my orders</button></a>';
+	echo '<a href="../controller/controller_orders.php"><button class="button1" >View my orders</button></a>';
 
 	// COMMENTAIRE DE MODIFICATION
 
@@ -49,6 +50,7 @@
 		}
 
 		echo "<form action='../view/account_settings.php' method='GET'>
-						<button>Settings</button>
+						<button class='button'>Settings</button>
 					</form>";
+		echo "<br>";
 ?>
