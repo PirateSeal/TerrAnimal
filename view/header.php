@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="../view/bootstrap1.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
-    <script src="../view/bootstrap2.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"></script>
-    <script src="../view/bootstrap3.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" ></script>
+    <script src="../view/bootstrap1.js" ></script>
+    <script src="../view/bootstrap2.js" ></script>
+    <script src="../view/bootstrap3.js" ></script>
     <link rel="stylesheet" href="../view/bootstrap.css" >
     <link rel="stylesheet" href="../view/style.css">
     <title>TerraBay</title>
@@ -47,7 +47,7 @@
 
         <div class="collapse navbar-collapse col-lg-3 mr-auto" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto float-right">
-            <li class="nav-item"><a class="nav-link mr-4" href="#"> You got 5000<img src="../view/images/monney.svg" width="20" height="20" class="d-inline-block align-top" alt=""></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"> You have : <?php echo round($user_data['balance'])." "; ?><img src="../view/images/monney.svg" width="20" height="20" class="d-inline-block align-top" alt=""></a></li>
             <a class="navbar-brand" href="../controller/caddy_controller.php">
             <img src="../view/images/caddy.svg" width="30" height="30" class="d-inline-block align-top" alt=""></a>
             <a class="navbar-brand" href="../controller/disconnect.php">
@@ -55,4 +55,3 @@
           </ul>
         </div>
     </nav>
-    <br>

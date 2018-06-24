@@ -1,16 +1,5 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>add_article</title>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="add_article_style.css">
-</head>
-<body>
-	<form action='../controller/home_controller.php' method='GET'><button>Back</button></form>
-	<br>
-	<h1>Please inform information about the product you want to sell</h1>
-	<br>
+	<center><h2>Please inform information about the product you want to sell</h2></center>
+	<div id="box2"><br>
 	<?php
 		if (isset($test) && $test==1) {
 			echo "Please be sure you have completed all field, and that your stock value is not 0.<br><br>";
@@ -20,33 +9,32 @@
 	?>
 
 		<form action="../controller/add_article_display.php?go=add" method="POST">
-				Description : <input type='text' name='description' id="description"  pattern="[a-zA-Z0-9]{3,}+" title="Your article name must contain 3 characters. Special characters are not accepted." class="" value=''><br><br>
+				Description : <br><input type='text' name='description' id="description"  pattern="[a-zA-Z0-9]{3,}+" title="Your article name must contain 3 characters. Special characters are not accepted." class="" value=''><br>
 
-				Specie :<?php 
+				<br>Specie :<?php
 				if (!isset($test) || $test!==2) {
 					echo "<select name='name' id='name'>";
 					//AFFICHAGE DES DIFFERENTES ESPECES
-					for ($i=0; $i < count($data) ; $i++) { 
+					for ($i=0; $i < count($data) ; $i++) {
 						echo "<option value='".$data[$i][0]."'>".$data[$i][0]."</option>";
 					}
 				}else{
 					echo "<input type='text' name='name' id='name'>";
 				}
 					?>
-								
-					</select><br>
-				The specie you want to add doesn't exist ?  <a href="../controller/add_article_display.php?go=add_specie"> Add one</a>
-				<br><br>
-				Price : <input type='text' name='price' id="price" pattern="[0-9]{1,}+" title="Special characters are not accepted." value=''> In dollars<br><br>
 
-				Number of products : <input type='text' name='stock' id="stock" pattern="[0-9]{1,}+" title="Special characters are not accepted." value=''>
+					</select><br>
+				The specie you want to add doesn't exist ?  <a href="../controller/add_article_display.php?go=add_specie"> Add one</a><br>
+				<br>
+				Price in dollars:<br><input type='text' name='price' id="price" pattern="[0-9]{1,}+" title="Special characters are not accepted." value=''><br>
+				Number of products :<br><input type='text' name='stock' id="stock" pattern="[0-9]{1,}+" title="Special characters are not accepted." value=''>
 				<span class="tooltip">This field can't be equal to 0 !</span><br><br>
 
 				Gender : <select name='gender' id="gender">
 					<option value='0'>Male</option>
 					<option value='1'>Female</option>
 					<option value='2'>Hermaphrodite</option>
-				</select><br><br>
+				</select><br>
 
 				Food : <select name='diet' id="diet">
 					<option value='carnivorous'>Carnivorous</option>
@@ -54,15 +42,15 @@
 					<option value='omnivorous'>Omnivorous</option>
 				</select><br><br>
 
-				Weight : <input type='text' name='weight' id="weight" value=''> In kilograms<br><br>
+				Weight in kilograms: <br><input type='text' name='weight' id="weight" value=''><br>
 
-				Size : <input type='text' name='size' id="size"  pattern="[0-9]{1,}+" title="Special characters are not accepted." value=''> In meters <br><br>
+				Size in meters:<br> <input type='text' name='size' id="size"  pattern="[0-9]{1,}+" title="Special characters are not accepted." value=''> <br>
 
-				Color : <input type='text' name='color' id="color"  pattern="[a-zA-Z0-9]{3,}+" title="Your article color must contain at enter 3 and 12 characters. Special characters are not accepted." value=''><br><br>
+				Color : <br><input type='text' name='color' id="color"  pattern="[a-zA-Z0-9]{3,}+" title="Your article color must contain at enter 3 and 12 characters. Special characters are not accepted." value=''><br>
 
-				Age : <input type='text' name='age' id="age" value=''><br><br>
-			<button>Submit</button>
-		</form>
-
+				Age : <br><input type='text' name='age' id="age" value=''><br><br>
+			<button class="button1">Submit</button>
+		</form><br>
+	</div>
 </body>
 </html>
