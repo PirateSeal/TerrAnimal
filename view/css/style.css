@@ -1,13 +1,13 @@
 @font-face {
 	font-family: "neuropol";
-	src: url('../view/neuropol.ttf');
+	src: url('../../view/css/neuropol.ttf');
 }
 @font-face {
 	font-family: "telemarines";
-	src: url('../view/telemarines1.ttf');
+	src: url('../../view/css/telemarines1.ttf');
 }
 body {
-	background-image: url("../view/images/background1.jpg");
+	background-image: url("../../view/images/background1.jpg");
 	background-size: 100%;
 	color : white;
 	overflow-X:hidden;

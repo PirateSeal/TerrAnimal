@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel='stylesheet' type='text/css' href='../view/style.css'>
+		<link rel='stylesheet' type='text/css' href='../view/css/style.css'>
 		<title>TerraBay</title>
 	</head>
 	<body>

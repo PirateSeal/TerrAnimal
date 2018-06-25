@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-    <link rel="stylesheet" href="../view/style.css">
-		<link rel='stylesheet' type='text/css' href='../view/subscribe_style.css'>
+    <link rel="stylesheet" href="../view/css/style.css">
+		<link rel='stylesheet' type='text/css' href='../view/css/subscribe_style.css'>
 		<title>TerraBay</title>
 	</head>
 	<body>
