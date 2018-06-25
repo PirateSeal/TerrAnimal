@@ -1,5 +1,5 @@
 <?php
-	echo "<center><h2>Welcome ".$_SESSION["pseudo"]."</h2></center>";
+	echo "<h2><center>Your articles</h2></center>";
 ?>
 
 <div id="box3">
@@ -22,7 +22,7 @@
 			}
 		}
 	} else {
-		echo "<br>You don't had any article !<br>Click <a href='../controller/add_article_display.php'>here</a> to add one .<br><br>";
+		echo "<div id='box'><br>You don't had any article !<br>Click <a href='../controller/add_article_display.php'>here</a> to add one .<br><br></div>";
 	}
 ?>
 </div>
