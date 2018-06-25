@@ -28,7 +28,7 @@
 			require_once("../model/modify_article.php");
 			require_once("../model/modify_article_data.php");
 			$good=0;
-			require_once("../controller/my_article.php");
+			header("location:../controller/my_article.php");
 		}
 	}
 

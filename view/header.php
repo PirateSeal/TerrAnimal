@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="../view/bootstrap1.js" ></script>
-    <script src="../view/bootstrap2.js" ></script>
-    <script src="../view/bootstrap3.js" ></script>
-    <link rel="stylesheet" href="../view/bootstrap.css" >
-    <link rel="stylesheet" href="../view/style.css">
+    <script src="../view/css/bootstrap1.js" ></script>
+    <script src="../view/css/bootstrap2.js" ></script>
+    <script src="../view/css/bootstrap3.js" ></script>
+    <link rel="stylesheet" href="../view/css/bootstrap.css" >
+    <link rel="stylesheet" href="../view/css/style.css">
     <link rel="icon" type="image/png" href="../view/images/logo.png">
     <title>TerraBay</title>
     <meta charset="UTF-8">

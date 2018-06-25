@@ -14,7 +14,7 @@
 		<tr><td>Note : ".$data['note']."/5</td><td>";
 		if (isset($_GET['id_transa'])) {
 		 	echo "<form action='../controller/user_account.php?vote=oui' method='POST'>
-		 	<input id='note' type='number' step='0.5' min='0' max='5'> 
+		 	<input id='note' type='number' step='0.5' min='0' max='5' value=''> 
 		 	<input id='id_transa' type='hidden' value='".$_GET['id_transa']."'>
 		 	<button>Vote</button></form>";
 		 } 

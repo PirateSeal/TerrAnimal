@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="view/bootstrap1.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
-    <script src="view/bootstrap2.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"></script>
-    <script src="view/bootstrap3.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" ></script>
-    <link rel="stylesheet" href="view/bootstrap.css" >
-		<link rel='stylesheet' type='text/css' href='view/style.css'>
+		<script src="view/css/bootstrap1.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
+    <script src="view/css/bootstrap2.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"></script>
+    <script src="view/css/bootstrap3.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" ></script>
+    <link rel="stylesheet" href="view/css/bootstrap.css" >
+		<link rel='stylesheet' type='text/css' href='view/css/style.css'>
 		<title>TerraBay</title>
 	</head>
 	<body>
