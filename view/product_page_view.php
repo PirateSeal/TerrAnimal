@@ -1,29 +1,21 @@
-<?php
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>product details</title>
-</head>
-<body>
+<center><h2>Information of the article</h2></center>
+<div id="box1">
 	<?php
-		echo "<form action='../controller/home_controller.php'><button>back</button></form>";
-
-		echo "<form action='../controller/caddy_controller.php'><button>caddy</button></form>";
-
-
-		echo "<br><table border=1px>
-		<tr><td>image</td><td>".$data['specie']."</td></tr>
-		<tr><td>".$data['unit_price']."$ </td><td>Stock :".$data['stock']."</td></tr>
-		<tr><td>Age :".$data['age']."</td><td>".$data['diet']."</td></tr>
-		<tr><td>Weight :".$data['weight']."</td><td>Color :".$data['color']."</td></tr>
-		<tr><td>Vendor :<a href='../controller/user_account.php?id_user=".$data["id_user"]."'>".$data['firstname']." ".$data['name']."</a></tr></td>
-		</table>";
+	$data1 = $db_connexion->query($req1)->fetch();
+		echo "<br>
+		<img class='' src = '".$data1[13]."' width='23%'><center>
+		Specie :".$data['specie']."<br>Description :".$data1[3]."<br>Price :".$data['unit_price']."$ <br>Stock :".$data['stock']."<br>
+		Age :".$data['age']."<br>Diet :".$data['diet']."<br>
+		<br>Weight :".$data['weight']."<br>Color :".$data['color']."<br>
+		<br>Vendor :<a href='../controller/user_account.php?id_user=".$data["id_user"]."'>".$data['firstname']." ".$data['name']."</a><br><br></center>
+		";
 
 		if ($status == 0) {
-			echo "<form action='../model/add_caddy.php?id=".$_GET["id"]."' method='POST'><button>Add to caddy</button></form><br>"; 
+			echo "<form action='../model/add_caddy.php?id=".$_GET["id"]."' method='POST'><button class='button1'>Add to caddy</button></form><br>";
+		} else {
+			echo "This animal has been added to your caddy .<br><br>";
 		}
 	?>
-
+</div>
 </body>
 </html>
