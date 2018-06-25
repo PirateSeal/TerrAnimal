@@ -1,11 +1,16 @@
 <?php
 	require("../controller/loged_or_not.php");
-	include("../view/header.php");
+	if ( !isset($_POST["pseudo"]) && !isset($_POST["email"]) && !isset($_POST["firstname"]) && !isset($_POST["name"]) && !isset($_POST["password"]) ){
+
+	} else {
+		header("refresh:0");
+	}
 ?>
 <?php
 	require_once("../controller/db_connexion.php");
 	$data = $db_connexion->query("SELECT * FROM users WHERE pseudo='".$_SESSION["pseudo"]."'")->fetch();
 ?>
+<center><h2>Account Settings</h2></center>
 <div id="box1"><br>
 <form action='../controller/account_settings.php' method='POST'>
 	<label for='pseudo'> Your pseudo : </label><input type='text' size='25' name='pseudo' value= <?php echo $data["pseudo"] ?>>
@@ -24,9 +29,9 @@
 							<button class="button1">Change your name</button><br>
 						</form><br>
 						<form action='../controller/account_settings.php' method='POST'>
-							<label for='password'> Old Password : </label><input type='password' size='25' name='password' value=''><br>
-							<label for='password1'> Password : </label><input type='password' size='25' name='password1' value=''><br>
-							<label for='password2'> Re-enter password : </label><input type='password' size='25' name='password2' value=''><br>
+							Old Password : <br><input type='password' size='25' name='password' value=''><br>
+							Password : <br><input type='password' size='25' name='password1' value=''><br>
+							Re-enter password : <br><input type='password' size='25' name='password2' value=''><br>
 							<button class="button2">Change your password</button><br>
 						</form><br>
 						<form action='../controller/account_settings.php' method='POST'>

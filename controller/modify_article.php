@@ -1,10 +1,11 @@
 <?php
 	require_once("../controller/loged_or_not.php");
-	include("../view/header.php");
+
 
 	$good = 0;
 	if (!isset($_GET['go'])) {
 		$idarticle = $_GET['id'];
+		include("../view/header.php");
 		require_once("../model/modify_article_data.php");
 		require_once("../view/modify_article.php");
 	} elseif (isset($_GET['go']) && $_GET['go']=="modify") {

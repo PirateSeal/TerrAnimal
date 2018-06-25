@@ -7,8 +7,7 @@ body {
 }
 label{
 	display : block;
-	width : 150px;
-	float :left;
+
 }
 #box{
 	background-color :white;

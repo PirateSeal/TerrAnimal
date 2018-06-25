@@ -16,7 +16,7 @@
 			}
 		}else {
 			echo "<h2><center>Your order</h2></center><div id='box'>";
-			echo "<br><center>You don't have any articles in your caddy.";
+			echo "<br><center>You don't have any articles in your caddy.<br>";
 		}
 		echo "</center>";
 	?>
