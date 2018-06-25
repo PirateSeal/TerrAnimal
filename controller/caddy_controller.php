@@ -1,8 +1,5 @@
 <?php
-	SESSION_start();
-	if (empty($_SESSION["pseudo"])){
-		header("location:../index.php");
-	}else{
+	require_once("../controller/loged_or_not.php");
 		if (isset($_COOKIE['toto']) && !isset($_GET['status'])) {
 			include("../view/header.php");
 			require_once("../model/caddy_modele.php");
@@ -26,8 +23,7 @@
 			$order = 0;
 			require_once("../view/caddy_view.php");
 		}
-	}
 	if (isset($_GET["status"])){
-		echo "<br>Your order was confirmed with success .";
+		echo "Your order was confirmed with success .<br><br>";
 	}
 ?>

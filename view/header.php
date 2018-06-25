@@ -48,10 +48,10 @@
 
         <div class="collapse navbar-collapse col-lg-3 mr-auto" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto float-right">
-            <li class="nav-item"><a class="nav-link" href="../controller/controller_monney.php"> You have : <?php echo round($_SESSION['monney'])." "; ?><img src="../view/images/monney.svg" width="20" height="20" class="d-inline-block align-top" alt=""></a></li>
-            <a class="navbar-brand" href="../controller/caddy_controller.php">
+            <li class="nav-item"><a class="nav-link mr-4" href="../controller/controller_monney.php"> You have : <?php echo round($_SESSION['monney'])." "; ?><img src="../view/images/monney.svg" width="20" height="20" class="d-inline-block align-top" alt=""></a></li>
+            <a class="navbar-brand ml-2" href="../controller/caddy_controller.php">
             <img src="../view/images/caddy.svg" width="30" height="30" class="d-inline-block align-top" alt=""></a>
-            <a class="navbar-brand" href="../controller/disconnect.php">
+            <a class="navbar-brand ml" href="../controller/disconnect.php">
             <img src="../view/images/disconnect.svg" width="30" height="30" class="d-inline-block align-top" alt=""></a>
           </ul>
         </div>
