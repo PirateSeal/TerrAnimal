@@ -43,7 +43,8 @@
   $data = $db_connexion->query($req_bid)->fetch();
   $old_id = $data[1];
   $new_id = $rand[0];
-  if ($day === $date_end[2] && $hour >= $hour_end[0] || $day > $date_end[2] ){
+  $article = $db_connexion->query($req_data_article)->fetch();
+  if ($day === $date_end[2] && $hour >= $hour_end[0] || $day > $date_end[2] || $article[5] === "0"){
     if ( $old_id === $new_id){
       header("location:../controller/offer_of_the_hour_controller.php");
     } else {
@@ -66,9 +67,6 @@
       echo "<center><h2>Offer of the hour !</h2></center>";
       echo "<div id='box2'><br>";
       $article = $db_connexion->query($req_data_article)->fetch();
-      if ( $article[5] === "0"){
-        echo "The offer of the hour has already been bought !<br>Come back later .<br><br></div>";
-      } else {
       echo "Description : ".$article[3]."<br>";
       echo "<img class='float-left ml-5' src='".$article[13]."' width='30%'><br><br>";
       echo "Price : ".$article[4]."<br>";
@@ -91,8 +89,6 @@
       } else {
         echo "<form action='../model/add_caddy.php?id=".$data[1]."' method='POST'><button class='button button1'>Add to the caddy</button></form>";
       }
-    }
       echo "<br><br></div>";
-
   }
 ?>

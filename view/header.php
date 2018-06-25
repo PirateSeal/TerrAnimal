@@ -6,6 +6,7 @@
     <script src="../view/bootstrap3.js" ></script>
     <link rel="stylesheet" href="../view/bootstrap.css" >
     <link rel="stylesheet" href="../view/style.css">
+    <link rel="icon" type="image/png" href="../view/images/logo.png">
     <title>TerraBay</title>
     <meta charset="UTF-8">
   </head>
