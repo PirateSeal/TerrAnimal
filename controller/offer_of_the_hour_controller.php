@@ -44,7 +44,7 @@
   $old_id = $data[1];
   $new_id = $rand[0];
   $article = $db_connexion->query($req_data_article)->fetch();
-  if ($day === $date_end[2] && $hour >= $hour_end[0] || $day > $date_end[2] || $article[5] === "0"){
+  if ($day === $date_end[2] && $hour >= $hour_end[0] || $day > $date_end[2] || intval($article[5], 0) <= 0){
     if ( $old_id === $new_id){
       header("location:../controller/offer_of_the_hour_controller.php");
     } else {
