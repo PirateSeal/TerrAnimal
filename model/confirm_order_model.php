@@ -1,4 +1,5 @@
 <?php
+//
 	require_once("../controller/db_connexion.php");
 	//on recup les informations du cookie
 	$data = $_COOKIE['toto'];
@@ -14,7 +15,6 @@
 			$recup[$i] = $row;
 		}
 	}
-	var_dump($recup);
 
 	//on récupère l'argent que possède l'utilisateur
 	$sql ='select balance, id_user from users where pseudo = "'.$_SESSION['pseudo'].'"';

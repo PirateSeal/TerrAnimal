@@ -9,6 +9,7 @@
 					<td><form action='../model/delete_caddy_article.php?id=".$i."' method='POST'><button class='button2'>supprimer</button></form></td>
 				</tr>
 				<br>";
+				//
 			}
 			echo "</table>";
 			if ($order == 1) {
