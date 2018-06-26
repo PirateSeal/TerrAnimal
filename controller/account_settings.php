@@ -1,8 +1,6 @@
 <?php
 	require_once("loged_or_not.php");
 	require_once("db_connexion.php");
-	require_once("xor.php");
-	include("../view/header.php");
 	include("../model/account_model.php");
 	include("../view/account_settings.php");
 	$data = $db_connexion->query($req_data)->fetch();
@@ -42,6 +40,7 @@ if (isset($_POST["pseudo"])){
 	if(!isset ($_POST["password"]) || !isset($_POST["password1"]) || !isset($_POST["password2"])){
 		header("location:../controller/account_settings.php?error=password_not_set");
 	} else {
+		require_once("xor.php");
 		$password = htmlspecialchars($_POST["password"]);
 		$password1 = htmlspecialchars($_POST["password1"]);
 		$password2 = htmlspecialchars($_POST["password2"]);

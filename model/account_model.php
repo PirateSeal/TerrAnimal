@@ -1,6 +1,6 @@
 <?php
   $req_data = "SELECT * FROM users WHERE pseudo='".$_SESSION["pseudo"]."'";
-  $req_how_much = "SELECT COUNT(*) FROM users WHERE pseudo='".$pseudo."' ";
+  $req_how_much = "SELECT COUNT(*) FROM users WHERE pseudo='".$pseudo."'";
   $req_pseudo = "UPDATE users SET pseudo = '".$pseudo."' WHERE id_user = '".$data['id_user']."'" ;
   $req_firstname = "UPDATE users SET firstname = '".$firstname."' WHERE id_user = '".$data['id_user']."'";
   $req_name = "UPDATE users SET email = '".$email."' WHERE id_user = '".$data['id_user']."'";
