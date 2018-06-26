@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors','on');
 error_reporting(E_ALL);
-	require_once("db_connexion.php");
+	require_once("../controller/db_connexion.php");
 	include("../view/account_settings.php");
 
 	// MODIFICATION DE DONNÉES
