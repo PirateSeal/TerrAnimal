@@ -7,7 +7,6 @@
 	}
 ?>
 <?php
-	require_once("../controller/db_connexion.php");
 	include("../view/header.php");
 	$data = $db_connexion->query("SELECT * FROM users WHERE pseudo='".$_SESSION["pseudo"]."'")->fetch();
 ?>

@@ -1,14 +1,14 @@
 <?php
-	require_once("loged_or_not.php");
+ini_set('display_errors','on');
+error_reporting(E_ALL);
 	require_once("db_connexion.php");
-	include("../model/account_model.php");
 	include("../view/account_settings.php");
-	$data = $db_connexion->query($req_data)->fetch();
 
 	// MODIFICATION DE DONNÉES
 if (isset($_POST["pseudo"])){
 	$pseudo = htmlspecialchars($_POST["pseudo"]);
 	include("../model/account_model.php");
+	$data = $db_connexion->query($req_data)->fetch();
 	$how_much = $db_connexion->query($req_how_much)->fetch();
 	if( $how_much['COUNT(*)'] == 1 ){
 		header("location:../controller/account_settings.php?error=pseudo_exist");
@@ -21,18 +21,21 @@ if (isset($_POST["pseudo"])){
 } elseif(isset($_POST["firstname"])){
 	$firstname = htmlspecialchars($_POST["firstname"]);
 	include("../model/account_model.php");
+	$data = $db_connexion->query($req_data)->fetch();
 	$req = $db_connexion->prepare($req_firstname);
 	$req->execute();
 	header("location:../controller/account_controller.php?done=new_firstname");
 }elseif(isset($_POST["email"])){
 	$email = htmlspecialchars($_POST["email"]);
 	include("../model/account_model.php");
+	$data = $db_connexion->query($req_data)->fetch();
 	$req = $db_connexion->prepare($req_name);
 	$req->execute();
 	header("location:../controller/account_controller.php?done=new_email");
 } elseif(isset($_POST["name"])){
 	$name = htmlspecialchars($_POST["name"]);
 	include("../model/account_model.php");
+	$data = $db_connexion->query($req_data)->fetch();
 	$req = $db_connexion->prepare($req_email);
 	$req->execute();
 	header("location:../controller/account_controller.php?done=new_name");

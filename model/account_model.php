@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors','on');
+error_reporting(E_ALL);
   $req_data = "SELECT * FROM users WHERE pseudo='".$_SESSION["pseudo"]."'";
   $req_how_much = "SELECT COUNT(*) FROM users WHERE pseudo='".$pseudo."'";
   $req_pseudo = "UPDATE users SET pseudo = '".$pseudo."' WHERE id_user = '".$data['id_user']."'" ;
