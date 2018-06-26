@@ -1,5 +1,4 @@
 <?php
-	require("../controller/loged_or_not.php");
 	if ( !isset($_POST["pseudo"]) && !isset($_POST["email"]) && !isset($_POST["firstname"]) && !isset($_POST["name"]) && !isset($_POST["password"]) ){
 
 	} else {
