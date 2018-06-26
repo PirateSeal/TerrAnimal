@@ -3,7 +3,11 @@ ini_set('display_errors','on');
 error_reporting(E_ALL);
 	require_once("loged_or_not.php");
 	require_once("db_connexion.php");
+	require_once("xor.php");
+	include("../view/header.php");
+	include("../model/account_model.php");
 	include("../view/account_settings.php");
+	$data = $db_connexion->query($req_data)->fetch();
 
 	// MODIFICATION DE DONNÉES
 if (isset($_POST["pseudo"])){
@@ -50,7 +54,6 @@ if (isset($_POST["pseudo"])){
 		if ( $data["password"] === $password3){
 			if($password1 === $password2){
 				$xor_key = 'ByTheWay66';
-				require_once("xor.php");
 				$signal = base64_encode(xorIt($password1, $xor_key));
 				$password = $signal;
 				include("../model/account_model.php");
