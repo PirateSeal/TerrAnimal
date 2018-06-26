@@ -9,6 +9,7 @@
 			include("../view/header.php");
 			require_once("../model/caddy_modele.php");
 			$order = 0;
+			//
 			require_once("../view/caddy_view.php");
 			echo "You don't have enough money to conclude your order.";
 		}elseif (isset($_COOKIE['toto']) && $_GET['status']=="1") {

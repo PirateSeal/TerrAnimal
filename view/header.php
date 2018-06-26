@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="../view/css/bootstrap1.js" ></script>
-    <script src="../view/css/bootstrap2.js" ></script>
-    <script src="../view/css/bootstrap3.js" ></script>
-    <link rel="stylesheet" href="../view/css/bootstrap.css" >
+    <script src="../view/css/bootstrap/bootstrap1.js" ></script>
+    <script src="../view/css/bootstrap/bootstrap2.js" ></script>
+    <script src="../view/css/bootstrap/bootstrap3.js" ></script>
+    <link rel="stylesheet" href="../view/css/bootstrap/bootstrap.css" >
     <link rel="stylesheet" href="../view/css/style.css">
     <link rel="icon" type="image/png" href="../view/images/logo.png">
     <title>TerraBay</title>
@@ -12,7 +12,6 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
       <a class="navbar-brand" href="../controller/home_controller.php">
       <img src="../view/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">TerraBay</a>
       <div class="collapse navbar-collapse row ml-3" id="navbarSupportedContent">
