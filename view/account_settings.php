@@ -1,7 +1,6 @@
 <?php
 ini_set('display_errors','on');
-error_reporting(E_ALL);
-	require("../controller/loged_or_not.php");
+error_reporting(E_ALL|E_STRICT);
 	if ( !isset($_POST["pseudo"]) && !isset($_POST["email"]) && !isset($_POST["firstname"]) && !isset($_POST["name"]) && !isset($_POST["password"]) ){
 
 	} else {
@@ -10,7 +9,6 @@ error_reporting(E_ALL);
 ?>
 <?php
 	require_once("../controller/db_connexion.php");
-	include("../view/header.php");
 	$data = $db_connexion->query("SELECT * FROM users WHERE pseudo='".$_SESSION["pseudo"]."'")->fetch();
 ?>
 <center><h2>Account Settings</h2></center>
