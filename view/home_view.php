@@ -14,7 +14,7 @@
 				<form action='../controller/product_page_controller.php?id=".$data[$i]['id_article']."' method='POST'>
 				<input type='submit' class='btn btn-dark ' style='background-color:dark;' name='Details' value='Details'></form><br><br></div>";
 				$x++;
-				if ( $x === 3 ){
+				if ($x%3==0){
 					echo "<br>";
 				}
 			}

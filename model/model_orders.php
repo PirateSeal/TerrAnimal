@@ -28,7 +28,7 @@ ON users.id_user = t.id_seller
     AND tl.id_article = a.id_article 
     AND t.id_transaction = tl.id_transaction 
 WHERE t.id_buyer = ".$_SESSION['ID']."
-ORDER BY t.date DESC, tl.id_transaction_line ASC
+ORDER BY t.date DESC, tl.id_transaction_line DESC
 ;";
 
 $req = $db_connexion->query($sql);

@@ -1,10 +1,10 @@
 @font-face {
 	font-family: "neuropol";
-	src: url('../../view/css/neuropol.ttf');
+	src: url('./font/neuropol.ttf');
 }
 @font-face {
 	font-family: "telemarines";
-	src: url('../../view/css/telemarines1.ttf');
+	src: url('./font/telemarines1.ttf');
 }
 body {
 	background-image: url("../../view/images/background1.jpg");
@@ -12,7 +12,7 @@ body {
 	color : white;
 	overflow-X:hidden;
 	font-family: "neuropol";
-	font-site: 15px;
+	font-size: 15px;
 }
 label{
 	display : block;
