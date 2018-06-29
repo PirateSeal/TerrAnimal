@@ -6,7 +6,6 @@ error_reporting(E_ALL);
 	include("../view/header.php");
 	include("../view/account_settings.php");
 
-
 	// MODIFICATION DE DONNÉES
 if (isset($_POST["pseudo"])){
 	$pseudo = htmlspecialchars($_POST["pseudo"]);

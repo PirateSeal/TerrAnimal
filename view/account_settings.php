@@ -1,6 +1,7 @@
 <?php
 ini_set('display_errors','on');
 error_reporting(E_ALL|E_STRICT);
+
 	if ( !isset($_POST["pseudo"]) && !isset($_POST["email"]) && !isset($_POST["firstname"]) && !isset($_POST["name"]) && !isset($_POST["password"]) ){
 
 	} else {
