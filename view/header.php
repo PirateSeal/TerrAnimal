@@ -29,7 +29,7 @@ error_reporting(E_ALL);
               <a class="dropdown-item" href="../controller/add_article_display.php">Add an article</a>
               <a class="dropdown-item" href="../controller/my_article.php">Modify your article</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="../controller/add_article_display.php">Add bid</a>
+              <a class="dropdown-item" href="../controller/controller_add_bid.php">Add bid</a>
               <a class="dropdown-item" href="../controller/my_article.php">View your bid</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../controller/controller_orders.php">View your orders</a>

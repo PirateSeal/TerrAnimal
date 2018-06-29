@@ -26,7 +26,7 @@
 					</select><br>
 				The specie you want to add doesn't exist ?  <a href="../controller/add_article_display.php?go=add_specie"> Add one</a><br>
 				<br>
-				Price in dollars:<br><input type='text' name='price' id="price" pattern="[0-9]{1,}+" title="Special characters are not accepted." value=''><br>
+				Start price in dollars:<br><input type='text' name='price' id="price" pattern="[0-9]{1,}+" title="Special characters are not accepted." value=''><br>
 				Number of products :<br><input type='text' name='stock' id="stock" pattern="[0-9]{1,}+" title="Special characters are not accepted." value=''>
 				<span class="tooltip">This field can't be equal to 0 !</span><br><br>
 
@@ -49,6 +49,8 @@
 				Color : <br><input type='text' name='color' id="color"  pattern="[a-zA-Z0-9]{3,}+" title="Your article color must contain at enter 3 and 12 characters. Special characters are not accepted." value=''><br>
 
 				Age : <br><input type='text' name='age' id="age" value=''><br><br>
+
+			  End date : <br><input type='date' name='date' value=''><br>
 			<button class="button1">Submit</button>
 		</form><br>
 	</div>

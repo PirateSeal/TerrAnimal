@@ -6,7 +6,7 @@
 		if (!isset($_GET['go'])) {
 			include("../view/header.php");
 			require_once("../model/add_article_retrieve.php");
-			require_once("../view/add_article.php");
+			require_once("../view/view_add_bid.php");
 		} else if (isset($_GET['go']) && $_GET['go']=="add") {
 			$verif = ["description", "name", "price", "gender", "diet", "weight", "size", "size", "color", "age"];
 			$test = 0;
