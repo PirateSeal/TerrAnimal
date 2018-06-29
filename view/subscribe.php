@@ -46,7 +46,6 @@
 	    	<span class="form_col"></span>
 				<div class="btn-group">
   				<button class="button1" value="submit">Submit</button>
-  				<button class="button2" value="reset">Reset</button>
 				</div>
 
 	    	<?php

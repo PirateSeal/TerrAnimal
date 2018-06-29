@@ -19,7 +19,7 @@
 				<button class="button button1" name="go" value="login">Login</button>
 			</form>
 			<form action="controller/index_controller.php" method="POST">
-				<button class="button button2" name="go" value="subscribe">Subscribe</button>
+				<button class="button button2" name="go" value="subscribe">Register</button>
 			</form>
 			<br><br>
 		</div>
