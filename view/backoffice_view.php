@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Backoffice_TerraBay</title>
-    <link rel="stylesheet" href="../view/CSS/backoffice_css.css">
+    <link rel="stylesheet" href="../view/css/backoffice_css.css">
 </head>
 <body>
     <div class="header hide">
