@@ -14,7 +14,6 @@
             <img id="leave" class="logo" title='Leave Backoffice' src="../view/images/leave.svg">
 
             <img id="return" class="logo" title='Return to menu' src="../view/images/return.svg">
-            <br> <br>
         </div>
     </div>
 
@@ -111,8 +110,9 @@
         <?php
             // RM SPECIE
                 if (isset($srv_specie)) {
-                    echo '<table class="table" cellpadding="5" cellspacing="0.5" width="50%">
-                        <tr><td colspan="10" align="center"><h2>Remove a specie : </h2></td></tr><tr>';
+                    echo "<h2>Remove a specie : </h2>";
+                    echo '<table class="table" align="center" cellpadding="5" cellspacing="0.5" width="50%">
+                        <tr>';
                     
                 for ($k=0; $k<count($srv_specie) ; $k++) { 
                     if ($k % 6 == 0 && $k !== 0) {
@@ -127,7 +127,7 @@
                             </td>';
                     }
                 }
-                echo '</table><br><br>';
+                echo '</table>';
             }
         ?>
     </div>
