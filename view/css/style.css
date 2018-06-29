@@ -13,6 +13,7 @@ body {
 	overflow-X:hidden;
 	font-family: "neuropol";
 	font-size: 15px;
+	overflow-y: auto;
 }
 label{
 	display : block;

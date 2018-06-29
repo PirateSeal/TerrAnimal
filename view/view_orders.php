@@ -6,7 +6,6 @@
                     if (!empty($transactions)) {
                         if (!isset($_POST['ID'])) {
                             for ($i=0; $i<count($transactions) ; $i++) {
-
                                 echo '
                                 <table style="font-size: 20px"  class="table" border="1" cellpadding="5" cellspacing="0.5" width="100%">
                                     <tr align = "center">
@@ -24,6 +23,7 @@
                                 </table>' ;
                             }
                         } else if (isset($_POST['ID'])) {
+                            echo '<a href="../controller/controller_orders.php"><button>Back</button></a>';
                             for ($i=0; $i<count($transactions) ; $i++) {
                                 if ($transactions[$i]['id_transaction_line'] == $_POST['tl']) {
                                     echo '
