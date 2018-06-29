@@ -32,9 +32,9 @@ error_reporting(E_ALL);
               <a class="dropdown-item" href="../controller/add_article_display.php">Add bid</a>
               <a class="dropdown-item" href="../controller/my_article.php">View your bid</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="../controller/account_controller.php">View your orders</a>
+              <a class="dropdown-item" href="../controller/controller_orders.php">View your orders</a>
               <a class="dropdown-item" href="../controller/account_controller.php">View your account</a>
-              <a class="dropdown-item" href="../controller/account_controller.php">Modify your account</a>
+              <a class="dropdown-item" href="../controller/account_settings.php">Modify your account</a>
             </div>
           </li>
           <li class="nav-item"><a class="nav-link" href="../controller/offer_of_the_hour_controller.php">Offer of the hour</a></li>
