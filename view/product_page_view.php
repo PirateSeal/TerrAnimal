@@ -11,6 +11,9 @@
 		";
 
 		if ($status == 0) {
+			if(isset($_GET["id"])) {
+				echo "<script> alert('This animal has been added to your caddy .')</script>";
+			}
 			echo "<form action='../model/add_caddy.php?id=".$_GET["id"]."' method='POST'><button class='button1'>Add to caddy</button></form><br>";
 		} else {
 			echo "This animal has been added to your caddy .<br><br>";
