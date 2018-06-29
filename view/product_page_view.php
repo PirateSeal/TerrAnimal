@@ -12,8 +12,11 @@
 
 		if ($status == 0) {
 			echo "<form action='../model/add_caddy.php?id=".$_GET["id"]."' method='POST'><button class='button1'>Add to caddy</button></form><br>";
-		} else {
+		} elseif ($status == 1) {
 			echo "This animal has been added to your caddy .<br><br>";
+		}else{
+			echo "This article has been added to your caddy.<br>";
+			echo "<form action='../model/add_caddy.php?id=".$_GET["id"]."' method='POST'><button class='button1'>Add to caddy</button></form><br>";
 		}
 	?>
 </div>
