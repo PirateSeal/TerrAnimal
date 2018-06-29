@@ -10,11 +10,10 @@
 		while ($row = $req2 -> fetch(PDO::FETCH_ASSOC)) {
 			$vote=$row;
 		}
-		var_dump($vote['vote_nbr']);
 		if (!isset($vote['vote_nbr'])) {
 			$nb_vote = 2;
 		} else {
-			$nb_vote = $vote['vote_nbr']++;
+			$nb_vote = $vote['vote_nbr']+1;
 		}
 
 		$note = ($vote['note'] + $_POST['note'])/$nb_vote;
