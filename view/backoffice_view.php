@@ -95,7 +95,7 @@
                             <tr>
                                 <td>Ban a member : </td>
                                 <td align = "center">
-                                    <a href="../controller/backoffice_controller.php?ban='.$srv_user[$i]['id_user'].'"><img src="../view/images/ban.svg" class="ban"></a>
+                                    <a href="../controller/backoffice_controller.php?ban='.$srv_user[$i]['id_user'].'"><img onclick="'.$alert_user.'" src="../view/images/ban.svg" class="ban"></a>
                                 </td>
                             </tr>
                         </table></td>';
@@ -110,6 +110,7 @@
         <?php
             // RM SPECIE
                 if (isset($srv_specie)) {
+                    $alert_specie = "return confirm('Are you sure you want to remove this specie ?')";
                     echo "<h2>Remove a specie : </h2>";
                     echo '<table class="table" align="center" cellpadding="5" cellspacing="0.5" width="50%">
                         <tr>';
@@ -122,7 +123,7 @@
                             <td align="center">
                                 '.$srv_specie[$k]['name'].'<br>
                                 <a href="../controller/backoffice_controller.php?rm_specie='.$srv_specie[$k]['id_specie'].'">
-                                    <button>Remove</button>
+                                    <img onclick="'.$alert_specie.'" src="../view/images/specie.svg" class="ban">
                                 </a>
                             </td>';
                     }
@@ -161,7 +162,7 @@
                         <tr>
                             <td colspan="3" align = "center">
                                 <a href="../controller/backoffice_controller.php?remove_article='.$srv_art[$i]['id_article'].'">
-                                    <button onclick="'.$alert_art.'">Remove article</button>
+                                    <img onclick="'.$alert_art.'" src="../view/images/box.svg" class="ban">
                                 </a>
                             </td>
                         </tr>

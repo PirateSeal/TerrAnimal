@@ -67,14 +67,14 @@ ul li {
 }
 
 .menu-ul .menu-li:nth-child(1) {
-    top: -210px;
+    top: -33%;
     z-index: 2;
 }
 .menu-ul .menu-li:nth-child(2) {
     z-index: 1;
 }
 .menu-ul .menu-li:nth-child(3) {
-    top: 210px;
+    top: 33%;
 }
 
 ul li:hover {
