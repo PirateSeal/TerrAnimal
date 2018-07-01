@@ -59,8 +59,6 @@ for ($i=0; $i < count($data) ; $i++) {
 
     echo "<form action='../controller/controller_bids.php' method='GET'><input type='hidden' name='id_bid' value='".$bid[0]."'><button class='button2'>Add an offer to the bid</button></form>";
   } else {
-
-    //ALGO GESTION ANCIEN BIDS
     $bid_monney = $bidder[8]-$bid[7];
     $sel_monney = $seller[8]+$bid[7];
 
@@ -83,7 +81,7 @@ echo "<br><br><br></div>";
   $bid = $db_connexion->query($req_bid)->fetch();
   $price = $bid[7]+1;
 
-  if( $_GET['bid'] < $price ){
+  if( $_GET['bid'] < $price || $_GET['bid'] > $bidder[8]){
     header("location:../controller/controller_bids.php?error=price&id_bid=$_GET[id_bid]");
   } else {
     $req_up_article  ="UPDATE articles SET  unit_price= '".$_GET['bid']."' WHERE id_article ='".$bid[1]."'";
