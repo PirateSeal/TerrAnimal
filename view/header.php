@@ -38,7 +38,7 @@ error_reporting(E_ALL);
             </div>
           </li>
           <li class="nav-item"><a class="nav-link" href="../controller/offer_of_the_hour_controller.php">Offer of the hour</a></li>
-          <li class="nav-item"><a class="nav-link" href="../controller/offer_of_the_hour_controller.php">Bids</a></li>
+          <li class="nav-item"><a class="nav-link" href="../controller/controller_bids.php">Bids</a></li>
           <?php
             if (isset($_SESSION['admin'])) {
                echo "<li class='nav-item'><a class='nav-link' href='../controller/backoffice_controller.php'>BO</a></li>";
