@@ -12,6 +12,7 @@
 				<img class='float-left mr-5' src = '".$data[$i]['photo_path']."' width='25%'>
 				<br>".$data[$i]['name']."<br>".$data[$i]['unit_price']." $<br>
 				<form action='../controller/product_page_controller.php?id=".$data[$i]['id_article']."' method='POST'>
+				<input type='hidden' name='display' value='article'>
 				<input type='submit' class='btn btn-dark ' style='background-color:dark;' name='Details' value='Details'></form><br><br></div>";
 				$x++;
 				if ($x%3==0){
