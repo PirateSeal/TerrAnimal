@@ -12,13 +12,14 @@
 
 		if ($status == 0) {
 			if(isset($_GET["id"])) {
-				echo "<script> alert('This animal has been added to your caddy .')</script>";
+				// Soucis avec les alertes qui se déclenchent a l'arriver sur la page de l'animal et a l'ajout dans le paneir ...
+				//echo "<script> alert('This animal has been added to your caddy .')</script>";
 			}
 			echo "<form action='../model/add_caddy.php?id=".$_GET["id"]."' method='POST'><button class='button1'>Add to caddy</button></form><br>";
 		} elseif ($status == 1) {
 			echo "This animal has been added to your caddy .<br><br>";
 		}else{
-			echo "<script> alert('This animal has been added to your caddy .')</script>";
+			//echo "<script> alert('This animal has been added to your caddy .')</script>";
 			echo "<form action='../model/add_caddy.php?id=".$_GET["id"]."' method='POST'><button class='button1'>Add to caddy</button></form><br>";
 		}
 	?>
