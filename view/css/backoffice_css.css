@@ -55,9 +55,9 @@ body {
 .img-li {
     padding-left: 5px;
     padding-right: 10px;
-    padding-top: 20%;
-    min-width: 130px;
-    max-width: 130px;
+    padding-top: 30% !important;
+    min-width: 75%;
+    max-width: 75%;
 }
 
 ul li {
