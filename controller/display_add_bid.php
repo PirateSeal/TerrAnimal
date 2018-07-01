@@ -26,7 +26,7 @@
 				include("../view/header.php");
 				require_once("../view/view_add_bid.php");
 			} else {
-				require_once("../model/model_add_bid_insert.php");
+				require_once("../model/add_bid_insert.php");
 				require_once("../model/add_article_retrieve.php");
 				include("../view/header.php");
 				$test=0;
