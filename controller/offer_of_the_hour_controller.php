@@ -64,7 +64,7 @@
     header("refresh:0");
   } else {
       require("../model/offer_of_the_hour_model.php");
-      echo "<center><h2>Offer of the hour !</h2></center>";
+      echo "<center><h2>Offer of the minute !</h2></center>";
       echo "<div id='box2'><br><br><br>";
       $article = $db_connexion->query($req_data_article)->fetch();
       echo "Description : ".$article[3]."<br>";

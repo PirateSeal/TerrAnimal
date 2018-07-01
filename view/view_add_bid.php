@@ -50,7 +50,7 @@
 
 				Age : <br><input type='text' name='age' id="age" value=''><br><br>
 
-			  End date : <br><input type='date' name='date' value=''><br>
+			  End date : <br><input type='datetime-local' name='date' value=''><br>
 			<button class="button1">Submit</button>
 		</form><br>
 	</div>

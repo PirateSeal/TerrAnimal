@@ -37,7 +37,7 @@ error_reporting(E_ALL);
               <a class="dropdown-item" href="../controller/account_settings.php">Modify your account</a>
             </div>
           </li>
-          <li class="nav-item"><a class="nav-link" href="../controller/offer_of_the_hour_controller.php">Offer of the hour</a></li>
+          <li class="nav-item"><a class="nav-link" href="../controller/offer_of_the_hour_controller.php">Offer of the minute</a></li>
           <li class="nav-item"><a class="nav-link" href="../controller/controller_bids.php">Bids</a></li>
           <?php
             if (isset($_SESSION['admin'])) {
