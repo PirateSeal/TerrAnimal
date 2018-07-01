@@ -31,6 +31,7 @@ error_reporting(E_ALL);
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../controller/controller_add_bid.php">Add bid</a>
               <a class="dropdown-item" href="../controller/controller_my_bids.php">View your bid</a>
+              <a class="dropdown-item" href="../controller/controller_bids_active.php">View bids you participate</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="../controller/controller_orders.php">View your orders</a>
               <a class="dropdown-item" href="../controller/account_controller.php">View your account</a>

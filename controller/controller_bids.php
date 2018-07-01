@@ -10,14 +10,14 @@ $day = date("d");
 $hour = date("H");
 $minute = date("i");
 $second = date("s");
-echo $year."-".$month."-".$day." ".$hour.":".$minute.":".$second;
-
-
+//echo $year."-".$month."-".$day." ".$hour.":".$minute.":".$second;
 $req_user =" SELECT * FROM articles WHERE status='bid'";
 $data = $db_connexion->query($req_user)->fetchAll();
-
+echo "<center><h2>Bids</h2></center>";
 echo "<div id='box'><br>";
-
+if (isset($_GET["success"])){
+  echo "You offer is online ";
+}
 for ($i=0; $i < count($data) ; $i++) {
     $req_bid =" SELECT * FROM bids WHERE id_article='".$data[$i][0]."'";
     $bid = $db_connexion->query($req_bid)->fetch();
@@ -35,7 +35,6 @@ for ($i=0; $i < count($data) ; $i++) {
     $date_end = explode("-",$full_date_end[0]);
     $hour_end = explode(":",$full_date_end[1]);
 
-    echo $date_end[2];
     if ( $date_end[0] >= $year || $date_end[0] >= $year && $date_end[1] >= $month || $date_end[0] >= $year && $date_end[1] >= $month && $date_end[2] >= $day ) {
 
     echo "Description : ".$data[$i][3]."<br>";
@@ -50,7 +49,7 @@ for ($i=0; $i < count($data) ; $i++) {
     echo "Color: ".$data[$i][10] ."<br>";
     echo "Age: ".$data[$i][11] ."<br>";
     echo "Initial price :".$bid[6]."<br>";
-    echo "End price :".$bid[7]."<br>";
+    echo "<b>End price :".$bid[7]."</b><br>";
     echo "Date start :".$bid[4]."<br>";
     echo "Date end :".$bid[5]."<br>";
     echo "Seller :".$seller[1]."<br>";
@@ -60,17 +59,22 @@ for ($i=0; $i < count($data) ; $i++) {
 
     echo "<form action='../controller/controller_bids.php' method='GET'><input type='hidden' name='id_bid' value='".$bid[0]."'><button class='button2'>Add an offer to the bid</button></form>";
   } else {
-    $req_client  ="UPDATE users SET balance= '".$_GET['bid']."' WHERE id_article ='".$bid[1]."'";
-    $req_article = $db_connexion->prepare($req_up_article);
-    $req_article->execute();
 
-    $req_seller ="UPDATE bids SET  balance= '".$_GET['bid']."' WHERE id_article = '".$bid[1]."'";
-    $req_bid = $db_connexion->prepare($req_up_bid);
+    //ALGO GESTION ANCIEN BIDS
+    $bid_monney = $bidder[8]-$bid[7];
+    $sel_monney = $seller[8]+$bid[7];
+
+    $req_bid_less  ="UPDATE users SET balance= '".$bid_monney."' WHERE id_user ='".$bidder[0]."'";
+    $req_bid = $db_connexion->prepare($req_bid_less);
     $req_bid->execute();
 
-    $req_up_client ="UPDATE bids SET  id_bidder= '".$_SESSION['ID']."' WHERE id_article = '".$bid[1]."'";
-    $req_client = $db_connexion->prepare($req_up_client);
-    $req_client->execute();
+    $req_seller_more ="UPDATE users SET balance= '".$sel_monney."' WHERE id_user ='".$seller[0]."'";
+    $req_sel = $db_connexion->prepare($req_seller_more);
+    $req_sel->execute();
+
+    $req_unavailable ="UPDATE articles SET status= 'unavailable' WHERE id_article ='".$data[$i][0]."'";
+    $req_una = $db_connexion->prepare($req_unavailable);
+    $req_una->execute();
   }
 }
 echo "<br><br><br></div>";
@@ -82,7 +86,6 @@ echo "<br><br><br></div>";
   if( $_GET['bid'] < $price ){
     header("location:../controller/controller_bids.php?error=price&id_bid=$_GET[id_bid]");
   } else {
-    echo "ALGO AJOUT DU NOOUVEAU PRIX ET CLIENT";
     $req_up_article  ="UPDATE articles SET  unit_price= '".$_GET['bid']."' WHERE id_article ='".$bid[1]."'";
     $req_article = $db_connexion->prepare($req_up_article);
     $req_article->execute();
@@ -92,11 +95,12 @@ echo "<br><br><br></div>";
     $req_up_client ="UPDATE bids SET  id_bidder= '".$_SESSION['ID']."' WHERE id_article = '".$bid[1]."'";
     $req_client = $db_connexion->prepare($req_up_client);
     $req_client->execute();
+    header("location:../controller/controller_bids.php?success=true");
   }
 }else {
     $req_bid =" SELECT * FROM bids WHERE id_bi='".$_GET['id_bid']."'";
     $bid = $db_connexion->query($req_bid)->fetch();
-    $price = $bid[6]+1;
+    $price = $bid[7]+1;
     echo "<h2><center>Enter your offer</center></h2><div id='box2'>The minimum price is ".$price."
     <form action='controller_bids.php' method='GET'>
     <input type='number' name='bid' value=''>
