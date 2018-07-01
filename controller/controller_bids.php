@@ -35,7 +35,11 @@ for ($i=0; $i < count($data) ; $i++) {
     $date_end = explode("-",$full_date_end[0]);
     $hour_end = explode(":",$full_date_end[1]);
 
-    if ( $date_end[0] >= $year || $date_end[0] >= $year && $date_end[1] >= $month || $date_end[0] >= $year && $date_end[1] >= $month && $date_end[2] >= $day ) {
+    if ( $date_end[0] > $year ||
+          $date_end[0] == $year && $date_end[1] > $month ||
+          $date_end[0] == $year && $date_end[1] == $month && $date_end[2] > $day ||
+          $date_end[0] == $year && $date_end[1] == $month && $date_end[2] == $day && $hour_end[0] > $hour ||
+          $date_end[0] == $year && $date_end[1] == $month && $date_end[2] == $day && $hour_end[0] == $minute && $hour_end[1] > $minute ) {
 
     echo "Description : ".$data[$i][3]."<br>";
     echo "<img src=".$data[$i][13] ."><br>";
@@ -49,7 +53,7 @@ for ($i=0; $i < count($data) ; $i++) {
     echo "Color: ".$data[$i][10] ."<br>";
     echo "Age: ".$data[$i][11] ."<br>";
     echo "Initial price :".$bid[6]."<br>";
-    echo "<b>End price :".$bid[7]."</b><br>";
+    echo "<b>End price :".$bid[7]."<b><br>";
     echo "Date start :".$bid[4]."<br>";
     echo "Date end :".$bid[5]."<br>";
     echo "Seller :".$seller[1]."<br>";
@@ -59,6 +63,8 @@ for ($i=0; $i < count($data) ; $i++) {
 
     echo "<form action='../controller/controller_bids.php' method='GET'><input type='hidden' name='id_bid' value='".$bid[0]."'><button class='button2'>Add an offer to the bid</button></form>";
   } else {
+
+    //ALGO GESTION ANCIEN BIDS
     $bid_monney = $bidder[8]-$bid[7];
     $sel_monney = $seller[8]+$bid[7];
 
@@ -81,7 +87,7 @@ echo "<br><br><br></div>";
   $bid = $db_connexion->query($req_bid)->fetch();
   $price = $bid[7]+1;
 
-  if( $_GET['bid'] < $price || $_GET['bid'] > $bidder[8]){
+  if( $_GET['bid'] < $price ){
     header("location:../controller/controller_bids.php?error=price&id_bid=$_GET[id_bid]");
   } else {
     $req_up_article  ="UPDATE articles SET  unit_price= '".$_GET['bid']."' WHERE id_article ='".$bid[1]."'";
