@@ -35,11 +35,18 @@ for ($i=0; $i < count($data) ; $i++) {
     $date_end = explode("-",$full_date_end[0]);
     $hour_end = explode(":",$full_date_end[1]);
 
+    echo $date_end[0]." > ".$year."<br>";
+    echo $date_end[0]." == ".$year." && ".$date_end[1]." > ".$month."<br>";
+    echo $date_end[0]." == ".$year." && ".$date_end[1]." == ".$month." && ". $date_end[2] ." > ".$day."<br>";
+    echo $date_end[0]." == ".$year." && ".$date_end[1]." == ".$month." && ". $date_end[2] ." == ".$day." && ".$hour_end[0]." > ".$hour."<br>";
+    echo $date_end[0]." == ".$year." && ".$date_end[1]." == ".$month." && ". $date_end[2] ." == ".$day." && ".$hour_end[0]." == ".$hour."<br>".$hour_end[1]." > ".$minute;
+
+
     if ( $date_end[0] > $year ||
           $date_end[0] == $year && $date_end[1] > $month ||
           $date_end[0] == $year && $date_end[1] == $month && $date_end[2] > $day ||
           $date_end[0] == $year && $date_end[1] == $month && $date_end[2] == $day && $hour_end[0] > $hour ||
-          $date_end[0] == $year && $date_end[1] == $month && $date_end[2] == $day && $hour_end[0] == $minute && $hour_end[1] > $minute ) {
+          $date_end[0] == $year && $date_end[1] == $month && $date_end[2] == $day && $hour_end[0] == $hour && $hour_end[1] > $minute ) {
 
     echo "Description : ".$data[$i][3]."<br>";
     echo "<img src=".$data[$i][13] ."><br>";
@@ -60,11 +67,16 @@ for ($i=0; $i < count($data) ; $i++) {
     echo "Last bidder :".$bidder[1]."<br>";
     echo "Cash Seller :".$seller[8]."<br>";
     echo "Cash Bidder :".$bidder[8]."<br>";
+    $bid_monney = $bidder[8]-$bid[7];
+    $sel_monney = $seller[8]+$bid[7];
+    echo "Cash Bidder after :".$bid_monney;
+    echo "Cash Seller after :".$sel_monney;
 
     echo "<form action='../controller/controller_bids.php' method='GET'><input type='hidden' name='id_bid' value='".$bid[0]."'><button class='button2'>Add an offer to the bid</button></form>";
   } else {
 
     //ALGO GESTION ANCIEN BIDS
+
     $bid_monney = $bidder[8]-$bid[7];
     $sel_monney = $seller[8]+$bid[7];
 
@@ -79,6 +91,12 @@ for ($i=0; $i < count($data) ; $i++) {
     $req_unavailable ="UPDATE articles SET status= 'unavailable' WHERE id_article ='".$data[$i][0]."'";
     $req_una = $db_connexion->prepare($req_unavailable);
     $req_una->execute();
+
+    $req_monney_user =" SELECT * FROM users WHERE id_user='".$_SESSION['id']."'";
+    $data_mu = $db_connexion->query($req_monney_user)->fetch();
+
+    $_SESSION["monney"] = $data_mu[8];
+    header("refresh:0");
   }
 }
 echo "<br><br><br></div>";
@@ -114,7 +132,6 @@ echo "<br><br><br></div>";
       echo "<br>Please enter a price more expensive than the actual offer .<br>";
     }
 
-    echo"<button class='button1'>Add this offer</button>
-    <form>";
+    echo"<button class='button1'>Add this offer</button><form>";
   }
 ?>

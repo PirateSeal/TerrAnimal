@@ -11,10 +11,11 @@
 
 	$quote = [$firstname,$name];
 	    for ($i=0; $i < 2 ; $i++) {
-	        for ($j=0; $j < strlen($quote[$i]) ; $j++) {
+				addslashes($quote[$i]);
+					for ($j=0; $j < strlen($quote[$i]) ; $j++) {
 	          if ($quote[$i][$j] === "'"){
 	            $dual[$i] = explode("'", $quote[$i]);
-	            $fin[$i] = implode("\'",$dual[$i]);
+	            $fin[$i] = implode("\\'",$dual[$i]);
 	          } else {
 							$fin[$i] = $quote[$i];
 						}
@@ -23,6 +24,7 @@
 	    $firstname = $fin[0];
 	    $name = $fin[1];
 			echo $firstname ;
+			echo "<br>";
 			echo $name;
 
 		require("../model/subscribe_model.php");
