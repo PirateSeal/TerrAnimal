@@ -220,7 +220,13 @@ USE `db_terrabay`;
 INSERT INTO `db_terrabay`.`species` (`id_specie`, `name`) VALUES (1, 'Felines');
 INSERT INTO `db_terrabay`.`species` (`id_specie`, `name`) VALUES (2, 'Canides');
 INSERT INTO `db_terrabay`.`species` (`id_specie`, `name`) VALUES (3, 'Ursides');
-
+INSERT INTO `db_terrabay`.`species` (`id_specie`, `name`) VALUES (4, 'Birds');
+INSERT INTO `db_terrabay`.`species` (`id_specie`, `name`) VALUES (5, 'Camelids');
+INSERT INTO `db_terrabay`.`species` (`id_specie`, `name`) VALUES (6, 'Reptiles');
+INSERT INTO `db_terrabay`.`species` (`id_specie`, `name`) VALUES (7, 'Fishes');
+INSERT INTO `db_terrabay`.`species` (`id_specie`, `name`) VALUES (8, 'Mammals');
+INSERT INTO `db_terrabay`.`species` (`id_specie`, `name`) VALUES (9, 'Rondent');
+INSERT INTO `db_terrabay`.`species` (`id_specie`, `name`) VALUES (10, 'Arthropod');
 COMMIT;
 
 
@@ -232,6 +238,23 @@ USE `db_terrabay`;
 INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (1, 'Feral', 'oui.non@gmail.com', 'Thomas', 'Cousin', 2.5, 1, 'YlhE', 50000, 'admin', NULL);
 INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (2, 'Tylan', 'unmail@gmail.com', 'JeanRene', 'Bovin', 2.5, 1, 'Ylhe', 99999, DEFAULT, NULL);
 INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (3, 'ScrubLord', 'scrub.lord@gmail.com', 'Theodule', 'Joulax', 2.5, 1, 'Ylhe', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (4, 'aze', 'mister.aze@gmail.com', 'Mister', 'Aze',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (5, 'r1', 'r1@gmail.com', 'Mister', 'r1',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (6, 'tb0', 'thibault@gmail.com', 'Mister', 'Tb0',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (7, 'rick', 'rick@gmail.com', 'Mister', 'Rick1',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (8, 'fred', 'fred@gmail.com', 'Mister', 'Fred',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (9, 'jessy', 'fred@gmail.com', 'Mister', 'Fred',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (10, 'jocelyne', 'fred@gmail.com', 'Mister', 'Fred',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (11, 'spacefarmer', 'fred@gmail.com', 'Mister', 'Fred',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (12, 'planetarium-andromeda', 'fred@gmail.com', 'Mister', 'Fred',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (13, 'planetarium-aldebaran', 'aldebaran@gmail.com', 'Mister', 'Ministor',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (14, 'dylan', 'dylan@gmail.com', 'Dylan', 'Aerzal',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (15, 'jo', 'fred@gmail.com', 'Mister', 'Fred',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (16, 'finder', 'fred@gmail.com', 'Mister', 'Find',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (17, 'grinder', 'fred@gmail.com', 'Mister', 'Grind',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (18, 'superman', 'fred@gmail.com', 'Mister', 'Kent',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (19, 'hoobs', 'fred@gmail.com', 'Mister', 'hoobs',4, 1, 'TFdI', 100, DEFAULT, NULL);
+INSERT INTO `db_terrabay`.`users` (`id_user`, `pseudo`, `email`, `firstname`, `name`, `note`, `vote_nbr`, `password`, `balance`, `status`, `photo_path`) VALUES (20, 'hobbit', 'fred@gmail.com', 'Mister', 'Hobbit',4, 1, 'TFdI', 100, DEFAULT, NULL);
 
 COMMIT;
 
@@ -245,8 +268,6 @@ INSERT INTO `db_terrabay`.`articles` (`id_article`, `id_specie`, `id_user`, `des
 INSERT INTO `db_terrabay`.`articles` (`id_article`, `id_specie`, `id_user`, `description`, `unit_price`, `stock`, `gender`, `diet`, `weight`, `size`, `color`, `age`, `status`, `photo_path`) VALUES (2, 2, 1, 'Boxer', 50, 2, '1', 'carnivorous', 5, 0.7, 'Light brown', 2, 'available', '../model/resources/dog1.jpg');
 INSERT INTO `db_terrabay`.`articles` (`id_article`, `id_specie`, `id_user`, `description`, `unit_price`, `stock`, `gender`, `diet`, `weight`, `size`, `color`, `age`, `status`, `photo_path`) VALUES (3, 3, 2, 'Brown bear', 1500, 3, '1', 'omnivorous', 600, 1.5, 'Brown', 5, 'available', '../model/resources/bear.jpg');
 INSERT INTO `db_terrabay`.`articles` (`id_article`, `id_specie`, `id_user`, `description`, `unit_price`, `stock`, `gender`, `diet`, `weight`, `size`, `color`, `age`, `status`, `photo_path`) VALUES (4, 2, 2, 'Fox', 1000, 2, '0', 'carnivorous', 3, 0.5, 'Red', 3, 'available', '../model/resources/fox1.jpg');
-INSERT INTO `db_terrabay`.`articles` (`id_article`, `id_specie`, `id_user`, `description`, `unit_price`, `stock`, `gender`, `diet`, `weight`, `size`, `color`, `age`, `status`, `photo_path`) VALUES (5, 1, 3, 'Chat', 35, 3, '1', 'carnivorous', 3, 0.7, 'Dark Brown', 4, 'available', '../model/resources/cat2.jpg');
-
 COMMIT;
 
 
@@ -258,4 +279,3 @@ USE `db_terrabay`;
 INSERT INTO `db_terrabay`.`discounts` (`id_discount`, `id_article`, `status`, `date_start`, `date_end`, `init_price`, `disc_price`) VALUES (1, 2, '0', 'current_time', 'current_time + interval 1 hour', 150.00, 200.00);
 
 COMMIT;
-
