@@ -5,7 +5,6 @@
 	$req = $db_connexion->query($sql);
 
 	$req1 ="SELECT * FROM articles WHERE id_article ='".$_GET["id"]."'";
-
 	while ($row = $req->fetch(PDO::FETCH_ASSOC)){
 		$data=$row;
 	}
