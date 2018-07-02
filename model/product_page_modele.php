@@ -17,13 +17,11 @@
 
 		if (isset($caddy[$_GET["id"]]) && $caddy[$_GET["id"]] == $data['stock']) {
 			$status = 1;
-		}elseif (isset($_GET["achat"])) {
-			$status = 2;
 		}else{
-			$status =0;
+			$status =2;
 		}
 	}else{
-		$status =0;
+		$status =2;
 	}
 
 
