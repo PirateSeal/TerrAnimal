@@ -5,7 +5,6 @@
 	$req = $db_connexion->query($sql);
 
 	$req1 ="SELECT * FROM articles WHERE id_article ='".$_GET["id"]."'";
-
 	while ($row = $req->fetch(PDO::FETCH_ASSOC)){
 		$data=$row;
 	}
@@ -18,11 +17,13 @@
 
 		if (isset($caddy[$_GET["id"]]) && $caddy[$_GET["id"]] == $data['stock']) {
 			$status = 1;
+		}elseif (isset($_GET["achat"])) {
+			$status = 2;
 		}else{
-			$status =2;
+			$status =0;
 		}
 	}else{
-		$status =2;
+		$status =0;
 	}
 
 
