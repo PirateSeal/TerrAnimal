@@ -2,6 +2,13 @@
 	require_once("db_connexion.php");
 	require_once("xor.php");
 
+	$req_insert_user = $db_connexion->prepare("INSERT INTO users (id_user, pseudo, email, firstname, name, note, password)VALUES (NULL, :pseudo,:email,:firstname, :name, '2.5', :password)");
+    $req_insert_user->bindParam(':pseudo',$pseudo);
+    $req_insert_user->bindParam(':email',$email);
+    $req_insert_user->bindParam(':firstname',$firstname);
+    $req_insert_user->bindParam(':name',$name);
+    $req_insert_user->bindParam(':password',$password);
+
 	$pseudo= htmlspecialchars($_GET["pseudo"]);
 	$firstname= htmlspecialchars($_GET["firstname"]);
 	$email = htmlspecialchars($_GET["email"]);
@@ -36,8 +43,9 @@
 		$xor_key = 'ByTheWay66';
 		$signal = base64_encode(xorIt($password1, $xor_key));
 		$password = $signal;
-		require("../model/subscribe_model.php");
-		$db_connexion->exec($sql);
+		//require("../model/subscribe_model.php");
+		//$db_connexion->exec($sql);
+		$req_insert_user->execute();
 		header("location:../index.php?subscribe=confirmed");
 	}
 ?>
