@@ -5,6 +5,7 @@ require("../view/header.php");
 
 if (!isset($_GET["id_bid"]) && !isset($_GET["bid"])){
 $year = date("Y");
+
 $month = date("m");
 $day = date("d");
 $hour = date("H");
