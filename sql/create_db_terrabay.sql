@@ -340,6 +340,7 @@ INSERT INTO `db_terrabay`.`articles` (`id_article`, `id_specie`, `id_user`, `des
 INSERT INTO `db_terrabay`.`articles` (`id_article`, `id_specie`, `id_user`, `description`, `unit_price`, `stock`, `gender`, `diet`, `weight`, `size`, `color`, `age`, `status`, `photo_path`) VALUES (65, 4, 28, 'Sparrow', 1000, 2, '0', 'carnivorous', 3, 0.5, 'Brown', 3, 'available', '../model/resources/sparrow1.jpg');
 INSERT INTO `db_terrabay`.`articles` (`id_article`, `id_specie`, `id_user`, `description`, `unit_price`, `stock`, `gender`, `diet`, `weight`, `size`, `color`, `age`, `status`, `photo_path`) VALUES (66, 4, 28, 'Sparrow', 1000, 2, '0', 'carnivorous', 3, 0.5, 'Brown', 3, 'available', '../model/resources/sparrow2.jpg');
 INSERT INTO `db_terrabay`.`articles` (`id_article`, `id_specie`, `id_user`, `description`, `unit_price`, `stock`, `gender`, `diet`, `weight`, `size`, `color`, `age`, `status`, `photo_path`) VALUES (68, 8, 29, 'Fat Giraffe', 99999, 2, '0', 'carnivorous', 3, 0.5, 'Brown', 18, 'available', '../model/resources/fat_giraffe.png');
+
 COMMIT;
 
 
