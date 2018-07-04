@@ -20,12 +20,8 @@
 			require_once("../model/user_account.php");
 			require_once("../view/user_account.php");
 		} else {
-
 			require_once("../model/user_account.php");
-			echo "<center><h2>Ranking you seller .</h2></center>";
-			echo "<div id='box2'><br><center>";
 			require_once("../view/user_account.php");
-			echo "</div></center><br><br>";
 		}
 	}
 ?>

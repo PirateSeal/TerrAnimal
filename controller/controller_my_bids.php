@@ -5,7 +5,7 @@
   $req_user =" SELECT * FROM articles WHERE status='bid' AND id_user='".$_SESSION["ID"]."'";
   $data = $db_connexion->query($req_user)->fetchAll();
 
-  echo "<div id='box'><br>";
+  echo "<center><h2>Your bids</h2><div id='box'><br>";
 
   for ($i=0; $i < count($data) ; $i++) {
       $req_bid =" SELECT * FROM bids WHERE id_article='".$data[$i][0]."'";
@@ -31,6 +31,6 @@
       echo "Date end :".$bid[4]."<br><br>";
 
   }
-  echo "<br><br><br></div>";
+  echo "<br></div>";
 
 ?>
