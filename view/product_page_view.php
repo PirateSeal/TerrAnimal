@@ -2,6 +2,7 @@
 <div id="box1">
 	<?php
 	$data1 = $db_connexion->query($req1)->fetch();
+	echo "<br>Description :".$data1[3]."<br>";
 		if ($data['gender'] == "0"){
 			$sexe = "Male";
 		} elseif ($data['gender'] == "1"){
@@ -9,12 +10,15 @@
 		} else {
 			$sexe ="Ermaphrodite";
 		}
-		echo "<br>
-		<img class='' src = '".$data1[13]."' width='23%'><center>
-		Specie :".$data['specie']."<br>Description :".$data1[3]."<br>Price :".$data['unit_price']."$ <br>Stock :".$data['stock']."<br>
-		Age :".$data['age']."<br>Diet :".$data['diet']."
+		echo "<br><img class='' src = '".$data1[13]."' width='55%'><center><br>
+		Specie :".$data['specie']."
+		<br>Price :".$data['unit_price']."$ 
+		<br>Stock :".$data['stock']."
+		<br>Age :".$data['age']."
+		<br>Diet :".$data['diet']."
 		<br>Sexe :".$sexe."
-		<br>Weight :".$data['weight']."<br>Color :".$data['color']."<br>
+		<br>Weight :".$data['weight']."
+		<br>Color :".$data['color']."
 		<br>Vendor :<a href='../controller/user_account.php?id_user=".$data["id_user"]."'>".$data['firstname']." ".$data['name']."</a><br><br></center>
 		";
 
